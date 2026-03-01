@@ -1,24 +1,45 @@
 [gd_scene format=3 uid="uid://bcobrnfkpy2rr"]
 
 [ext_resource type="PackedScene" uid="uid://we7cuthcne7q" path="res://Scenes/neu.tscn" id="1_jjgbg"]
+[ext_resource type="Shader" uid="uid://comnqxit5sd5g" path="res://Resources/Floor cardboard.tres" id="2_8gbba"]
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="3_jjvhh"]
 
-[sub_resource type="Curve" id="Curve_jjgbg"]
-_data = [Vector2(0, 0.61797756), 0.0, 0.0, 0, 0]
-point_count = 1
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kry3j"]
+render_priority = 0
+shader = ExtResource("2_8gbba")
+shader_parameter/Texture2DParameter2 = ExtResource("3_jjvhh")
 
-[sub_resource type="CurveTexture" id="CurveTexture_bo1nx"]
-curve = SubResource("Curve_jjgbg")
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8gbba"]
-panorama = SubResource("CurveTexture_bo1nx")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21xkr"]
+sky_top_color = Color(0, 0.05498241, 0.1429244, 1)
+sky_horizon_color = Color(0.8348958, 0.7863601, 0.8455663, 1)
+sky_curve = 1.5587068
+sky_cover_modulate = Color(0.737193, 0.7371929, 0.7371929, 1)
+sun_angle_max = 0.0
 
 [sub_resource type="Sky" id="Sky_jjvhh"]
-sky_material = SubResource("PanoramaSkyMaterial_8gbba")
+sky_material = SubResource("ProceduralSkyMaterial_21xkr")
 
 [sub_resource type="Environment" id="Environment_kry3j"]
 background_mode = 2
 background_energy_multiplier = 0.84
 sky = SubResource("Sky_jjvhh")
+ambient_light_source = 3
+ambient_light_color = Color(0.90971833, 0.9402388, 1, 1)
+ambient_light_energy = 3.78
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bp64"]
+render_priority = -1
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("3_jjvhh")
+proximity_fade_enabled = true
+proximity_fade_distance = 4096.0
+distance_fade_max_distance = 1695.66
+
+[sub_resource type="QuadMesh" id="QuadMesh_344ge"]
+material = SubResource("StandardMaterial3D_6bp64")
+orientation = 0
 
 [node name="Main" type="Node3D" unique_id=435746957]
 
@@ -34,6 +55,27 @@ use_collision = true
 [node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=457502374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1)
 size = Vector3(100, 1, 100)
+material = SubResource("ShaderMaterial_kry3j")
+
+[node name="Floor2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1074561228]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5, 49, 48.73769)
+size = Vector3(100, 1, 100)
+material = SubResource("ShaderMaterial_kry3j")
+
+[node name="Floor4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2105519459]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5, 49, -50)
+size = Vector3(100, 1, 100)
+material = SubResource("ShaderMaterial_kry3j")
+
+[node name="Floor3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=466097776]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 44.48207, 49, -0.046691895)
+size = Vector3(100, 1, 100)
+material = SubResource("ShaderMaterial_kry3j")
+
+[node name="Floor5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=600144200]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -50.85917, 49, -0.046691895)
+size = Vector3(100, 1, 100)
+material = SubResource("ShaderMaterial_kry3j")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=348683058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2728271, 5.7758226, -14.719606)
@@ -51,5 +93,32 @@ size = Vector3(25.206665, 14.177612, 1)
 environment = SubResource("Environment_kry3j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=660963932]
-transform = Transform3D(-0.5057984, 0.77391946, 0.38107315, 0.6719489, 0.076436736, 0.7366426, 0.540974, 0.6286542, -0.5586958, 0, 39.86509, 0)
+transform = Transform3D(-0.32265174, 0.7685917, 0.5524155, -0.041035235, -0.5944394, 0.80309296, 0.9456278, 0.23645075, 0.22333613, 0, 39.86509, 0)
+light_color = Color(1, 0.9526338, 0.8477413, 1)
+light_energy = 0.505
 shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1301453215]
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, -2000, 2500, 0)
+visible = false
+mesh = SubResource("QuadMesh_344ge")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1683225634]
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 2000, 2500, 0)
+visible = false
+mesh = SubResource("QuadMesh_344ge")
+
+[node name="Big Floor" type="MeshInstance3D" parent="." unique_id=1590434091]
+transform = Transform3D(-0.0004371139, -10000, 0, 10000, -0.0004371139, 0, 0, 0, 10000, 0.053108215, -0.83753204, 0.031391144)
+visible = false
+mesh = SubResource("QuadMesh_344ge")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=585748728]
+transform = Transform3D(-0.0004371139, 0, 10000, 0, 10000, 0, -10000, 0, -0.0004371139, 0, 2500, -1999.9999)
+visible = false
+mesh = SubResource("QuadMesh_344ge")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=647039450]
+transform = Transform3D(-0.0004371139, 0, 10000, 0, 10000, 0, -10000, 0, -0.0004371139, 0, 2500, 2000)
+visible = false
+mesh = SubResource("QuadMesh_344ge")

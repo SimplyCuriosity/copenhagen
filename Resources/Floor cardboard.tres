@@ -1,0 +1,31 @@
+[gd_resource type="VisualShader" format=3 uid="uid://comnqxit5sd5g"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ko4s8"]
+output_port_for_preview = 0
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_plk6y"]
+parameter_name = "Texture2DParameter2"
+texture_type = 1
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_q68he"]
+output_port_for_preview = 0
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_ft7jg"]
+parameter_name = "Texture2DParameter"
+texture_type = 1
+texture_repeat = 1
+
+[resource]
+nodes/vertex/2/node = SubResource("VisualShaderNodeTexture_q68he")
+nodes/vertex/2/position = Vector2(40, 140)
+nodes/vertex/3/node = SubResource("VisualShaderNodeTexture2DParameter_ft7jg")
+nodes/vertex/3/position = Vector2(-200, 320)
+nodes/vertex/connections = PackedInt32Array(3, 0, 2, 2)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_ko4s8")
+nodes/fragment/2/position = Vector2(-160, 240)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_plk6y")
+nodes/fragment/3/position = Vector2(-240, 440)
+nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 2, 0, 0, 0)
