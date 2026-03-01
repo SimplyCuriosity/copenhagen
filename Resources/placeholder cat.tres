@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c53j1jy5qqgp1"]
+
+[resource]
+transparency = 1
+depth_draw_mode = 1
+diffuse_mode = 3
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.48380154, 0.35131863, 0.22368991, 1)
+stencil_flags = 1
+stencil_compare = 2
+stencil_color = Color(1, 1, 1, 1)
+stencil_outline_thickness = 0.032

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cri8y3q66j5po"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gev2h"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+stencil_mode = 3
+stencil_flags = 2
+stencil_compare = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_6jkk8"]
+material = SubResource("StandardMaterial3D_gev2h")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qhxu1"]
+render_priority = 1
+transparency = 1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_28hkj"]
+material = SubResource("StandardMaterial3D_qhxu1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=1506995029]
+mesh = SubResource("BoxMesh_6jkk8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=838239542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5750045, 0.43316394, 0)
+mesh = SubResource("SphereMesh_28hkj")

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bcobrnfkpy2rr"]
+
+[ext_resource type="PackedScene" uid="uid://we7cuthcne7q" path="res://Scenes/neu.tscn" id="1_jjgbg"]
+
+[sub_resource type="Curve" id="Curve_jjgbg"]
+_data = [Vector2(0, 0.61797756), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_bo1nx"]
+curve = SubResource("Curve_jjgbg")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8gbba"]
+panorama = SubResource("CurveTexture_bo1nx")
+
+[sub_resource type="Sky" id="Sky_jjvhh"]
+sky_material = SubResource("PanoramaSkyMaterial_8gbba")
+
+[sub_resource type="Environment" id="Environment_kry3j"]
+background_mode = 2
+background_energy_multiplier = 0.84
+sky = SubResource("Sky_jjvhh")
+
+[node name="Main" type="Node3D" unique_id=435746957]
+
+[node name="Neu" parent="." unique_id=790300511 instance=ExtResource("1_jjgbg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.951258, 3.512456, -14.062638)
+
+[node name="Camera3D2" type="Camera3D" parent="Neu" unique_id=2072271008]
+transform = Transform3D(-0.4843669, 0.22643174, -0.8450547, 0, 0.9659259, 0.25881907, 0.874865, 0.1253634, -0.4678625, -4.2020473, 1.3858643, -4.522092)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=423049885]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=457502374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1)
+size = Vector3(100, 1, 100)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=348683058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2728271, 5.7758226, -14.719606)
+size = Vector3(47.720947, 14.177612, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=734129033]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2728271, 5.7758226, 23.850393)
+size = Vector3(47.720947, 14.177612, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=178269782]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.6787, 5.7758226, 5.0680532)
+size = Vector3(25.206665, 14.177612, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=854118344]
+environment = SubResource("Environment_kry3j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=660963932]
+transform = Transform3D(-0.5057984, 0.77391946, 0.38107315, 0.6719489, 0.076436736, 0.7366426, 0.540974, 0.6286542, -0.5586958, 0, 39.86509, 0)
+shadow_enabled = true
