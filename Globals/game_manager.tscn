@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dt6gggynhlc8j"]
+
+[ext_resource type="Script" uid="uid://b86kefjq8lylb" path="res://Globals/game_manager.gd" id="1_wj7el"]
+
+[node name="Game Manager" type="Node3D" unique_id=838446217]
+process_mode = 3
+script = ExtResource("1_wj7el")
+
+[node name="Pause" type="Label" parent="." unique_id=850110653]
+visible = false
+offset_left = 411.0
+offset_top = 250.0
+offset_right = 749.0
+offset_bottom = 517.0
+theme_override_font_sizes/font_size = 96
+text = "Paused
+"

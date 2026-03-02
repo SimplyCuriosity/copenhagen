@@ -26,6 +26,7 @@ frame_3/duration = 0.5
 render_priority = -1
 transparency = 1
 cull_mode = 2
+no_depth_test = true
 shading_mode = 0
 diffuse_mode = 3
 specular_mode = 1
@@ -56,26 +57,28 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_a4a7j")
 size = Vector2(18, 18)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eiv8e"]
-height = 3.952
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3j0eb"]
+radius = 1.994
+height = 5.7829003
 
 [node name="Neu" type="CharacterBody3D" unique_id=790300511]
+collision_layer = 2
 script = ExtResource("1_xrnon")
 
 [node name="Placeholder cat" parent="." unique_id=121546770 instance=ExtResource("1_4ggwa")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Cat_Placeholder" parent="Placeholder cat" index="0" unique_id=1697158097]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2429995e-08, 0, 0.74191177)
 surface_material_override/0 = ExtResource("2_kj4xw")
 
 [node name="Paper" type="MeshInstance3D" parent="Placeholder cat" unique_id=863661060]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38819575, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2429995e-08, 0, 0.74191177)
 mesh = SubResource("QuadMesh_kj4xw")
 
 [node name="Placeholder cat outline 2" parent="Placeholder cat/Paper" unique_id=970817769 instance=ExtResource("5_jmmmc")]
 
 [node name="Cat_Placeholder" parent="Placeholder cat/Paper/Placeholder cat outline 2" index="0" unique_id=1862779639]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43776214, 0, -1.9135191e-08)
 surface_material_override/0 = ExtResource("6_jmmmc")
 
 [node name="Placeholder cat outline" parent="Placeholder cat/Paper" unique_id=1297012959 instance=ExtResource("5_eiv8e")]
@@ -83,6 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38819575, 0, 0)
 visible = false
 
 [node name="Cat_Placeholder" parent="Placeholder cat/Paper/Placeholder cat outline" index="0" unique_id=1849106904]
+visible = false
 surface_material_override/0 = ExtResource("6_jmmmc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Placeholder cat" unique_id=699651681]
@@ -91,8 +95,10 @@ visible = false
 mesh = SubResource("QuadMesh_3j0eb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=275449695]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009937286, -0.5902195, 0)
-shape = SubResource("CapsuleShape3D_eiv8e")
+transform = Transform3D(1.9106855e-15, -1, -4.371139e-08, -4.371139e-08, -4.371139e-08, 1, -1, 0, -4.371139e-08, -0.057280302, 0.027999999, 0)
+shape = SubResource("CapsuleShape3D_3j0eb")
+
+[node name="origin_angle" type="Node3D" parent="." unique_id=1327983494]
 
 [editable path="Placeholder cat"]
 [editable path="Placeholder cat/Paper/Placeholder cat outline 2"]

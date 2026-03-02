@@ -2,7 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://we7cuthcne7q" path="res://Scenes/neu.tscn" id="1_jjgbg"]
 [ext_resource type="Shader" uid="uid://comnqxit5sd5g" path="res://Resources/Floor cardboard.tres" id="2_8gbba"]
+[ext_resource type="Script" uid="uid://dov25x8y2gwtr" path="res://Scripts/third_person_cam.gd" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="3_jjvhh"]
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_jjvhh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kry3j"]
 render_priority = 0
@@ -44,10 +47,22 @@ orientation = 0
 [node name="Main" type="Node3D" unique_id=435746957]
 
 [node name="Neu" parent="." unique_id=790300511 instance=ExtResource("1_jjgbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.951258, 3.512456, -14.062638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.951258, 3.512456, -14.062638)
 
-[node name="Camera3D2" type="Camera3D" parent="Neu" unique_id=2072271008]
-transform = Transform3D(-0.4843669, 0.22643174, -0.8450547, 0, 0.9659259, 0.25881907, 0.874865, 0.1253634, -0.4678625, -4.2020473, 1.3858643, -4.522092)
+[node name="Third person cam" type="Node3D" parent="Neu" unique_id=764407442]
+script = ExtResource("2_jjvhh")
+
+[node name="Y Anchor" type="Node3D" parent="Neu/Third person cam" unique_id=1789035199]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="X Anchor" type="Node3D" parent="Neu/Third person cam/Y Anchor" unique_id=151368387]
+
+[node name="SpringArm3D" type="SpringArm3D" parent="Neu/Third person cam/Y Anchor/X Anchor" unique_id=2136392089]
+collision_mask = 3
+shape = SubResource("SeparationRayShape3D_jjvhh")
+spring_length = 9.47
+
+[node name="Camera3D" type="Camera3D" parent="Neu/Third person cam/Y Anchor/X Anchor/SpringArm3D" unique_id=2072271008]
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=423049885]
 use_collision = true
