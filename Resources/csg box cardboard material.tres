@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cimf5juv00w2p"]
+
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="1_rc37o"]
+[ext_resource type="Texture2D" uid="uid://c5ysdmgpsjlhd" path="res://Assets/3D art/Textures/CardBoard Normalmap (1).png" id="3_8d67r"]
+
+[resource]
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.7273974, 0.681432, 0.44171134, 1)
+albedo_texture = ExtResource("1_rc37o")
+normal_enabled = true
+normal_scale = 0.39
+normal_texture = ExtResource("3_8d67r")
+heightmap_enabled = true
+heightmap_scale = 9.237
+heightmap_flip_tangent = true
+heightmap_flip_binormal = true
+heightmap_texture = ExtResource("3_8d67r")
+heightmap_flip_texture = true
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true

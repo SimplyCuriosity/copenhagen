@@ -2,11 +2,13 @@
 
 [resource]
 transparency = 1
+blend_mode = 4
 cull_mode = 2
 depth_draw_mode = 1
 diffuse_mode = 3
+specular_mode = 1
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.28624618, 0.2781208, 0.24732852, 1)
+albedo_color = Color(0.7470902, 0.390048, 0, 1)
 stencil_mode = 3
 stencil_flags = 1
 stencil_compare = 2

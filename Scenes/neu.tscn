@@ -27,8 +27,7 @@ render_priority = -1
 transparency = 1
 cull_mode = 2
 no_depth_test = true
-shading_mode = 0
-diffuse_mode = 3
+diffuse_mode = 2
 specular_mode = 1
 vertex_color_use_as_albedo = true
 albedo_texture = SubResource("AnimatedTexture_p2x4n")
@@ -70,15 +69,16 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 
 [node name="Cat_Placeholder" parent="Placeholder cat" index="0" unique_id=1697158097]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2429995e-08, 0, 0.74191177)
+layers = 2
 surface_material_override/0 = ExtResource("2_kj4xw")
 
 [node name="Paper" type="MeshInstance3D" parent="Placeholder cat" unique_id=863661060]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.2429995e-08, 0, 0.74191177)
 mesh = SubResource("QuadMesh_kj4xw")
 
-[node name="Placeholder cat outline 2" parent="Placeholder cat/Paper" unique_id=970817769 instance=ExtResource("5_jmmmc")]
+[node name="Placeholder cat outline 2" parent="Placeholder cat/Paper" unique_id=1317409922 instance=ExtResource("5_jmmmc")]
 
-[node name="Cat_Placeholder" parent="Placeholder cat/Paper/Placeholder cat outline 2" index="0" unique_id=1862779639]
+[node name="Cat_Placeholder" parent="Placeholder cat/Paper/Placeholder cat outline 2" index="0" unique_id=560688426]
 surface_material_override/0 = ExtResource("6_jmmmc")
 
 [node name="Placeholder cat outline" parent="Placeholder cat/Paper" unique_id=1297012959 instance=ExtResource("5_eiv8e")]

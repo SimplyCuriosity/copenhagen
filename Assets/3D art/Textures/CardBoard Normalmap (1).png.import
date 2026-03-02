@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjpsoc7nmjgsr"
-path.s3tc="res://.godot/imported/CardBoard.png-d418b47f277077500fee31add88a0b34.s3tc.ctex"
+uid="uid://c5ysdmgpsjlhd"
+path.s3tc="res://.godot/imported/CardBoard Normalmap (1).png-ea8d752b8cda46493defb1c9c9cc6232.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/3D art/Textures/CardBoard.png"
-dest_files=["res://.godot/imported/CardBoard.png-d418b47f277077500fee31add88a0b34.s3tc.ctex"]
+source_file="res://Assets/3D art/Textures/CardBoard Normalmap (1).png"
+dest_files=["res://.godot/imported/CardBoard Normalmap (1).png-ea8d752b8cda46493defb1c9c9cc6232.s3tc.ctex"]
 
 [params]
 
@@ -26,8 +26,8 @@ compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Assets/3D art/Textures/CardBoard.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

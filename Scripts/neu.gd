@@ -50,8 +50,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 	look_at_dir = global_position + direction*2
-		
-	if global_position != global_position + direction:
+	#print(direction)
+	if direction:
 		origin_angle.look_at(global_position + direction)
 		#collision_shape_3d.look_at(global_position + direction)
 		
@@ -71,6 +71,6 @@ func _physics_process(delta: float) -> void:
 		#	placeholder_cat.rotation.y = move_toward(placeholder_cat.global_rotation.y, positive_angle, +0.2)
 		
 		# This one line does what I thought the above would do
-		placeholder_cat.rotation.y = rotate_toward(placeholder_cat.global_rotation.y, origin_angle.global_rotation.y, 0.2) 
-		collision_shape_3d.rotation.y = rotate_toward(collision_shape_3d.global_rotation.y, origin_angle.global_rotation.y, 0.2) 
+		placeholder_cat.rotation.y = rotate_toward(placeholder_cat.global_rotation.y, origin_angle.global_rotation.y, 10 * delta) 
+		collision_shape_3d.rotation.y = rotate_toward(collision_shape_3d.global_rotation.y, origin_angle.global_rotation.y, 10 * delta) 
 	move_and_slide()

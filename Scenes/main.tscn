@@ -1,16 +1,11 @@
 [gd_scene format=3 uid="uid://bcobrnfkpy2rr"]
 
 [ext_resource type="PackedScene" uid="uid://we7cuthcne7q" path="res://Scenes/neu.tscn" id="1_jjgbg"]
-[ext_resource type="Shader" uid="uid://comnqxit5sd5g" path="res://Resources/Floor cardboard.tres" id="2_8gbba"]
 [ext_resource type="Script" uid="uid://dov25x8y2gwtr" path="res://Scripts/third_person_cam.gd" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="3_jjvhh"]
+[ext_resource type="Material" uid="uid://cimf5juv00w2p" path="res://Resources/csg box cardboard material.tres" id="5_kry3j"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_jjvhh"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kry3j"]
-render_priority = 0
-shader = ExtResource("2_8gbba")
-shader_parameter/Texture2DParameter2 = ExtResource("3_jjvhh")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21xkr"]
 sky_top_color = Color(0, 0.05498241, 0.1429244, 1)
@@ -24,11 +19,11 @@ sky_material = SubResource("ProceduralSkyMaterial_21xkr")
 
 [sub_resource type="Environment" id="Environment_kry3j"]
 background_mode = 2
-background_energy_multiplier = 0.84
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_jjvhh")
 ambient_light_source = 3
-ambient_light_color = Color(0.90971833, 0.9402388, 1, 1)
-ambient_light_energy = 3.78
+ambient_light_color = Color(0.34938377, 0.56005013, 0.9999984, 1)
+ambient_light_energy = 2.61
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bp64"]
 render_priority = -1
@@ -64,51 +59,12 @@ spring_length = 9.47
 
 [node name="Camera3D" type="Camera3D" parent="Neu/Third person cam/Y Anchor/X Anchor/SpringArm3D" unique_id=2072271008]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=423049885]
-use_collision = true
-
-[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D" unique_id=457502374]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -1)
-size = Vector3(100, 1, 100)
-material = SubResource("ShaderMaterial_kry3j")
-
-[node name="Floor2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1074561228]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5, 49, 48.73769)
-size = Vector3(100, 1, 100)
-material = SubResource("ShaderMaterial_kry3j")
-
-[node name="Floor4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2105519459]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.5, 49, -50)
-size = Vector3(100, 1, 100)
-material = SubResource("ShaderMaterial_kry3j")
-
-[node name="Floor3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=466097776]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 44.48207, 49, -0.046691895)
-size = Vector3(100, 1, 100)
-material = SubResource("ShaderMaterial_kry3j")
-
-[node name="Floor5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=600144200]
-transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, -50.85917, 49, -0.046691895)
-size = Vector3(100, 1, 100)
-material = SubResource("ShaderMaterial_kry3j")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=348683058]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2728271, 5.7758226, -14.719606)
-size = Vector3(47.720947, 14.177612, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=734129033]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2728271, 5.7758226, 23.850393)
-size = Vector3(47.720947, 14.177612, 1)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=178269782]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.6787, 5.7758226, 5.0680532)
-size = Vector3(25.206665, 14.177612, 1)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=854118344]
 environment = SubResource("Environment_kry3j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=660963932]
-transform = Transform3D(-0.32265174, 0.7685917, 0.5524155, -0.041035235, -0.5944394, 0.80309296, 0.9456278, 0.23645075, 0.22333613, 0, 39.86509, 0)
+transform = Transform3D(-0.16215152, 0.9575076, 0.2385081, -0.14956978, -0.26276362, 0.95319694, 0.9753645, 0.11888872, 0.1858215, 0, 39.86509, 0)
+visible = false
 light_color = Color(1, 0.9526338, 0.8477413, 1)
 light_energy = 0.505
 shadow_enabled = true
@@ -137,3 +93,26 @@ mesh = SubResource("QuadMesh_344ge")
 transform = Transform3D(-0.0004371139, 0, 10000, 0, 10000, 0, -10000, 0, -0.0004371139, 0, 2500, 2000)
 visible = false
 mesh = SubResource("QuadMesh_344ge")
+
+[node name="Level 1" type="CSGCombiner3D" parent="." unique_id=318582169]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level 1" unique_id=706598815]
+size = Vector3(200, 200, 200)
+material = ExtResource("5_kry3j")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level 1" unique_id=83121387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1165771, 71.818115, -5.5299683)
+operation = 2
+size = Vector3(176.69, 143.64, 172.06)
+material = ExtResource("5_kry3j")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=557811273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 82.70415, 0)
+light_color = Color(0.9379974, 0.8944229, 0.70559883, 1)
+light_energy = 40.0
+light_indirect_energy = 2.763
+light_volumetric_fog_energy = 1.63
+shadow_enabled = true
+omni_range = 4096.0
+omni_shadow_mode = 0
