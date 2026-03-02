@@ -21,3 +21,5 @@ heightmap_texture = ExtResource("3_8d67r")
 heightmap_flip_texture = true
 uv1_scale = Vector3(0.05, 0.05, 0.05)
 uv1_triplanar = true
+proximity_fade_enabled = true
+proximity_fade_distance = 4096.0

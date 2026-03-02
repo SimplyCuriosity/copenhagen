@@ -8,8 +8,8 @@
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_jjvhh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_21xkr"]
-sky_top_color = Color(0, 0.05498241, 0.1429244, 1)
-sky_horizon_color = Color(0.8348958, 0.7863601, 0.8455663, 1)
+sky_top_color = Color(0.3941974, 0.6706414, 0.9999879, 1)
+sky_horizon_color = Color(0.89665824, 0.86607224, 0.9043002, 1)
 sky_curve = 1.5587068
 sky_cover_modulate = Color(0.737193, 0.7371929, 0.7371929, 1)
 sun_angle_max = 0.0
@@ -19,10 +19,10 @@ sky_material = SubResource("ProceduralSkyMaterial_21xkr")
 
 [sub_resource type="Environment" id="Environment_kry3j"]
 background_mode = 2
-background_energy_multiplier = 0.0
+background_energy_multiplier = 1.3
 sky = SubResource("Sky_jjvhh")
 ambient_light_source = 3
-ambient_light_color = Color(0.34938377, 0.56005013, 0.9999984, 1)
+ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_energy = 2.61
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bp64"]
@@ -33,6 +33,7 @@ shading_mode = 0
 albedo_texture = ExtResource("3_jjvhh")
 proximity_fade_enabled = true
 proximity_fade_distance = 4096.0
+distance_fade_mode = 1
 distance_fade_max_distance = 1695.66
 
 [sub_resource type="QuadMesh" id="QuadMesh_344ge"]
@@ -70,12 +71,12 @@ light_energy = 0.505
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1301453215]
-transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, -2000, 2500, 0)
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, -2000, -4000, 0)
 visible = false
 mesh = SubResource("QuadMesh_344ge")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1683225634]
-transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 2000, 2500, 0)
+transform = Transform3D(10000, 0, 0, 0, 10000, 0, 0, 0, 10000, 2000, -4000, 0)
 visible = false
 mesh = SubResource("QuadMesh_344ge")
 
@@ -85,16 +86,17 @@ visible = false
 mesh = SubResource("QuadMesh_344ge")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=585748728]
-transform = Transform3D(-0.0004371139, 0, 10000, 0, 10000, 0, -10000, 0, -0.0004371139, 0, 2500, -1999.9999)
+transform = Transform3D(-0.0004371139, 0, 10000, 0, 10000, 0, -10000, 0, -0.0004371139, 0, -4000, -1999.9999)
 visible = false
 mesh = SubResource("QuadMesh_344ge")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=647039450]
-transform = Transform3D(-0.0004371139, 0, 10000, 0, 10000, 0, -10000, 0, -0.0004371139, 0, 2500, 2000)
+transform = Transform3D(-0.0004371139, 0, 3000, 0, 10000, 0, -10000, 0, -0.00013113416, 0, -4000, 2000)
 visible = false
 mesh = SubResource("QuadMesh_344ge")
 
 [node name="Level 1" type="CSGCombiner3D" parent="." unique_id=318582169]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level 1" unique_id=706598815]

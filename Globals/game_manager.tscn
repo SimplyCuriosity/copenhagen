@@ -1,17 +1,40 @@
 [gd_scene format=3 uid="uid://dt6gggynhlc8j"]
 
 [ext_resource type="Script" uid="uid://b86kefjq8lylb" path="res://Globals/game_manager.gd" id="1_wj7el"]
+[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/3D art/Textures/PaperRip_1.png" id="2_e6ac5"]
+[ext_resource type="FontFile" uid="uid://esg1noxywjcx" path="res://Assets/Fonts/DigitalHandWritingTest-Regular.ttf" id="3_ae4yk"]
 
 [node name="Game Manager" type="Node3D" unique_id=838446217]
 process_mode = 3
 script = ExtResource("1_wj7el")
 
-[node name="Pause" type="Label" parent="." unique_id=850110653]
+[node name="Pause Overlay" type="Node2D" parent="." unique_id=1710918135]
 visible = false
-offset_left = 411.0
-offset_top = 250.0
-offset_right = 749.0
-offset_bottom = 517.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Pause Overlay" unique_id=1098476111]
+position = Vector2(541, 334)
+texture = ExtResource("2_e6ac5")
+
+[node name="Pause" type="Label" parent="Pause Overlay" unique_id=850110653]
+modulate = Color(0, 0, 0.5684909, 1)
+offset_left = 417.0
+offset_top = 160.0
+offset_right = 755.0
+offset_bottom = 427.0
+theme_override_fonts/font = ExtResource("3_ae4yk")
 theme_override_font_sizes/font_size = 96
 text = "Paused
 "
+
+[node name="Pause2" type="Label" parent="Pause Overlay" unique_id=1980877803]
+modulate = Color(0, 0, 0.5684909, 1)
+offset_left = 157.0
+offset_top = 321.0
+offset_right = 979.0
+offset_bottom = 588.0
+theme_override_fonts/font = ExtResource("3_ae4yk")
+theme_override_font_sizes/font_size = 56
+text = "Yep this is indeed 
+custom font
+"
+horizontal_alignment = 1

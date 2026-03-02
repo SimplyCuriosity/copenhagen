@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	#global_position = GameManager.playable_character.global_position
 	x_anchor.rotation_degrees[0] += delta*Input.get_last_mouse_velocity()[1]* - mouse_sensitifity
 	y_anchor.rotation_degrees[1] += delta*Input.get_last_mouse_velocity()[0]* - mouse_sensitifity
-	x_anchor.rotation_degrees[0] = clampf(x_anchor.rotation_degrees[0], -90,15)
+	x_anchor.rotation_degrees[0] = clampf(x_anchor.rotation_degrees[0], -90,45)
 	
 	# Rotate camera based on the movement of the mouse
 	
