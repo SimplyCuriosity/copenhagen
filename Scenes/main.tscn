@@ -3,7 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://we7cuthcne7q" path="res://Scenes/neu.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dov25x8y2gwtr" path="res://Scripts/third_person_cam.gd" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="3_jjvhh"]
-[ext_resource type="Material" uid="uid://cimf5juv00w2p" path="res://Resources/csg box cardboard material.tres" id="5_kry3j"]
+[ext_resource type="Material" uid="uid://cma65duu5l4o4" path="res://Resources/New_cardboard.tres" id="4_hptm8"]
+[ext_resource type="PackedScene" uid="uid://d1ol5tl11cqsb" path="res://Assets/3D art/Models/Placeholder cat.glb" id="5_21xkr"]
+[ext_resource type="Texture2D" uid="uid://b21elrc7iwfek" path="res://Assets/3D art/Textures/image.png" id="5_hptm8"]
+[ext_resource type="Script" uid="uid://dau17sxm25ygi" path="res://Scripts/ink wheel.gd" id="5_ynf5e"]
+[ext_resource type="Script" uid="uid://d1es6odvh5pc8" path="res://Scripts/3D Denial Neu.gd" id="6_6bp64"]
+[ext_resource type="FontFile" uid="uid://c5d08j0mrjr52" path="res://Assets/Fonts/Child-Regular.ttf" id="7_344ge"]
+[ext_resource type="Script" uid="uid://c3rirbrvaruuy" path="res://Scripts/killzone.gd" id="8_344ge"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_jjvhh"]
 
@@ -23,7 +29,14 @@ background_energy_multiplier = 1.3
 sky = SubResource("Sky_jjvhh")
 ambient_light_source = 3
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 2.61
+ambient_light_energy = 2.35
+fog_light_energy = 0.0
+fog_sky_affect = 0.76
+fog_height = 180.04
+volumetric_fog_density = 0.047
+volumetric_fog_emission_energy = 68.52
+volumetric_fog_anisotropy = 0.5
+volumetric_fog_length = 12.76
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6bp64"]
 render_priority = -1
@@ -40,10 +53,197 @@ distance_fade_max_distance = 1695.66
 material = SubResource("StandardMaterial3D_6bp64")
 orientation = 0
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_ynf5e"]
+size = Vector2(12.735, 12.715)
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_d1ilt"]
+
+[sub_resource type="VisualShaderNodeVec2Parameter" id="VisualShaderNodeVec2Parameter_6iyac"]
+parameter_name = "Vector2Parameter"
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_fdnlq"]
+parameter_name = "coloe"
+texture_type = 1
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_jkdf5"]
+expanded_output_ports = [0]
+source = 5
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_wsu2k"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeVec2Parameter" id="VisualShaderNodeVec2Parameter_k12tt"]
+parameter_name = "Vector2Parameter2"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_h1bgf"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_b3802"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_fevyy"]
+parameter_name = "test2"
+texture_type = 1
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ynf5e"]
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_hibaj"]
+source = 5
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_pdsj5"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_hptm8"]
+parameter_name = "test"
+texture_type = 1
+texture_repeat = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ee4r6"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_hptm8"]
+default_input_values = [0, 0.0, 1, 0.0, 2, 1.0]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_gt3je"]
+operator = 2
+
+[sub_resource type="VisualShader" id="VisualShader_6iyac"]
+modes/depth_draw = 1
+modes/cull = 2
+modes/diffuse = 3
+modes/specular = 1
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_ynf5e")
+nodes/fragment/2/position = Vector2(-700, 100)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_hptm8")
+nodes/fragment/3/position = Vector2(-940, 180)
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_ee4r6")
+nodes/fragment/4/position = Vector2(-1380, 180)
+nodes/fragment/7/node = SubResource("VisualShaderNodeVectorCompose_hptm8")
+nodes/fragment/7/position = Vector2(-660, 180)
+nodes/fragment/8/node = SubResource("VisualShaderNodeVectorOp_gt3je")
+nodes/fragment/8/position = Vector2(-1040, -100)
+nodes/fragment/11/node = SubResource("VisualShaderNodeUVFunc_d1ilt")
+nodes/fragment/11/position = Vector2(-800, -160)
+nodes/fragment/12/node = SubResource("VisualShaderNodeVec2Parameter_6iyac")
+nodes/fragment/12/position = Vector2(-1440, -180)
+nodes/fragment/13/node = SubResource("VisualShaderNodeTexture2DParameter_fdnlq")
+nodes/fragment/13/position = Vector2(-40, 300)
+nodes/fragment/14/node = SubResource("VisualShaderNodeTexture_jkdf5")
+nodes/fragment/14/position = Vector2(40, 140)
+nodes/fragment/15/node = SubResource("VisualShaderNodeInput_wsu2k")
+nodes/fragment/15/position = Vector2(-1300, 1080)
+nodes/fragment/16/node = SubResource("VisualShaderNodeVec2Parameter_k12tt")
+nodes/fragment/16/position = Vector2(-1360, 720)
+nodes/fragment/17/node = SubResource("VisualShaderNodeVectorOp_h1bgf")
+nodes/fragment/17/position = Vector2(-960, 800)
+nodes/fragment/18/node = SubResource("VisualShaderNodeUVFunc_b3802")
+nodes/fragment/18/position = Vector2(-720, 740)
+nodes/fragment/19/node = SubResource("VisualShaderNodeTexture2DParameter_fevyy")
+nodes/fragment/19/position = Vector2(-860, 1080)
+nodes/fragment/20/node = SubResource("VisualShaderNodeTexture_hibaj")
+nodes/fragment/20/position = Vector2(-620, 1000)
+nodes/fragment/21/node = SubResource("VisualShaderNodeFloatOp_pdsj5")
+nodes/fragment/21/position = Vector2(-320, 360)
+nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 4, 0, 8, 1, 12, 0, 8, 0, 8, 0, 11, 2, 11, 0, 2, 0, 13, 0, 14, 2, 14, 0, 0, 0, 14, 4, 0, 1, 19, 0, 20, 2, 15, 0, 17, 1, 16, 0, 17, 0, 17, 0, 18, 2, 18, 0, 20, 0, 21, 0, 14, 0, 20, 0, 21, 0, 2, 0, 21, 1, 7, 0, 8, 1)
+
+[sub_resource type="Gradient" id="Gradient_3pmx8"]
+offsets = PackedFloat32Array(0, 0.13486843, 1)
+colors = PackedColorArray(0.012594508, 0.0004592358, 0.049093977, 1, 0.40664697, 0.21162242, 0.9999742, 1, 0.09771543, 7.963233e-05, 0.31400895, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u50mg"]
+gradient = SubResource("Gradient_3pmx8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fdnlq"]
+render_priority = -1
+shader = SubResource("VisualShader_6iyac")
+shader_parameter/Vector2Parameter2 = Vector2(0, -0.01)
+shader_parameter/test2 = ExtResource("5_hptm8")
+shader_parameter/Vector2Parameter = Vector2(0.01, 0)
+shader_parameter/test = ExtResource("5_hptm8")
+shader_parameter/coloe = SubResource("GradientTexture1D_u50mg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_344ge"]
+material = ExtResource("4_hptm8")
+size = Vector3(0.465, 0.265, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hptm8"]
+size = Vector3(0.517334, 0.14437866, 1.0203857)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ynf5e"]
+size = Vector3(18.765, 19.265, 30.505)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ynf5e"]
+height = 4.28
+radius = 177.83
+
+[sub_resource type="Animation" id="Animation_ynf5e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level 1/Ink/Clockwise:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Level 1/Ink/CounterClockwise:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hptm8"]
+resource_name = "platforms"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Level 1/Ink/Clockwise:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Level 1/Ink/CounterClockwise:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5707964, 0), Vector3(0, -4.712389, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d1ilt"]
+_data = {
+&"RESET": SubResource("Animation_ynf5e"),
+&"platforms": SubResource("Animation_hptm8")
+}
+
 [node name="Main" type="Node3D" unique_id=435746957]
 
 [node name="Neu" parent="." unique_id=790300511 instance=ExtResource("1_jjgbg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.951258, 3.512456, -14.062638)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.71276, 3.512456, 2.7414255)
 
 [node name="Third person cam" type="Node3D" parent="Neu" unique_id=764407442]
 script = ExtResource("2_jjvhh")
@@ -97,17 +297,72 @@ mesh = SubResource("QuadMesh_344ge")
 
 [node name="Level 1" type="CSGCombiner3D" parent="." unique_id=318582169]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+material_override = ExtResource("4_hptm8")
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Level 1" unique_id=706598815]
-size = Vector3(200, 200, 200)
-material = ExtResource("5_kry3j")
+[node name="big box" type="CSGCombiner3D" parent="Level 1" unique_id=216673278]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+material_override = ExtResource("4_hptm8")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Level 1" unique_id=83121387]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1165771, 71.818115, -5.5299683)
+[node name="CSGBox3D" type="CSGBox3D" parent="Level 1/big box" unique_id=706598815]
+size = Vector3(200, 200, 200)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level 1/big box" unique_id=83121387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1165771, 71.818115, -5.5299687)
 operation = 2
 size = Vector3(176.69, 143.64, 172.06)
-material = ExtResource("5_kry3j")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Level 1" unique_id=673916000]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.99999964, 0, 0, 0, 0.99999964, -4.0258074, 0.011590576, 0)
+operation = 2
+inner_radius = 0.828
+outer_radius = 5.302847
+sides = 64
+ring_sides = 64
+
+[node name="Ink" type="MeshInstance3D" parent="Level 1" unique_id=409881618]
+transform = Transform3D(-4.371136e-08, 0, -0.9999994, 0, 0.9999994, 0, 0.9999994, 0, -4.371136e-08, -4.0742507, -0.29684472, 0.016476186)
+mesh = SubResource("PlaneMesh_ynf5e")
+surface_material_override/0 = SubResource("ShaderMaterial_fdnlq")
+script = ExtResource("5_ynf5e")
+
+[node name="Clockwise" type="AnimatableBody3D" parent="Level 1/Ink" unique_id=98127017]
+
+[node name="Plat 1" type="MeshInstance3D" parent="Level 1/Ink/Clockwise" unique_id=504101454]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.7175455, 0, 1.4305115e-06)
+mesh = SubResource("BoxMesh_344ge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level 1/Ink/Clockwise" unique_id=1150145975]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 4.7159586, 0.041030884, 1.9073486e-06)
+shape = SubResource("BoxShape3D_hptm8")
+
+[node name="Plat 2" type="MeshInstance3D" parent="Level 1/Ink/Clockwise" unique_id=607556927]
+transform = Transform3D(0.9999996, 0, 1.4210855e-14, 0, 0.9999996, 0, -1.4210855e-14, 0, 0.9999996, -2.6439896, 0, 0)
+mesh = SubResource("BoxMesh_344ge")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level 1/Ink/Clockwise" unique_id=83135303]
+transform = Transform3D(0.9999996, 0, 0, 0, 0.9999996, 0, 0, 0, 0.9999996, -2.6455765, 0.041030884, 0)
+shape = SubResource("BoxShape3D_hptm8")
+
+[node name="CounterClockwise" type="AnimatableBody3D" parent="Level 1/Ink" unique_id=1044008410]
+transform = Transform3D(-4.3711374e-08, 0, 0.99999964, 0, 0.99999964, 0, -0.99999964, 0, -4.3711374e-08, 0, 0, 0.014372826)
+collision_mask = 3
+
+[node name="Plat 3" type="MeshInstance3D" parent="Level 1/Ink/CounterClockwise" unique_id=943621270]
+transform = Transform3D(0.99999994, 0, 1.0658141e-14, 0, 0.99999994, 0, -1.0658141e-14, 0, 0.99999994, 3.5482244, 0, -1.9744039e-07)
+mesh = SubResource("BoxMesh_344ge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level 1/Ink/CounterClockwise" unique_id=1554296947]
+transform = Transform3D(1, 0, 1.0658141e-14, 0, 1, 0, -1.0658141e-14, 0, 1, 3.5466375, 0.041030884, -1.9744039e-07)
+shape = SubResource("BoxShape3D_hptm8")
+
+[node name="Plat 4" type="MeshInstance3D" parent="Level 1/Ink/CounterClockwise" unique_id=1012152230]
+transform = Transform3D(0.9999998, 0, 7.1054274e-15, 0, 0.9999998, 0, -7.1054274e-15, 0, 0.9999998, -1.4839053, 0, -1.899898e-07)
+mesh = SubResource("BoxMesh_344ge")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Level 1/Ink/CounterClockwise" unique_id=2072070075]
+transform = Transform3D(0.9999999, 0, 1.0658141e-14, 0, 0.9999999, 0, -1.0658141e-14, 0, 0.9999999, -1.4854922, 0.041030884, -1.9185245e-07)
+shape = SubResource("BoxShape3D_hptm8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=557811273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 82.70415, 0)
@@ -118,3 +373,41 @@ light_volumetric_fog_energy = 1.63
 shadow_enabled = true
 omni_range = 4096.0
 omni_shadow_mode = 0
+
+[node name="Denial Neu" parent="." unique_id=121546770 instance=ExtResource("5_21xkr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.66769, 0, 0.5069256)
+script = ExtResource("6_6bp64")
+
+[node name="Area3D" type="Area3D" parent="Denial Neu" unique_id=124004490]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Denial Neu/Area3D" unique_id=168258365]
+shape = SubResource("BoxShape3D_ynf5e")
+
+[node name="Label3D" type="Label3D" parent="Denial Neu" unique_id=1157542246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9560013, 0)
+visible = false
+billboard = 1
+modulate = Color(0, 0.9128102, 0.39588127, 1)
+text = "\"E\" talk"
+font = ExtResource("7_344ge")
+font_size = 432
+
+[node name="Killzone" type="Area3D" parent="." unique_id=1762011551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.576458, 0)
+collision_mask = 3
+script = ExtResource("8_344ge")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Killzone" unique_id=1302037727]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.31238, -5.977604, 0)
+shape = SubResource("CylinderShape3D_ynf5e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1712168188]
+libraries/ = SubResource("AnimationLibrary_d1ilt")
+autoplay = &"platforms"
+
+[connection signal="body_entered" from="Denial Neu/Area3D" to="Denial Neu" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Denial Neu/Area3D" to="Denial Neu" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
+
+[editable path="Denial Neu"]

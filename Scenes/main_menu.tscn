@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://blmijp366barc"]
+
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/3D art/Textures/PaperRip_1.png" id="2_ce3w2"]
+[ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="3_n45e2"]
+[ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_ce3w2"]
+
+[sub_resource type="Gradient" id="Gradient_ce3w2"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ce3w2"]
+gradient = SubResource("Gradient_ce3w2")
+width = 90
+height = 13
+
+[node name="MainMenu" type="Node2D" unique_id=1307850192]
+
+[node name="Carboard" type="Sprite2D" parent="." unique_id=1184587122]
+position = Vector2(644, 356)
+scale = Vector2(1.365, 1.365)
+texture = ExtResource("1_1ehe0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Carboard" unique_id=464923429]
+position = Vector2(33.699615, -20.512833)
+rotation = 3.1415927
+scale = Vector2(1.165, 0.955)
+texture = ExtResource("2_ce3w2")
+
+[node name="Title Screen" type="Label" parent="Carboard" unique_id=2095252805]
+modulate = Color(0, 0, 0.5684909, 1)
+offset_left = -312.8205
+offset_top = -178.75458
+offset_right = 331.1795
+offset_bottom = 88.24542
+theme_override_fonts/font = ExtResource("3_n45e2")
+theme_override_font_sizes/font_size = 128
+text = "COPENHAGEN
+"
+
+[node name="Start" parent="Carboard" unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
+offset_left = -242.49084
+offset_top = -150.91574
+offset_right = 243.50916
+offset_bottom = 116.08426
+button = NodePath("Button2")
+
+[node name="Button2" type="Button" parent="Carboard/Start" unique_id=394872272]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 161.90477
+offset_top = 110.622696
+offset_right = 324.9048
+offset_bottom = 156.3677
+icon = SubResource("GradientTexture2D_ce3w2")
+
+[node name="Settings" parent="Carboard" unique_id=898216069 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
+offset_left = -243.95604
+offset_top = -55.67766
+offset_right = 242.04396
+offset_bottom = 211.32234
+text = "Settings"
+button = NodePath("Button2")
+
+[node name="Button2" type="Button" parent="Carboard/Settings" unique_id=440493899]
+z_index = -1
+layout_mode = 0
+offset_left = 118.68131
+offset_top = 107.692314
+offset_right = 370.03632
+offset_bottom = 157.02231
+icon = SubResource("GradientTexture2D_ce3w2")
+
+[node name="Exit" parent="Carboard" unique_id=778196774 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
+offset_left = -251.28206
+offset_top = 31.501835
+offset_right = 234.71794
+offset_bottom = 298.50183
+text = "Exit"
+button = NodePath("Button2")
+
+[node name="Button2" type="Button" parent="Carboard/Exit" unique_id=104015223]
+z_index = -1
+layout_mode = 0
+offset_left = 181.685
+offset_top = 106.95971
+offset_right = 303.43
+offset_bottom = 148.5647
+icon = SubResource("GradientTexture2D_ce3w2")

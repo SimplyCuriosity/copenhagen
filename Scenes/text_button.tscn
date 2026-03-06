@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ce2a5g7yslbo7"]
+
+[ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="1_k150v"]
+[ext_resource type="Script" uid="uid://bje446bns3pmo" path="res://text_button.gd" id="2_xfn36"]
+
+[sub_resource type="Gradient" id="Gradient_xfn36"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.53000003)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xfn36"]
+gradient = SubResource("Gradient_xfn36")
+width = 184
+height = 3
+
+[node name="TextButton" type="Label" unique_id=1463502387]
+offset_right = 486.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/font = ExtResource("1_k150v")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_xfn36")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=252756875]
+visible = false
+modulate = Color(0.44447866, 0.0007626799, 0.5715298, 1)
+position = Vector2(146.01465, 50.153854)
+texture = SubResource("GradientTexture2D_xfn36")
+centered = false

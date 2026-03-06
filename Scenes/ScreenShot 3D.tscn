@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ciof8rw6yltx3"]
+
+[ext_resource type="Script" uid="uid://ebjcbscyfcm6" path="res://Scripts/Screenshot_test.gd" id="1_30wp0"]
+
+[node name="Camera3D" type="Camera3D" unique_id=846656092]
+transform = Transform3D(0.7303799, 0.25000006, -0.63564557, -0.0062360223, 0.9330128, 0.3597894, 0.6830128, -0.25881904, 0.68301266, 0, 0, 0)
+script = ExtResource("1_30wp0")

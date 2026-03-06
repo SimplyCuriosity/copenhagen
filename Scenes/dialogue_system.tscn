@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://dq1pdlg8lnj2c"]
+
+[ext_resource type="Texture2D" uid="uid://dkmqxywucgbly" path="res://Assets/3D art/Textures/Paper.png" id="1_b43ja"]
+[ext_resource type="Script" uid="uid://ccrs4yycusr0j" path="res://Scripts/dialogue_system.gd" id="1_tgreg"]
+[ext_resource type="Texture2D" uid="uid://58404dc8xsw4" path="res://Assets/2D art/orange cat.png" id="2_i2efg"]
+[ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="4_drpe7"]
+[ext_resource type="AudioStream" uid="uid://dnwwt043p7j3y" path="res://Assets/SFX/Audio/tone1.ogg" id="5_drpe7"]
+
+[node name="Dialogue system" type="Node2D" unique_id=471126201]
+script = ExtResource("1_tgreg")
+
+[node name="Cat Portraits" type="Node2D" parent="." unique_id=124937801]
+
+[node name="Denial Neu" type="Sprite2D" parent="Cat Portraits" unique_id=54748308]
+visible = false
+modulate = Color(0.5314308, 1, 0.9434751, 1)
+z_index = 1
+position = Vector2(268.00003, 419)
+scale = Vector2(0.40140623, 0.4308333)
+texture = ExtResource("2_i2efg")
+flip_h = true
+
+[node name="Anger Neu" type="Sprite2D" parent="Cat Portraits" unique_id=2129853506]
+visible = false
+modulate = Color(0.99999815, 0.48763824, 0.6860338, 1)
+z_index = 1
+position = Vector2(268.00003, 419)
+scale = Vector2(0.40140623, 0.4308333)
+texture = ExtResource("2_i2efg")
+flip_h = true
+
+[node name="Bargaining Neu" type="Sprite2D" parent="Cat Portraits" unique_id=673778884]
+visible = false
+modulate = Color(1, 0.89165515, 0.29748532, 1)
+z_index = 1
+position = Vector2(268.00003, 419)
+scale = Vector2(0.40140623, 0.4308333)
+texture = ExtResource("2_i2efg")
+flip_h = true
+
+[node name="Depression Neu" type="Sprite2D" parent="Cat Portraits" unique_id=1428889895]
+visible = false
+modulate = Color(0.19540206, 0.4496959, 1, 1)
+z_index = 1
+position = Vector2(268.00003, 419)
+scale = Vector2(0.40140623, 0.4308333)
+texture = ExtResource("2_i2efg")
+flip_h = true
+
+[node name="Neu" type="Sprite2D" parent="Cat Portraits" unique_id=805969747]
+visible = false
+z_index = 1
+position = Vector2(268.00003, 419)
+scale = Vector2(0.40140623, 0.4308333)
+texture = ExtResource("2_i2efg")
+flip_h = true
+
+[node name="Paper" type="Sprite2D" parent="." unique_id=1023676183]
+position = Vector2(642, 560)
+texture = ExtResource("1_b43ja")
+region_enabled = true
+region_rect = Rect2(0, 27.740692, 1024, 198.76923)
+
+[node name="Speaker Name" type="RichTextLabel" parent="Paper" unique_id=1614456939]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1225.0
+offset_top = -84.0
+offset_right = -570.0
+offset_bottom = -25.0
+grow_horizontal = 0
+theme_override_colors/default_color = Color(0.16799647, 2.0214916e-06, 0.7804943, 1)
+theme_override_fonts/normal_font = ExtResource("4_drpe7")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Denial Neu
+"
+horizontal_alignment = 2
+
+[node name="Dialogue" type="RichTextLabel" parent="Paper" unique_id=607900304]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1452.0
+offset_top = -8.0
+offset_right = -516.0
+offset_bottom = 81.0
+grow_horizontal = 0
+theme_override_colors/default_color = Color(0.16799647, 2.0214916e-06, 0.7804943, 1)
+theme_override_constants/line_separation = 23
+theme_override_fonts/normal_font = ExtResource("4_drpe7")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Why should I move? 
+Everything is just fine is it not????
+"
+scroll_active = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=915386615]
+stream = ExtResource("5_drpe7")
+volume_db = -18.31
+bus = &"Music"

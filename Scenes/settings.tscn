@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://dccfjxxtn4pn"]
+
+[ext_resource type="Script" uid="uid://bu1fwuq8g5cbe" path="res://Scenes/settings.gd" id="1_6vr2p"]
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="1_j2dne"]
+[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/3D art/Textures/PaperRip_1.png" id="2_6kysc"]
+[ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="3_6vr2p"]
+[ext_resource type="Texture2D" uid="uid://wvnp8j223pad" path="res://Assets/3D art/Textures/PaperRip_2.png" id="4_bismi"]
+[ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_f60ng"]
+[ext_resource type="Texture2D" uid="uid://c48a40ghgl8k5" path="res://Assets/3D art/Textures/PaperRip_3.png" id="5_f60ng"]
+[ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="7_rgw85"]
+
+[sub_resource type="Gradient" id="Gradient_mfc1d"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rgw85"]
+gradient = SubResource("Gradient_mfc1d")
+width = 90
+height = 13
+
+[node name="Settings" type="Node2D" unique_id=878062762]
+visible = false
+z_index = 1
+script = ExtResource("1_6vr2p")
+
+[node name="Carboard" type="Sprite2D" parent="." unique_id=1099297000]
+position = Vector2(644, 356)
+scale = Vector2(1.365, 1.365)
+texture = ExtResource("1_j2dne")
+
+[node name="Back" parent="Carboard" unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_f60ng")]
+z_index = 1
+offset_left = -602.1977
+offset_top = 150.18317
+offset_right = -116.19769
+offset_bottom = 271.18314
+text = "Back"
+button = NodePath("Button2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Carboard/Back" unique_id=284450145]
+z_index = -1
+position = Vector2(449.81677, 161.90479)
+scale = Vector2(1, 0.942)
+texture = ExtResource("4_bismi")
+region_enabled = true
+region_rect = Rect2(0, 137.23325, 739.67755, 886.7667)
+
+[node name="Button2" type="Button" parent="Carboard/Back" unique_id=74394332]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 183.88278
+offset_top = 32.234413
+offset_right = 302.5641
+offset_bottom = 77.97942
+icon = SubResource("GradientTexture2D_rgw85")
+
+[node name="Credits" parent="Carboard" unique_id=1296797338 node_paths=PackedStringArray("button") instance=ExtResource("4_f60ng")]
+z_index = 2
+offset_left = 54.94506
+offset_top = 156.77658
+offset_right = 540.94507
+offset_bottom = 277.77655
+text = "Credits"
+button = NodePath("Button2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Carboard/Credits" unique_id=1813259326]
+z_index = -1
+position = Vector2(369.9635, -109.15753)
+rotation = -3.1415927
+texture = ExtResource("5_f60ng")
+region_enabled = true
+region_rect = Rect2(0, 137.23325, 739.67755, 886.7667)
+
+[node name="Button2" type="Button" parent="Carboard/Credits" unique_id=438209583]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 183.88278
+offset_top = 32.234413
+offset_right = 302.5641
+offset_bottom = 77.97942
+icon = SubResource("GradientTexture2D_rgw85")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Carboard/Credits" unique_id=1202972072]
+z_index = -2
+position = Vector2(-200.7326, -53.479736)
+rotation = 3.1415927
+scale = Vector2(1, 0.942)
+texture = ExtResource("4_bismi")
+region_enabled = true
+region_rect = Rect2(0, 137.23325, 739.67755, 886.7667)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Carboard" unique_id=2122791765]
+process_mode = 3
+position = Vector2(33.699615, -20.512833)
+rotation = 3.1415927
+scale = Vector2(1.165, 0.955)
+texture = ExtResource("2_6kysc")
+
+[node name="Title Screen" type="Label" parent="Carboard" unique_id=242208510]
+visible = false
+modulate = Color(0, 0, 0.5684909, 1)
+offset_left = -312.8205
+offset_top = -178.75458
+offset_right = 331.1795
+offset_bottom = 88.24542
+theme_override_fonts/font = ExtResource("3_6vr2p")
+theme_override_font_sizes/font_size = 128
+text = "COPENHAGEN
+"
+
+[node name="Master" type="HSlider" parent="Carboard" unique_id=935654514]
+offset_left = -239.56042
+offset_top = -81.31868
+offset_right = 230.76923
+offset_bottom = -56.410248
+max_value = 1.5
+step = 0.01
+value = 1.5
+
+[node name="SFX" type="HSlider" parent="Carboard" unique_id=757873365]
+offset_left = -241.02565
+offset_top = 101.831505
+offset_right = 229.304
+offset_bottom = 124.54211
+min_value = 0.1
+max_value = 1.5
+step = 0.1
+value = 0.7999999999999999
+
+[node name="Music" type="HSlider" parent="Carboard" unique_id=1993728090]
+offset_left = -243.22343
+offset_top = 16.117216
+offset_right = 227.10622
+offset_bottom = 32.234436
+max_value = 1.5
+step = 0.01
+value = 0.75
+
+[node name="Master text" type="RichTextLabel" parent="Carboard" unique_id=454208017]
+offset_left = -232.967
+offset_top = -125.27473
+offset_right = 205.033
+offset_bottom = -84.24909
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("7_rgw85")
+theme_override_font_sizes/normal_font_size = 44
+bbcode_enabled = true
+text = "Master
+"
+
+[node name="Music text" type="RichTextLabel" parent="Carboard" unique_id=723223853]
+offset_left = -235.16483
+offset_top = -35.16482
+offset_right = 202.83517
+offset_bottom = 6.5933876
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("7_rgw85")
+theme_override_font_sizes/normal_font_size = 44
+bbcode_enabled = true
+text = "Music
+"
+
+[node name="SFX2" type="RichTextLabel" parent="Carboard" unique_id=824712918]
+offset_left = -237.36263
+offset_top = 56.410282
+offset_right = 200.63737
+offset_bottom = 98.90109
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("7_rgw85")
+theme_override_font_sizes/normal_font_size = 44
+bbcode_enabled = true
+text = "SFX
+"
+
+[connection signal="value_changed" from="Carboard/Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Carboard/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="Carboard/Music" to="." method="_on_music_value_changed"]

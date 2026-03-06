@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d352opnusgyau"]
+
+[ext_resource type="AudioStream" uid="uid://bpiphg3mwws63" path="res://Assets/Music/bigj_demo_4.mp3" id="1_rgg8u"]
+[ext_resource type="Script" uid="uid://lgyx5y62btu5" path="res://Globals/background_music.gd" id="2_2yfrf"]
+
+[node name="Background Music" type="AudioStreamPlayer" unique_id=419296899]
+stream = ExtResource("1_rgg8u")
+autoplay = true
+bus = &"Music"
+script = ExtResource("2_2yfrf")

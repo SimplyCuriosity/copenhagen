@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cma65duu5l4o4"]
+
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="1_lrtj0"]
+[ext_resource type="Texture2D" uid="uid://c5ysdmgpsjlhd" path="res://Assets/3D art/Textures/CardBoard Normalmap (1).png" id="2_wpddc"]
+
+[resource]
+render_priority = -1
+albedo_color = Color(0.8808105, 0.6947699, 3.465414e-06, 1)
+albedo_texture = ExtResource("1_lrtj0")
+normal_enabled = true
+normal_scale = 0.46
+normal_texture = ExtResource("2_wpddc")
+uv1_triplanar = true
