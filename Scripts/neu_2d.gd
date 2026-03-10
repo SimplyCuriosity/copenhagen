@@ -1,0 +1,91 @@
+extends CharacterBody2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var jump_meter_slider: HSlider = $JumpMeterSlider
+@onready var wall_climb_meter_slider: HSlider = $WallClimbMeterSlider
+
+
+const SPEED = 450.0
+const MAX_JUMP_VELOCITY = -1000
+var JUMP_VELOCITY = 0
+var jump_meter_going_up = true
+const MAX_WALL_CLIMB_STAMINA = 100
+var wall_climb_stamina = 100
+var motion_paused 
+
+func _ready() -> void:
+	GameManager.playable_character = self
+	jump_meter_slider.visible = false
+	jump_meter_slider.max_value = -MAX_JUMP_VELOCITY
+	wall_climb_meter_slider.visible = false
+	wall_climb_meter_slider.max_value = MAX_WALL_CLIMB_STAMINA
+	wall_climb_meter_slider.value = MAX_WALL_CLIMB_STAMINA
+	pass
+	
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if is_on_wall_only() and wall_climb_stamina > 0 and Input.is_action_pressed("Jump") and not motion_paused:
+		pass
+	elif not is_on_floor():
+		velocity += get_gravity() * delta
+		jump_meter_slider.visible = false
+		wall_climb_meter_slider.visible = false
+		JUMP_VELOCITY = 0
+		pass
+	
+	# Handle jump.
+	if JUMP_VELOCITY >= 0:
+		jump_meter_going_up = true
+	elif JUMP_VELOCITY <= MAX_JUMP_VELOCITY:
+		jump_meter_going_up = false
+	
+	if Input.is_action_pressed("Jump") and is_on_floor() and not motion_paused:
+		jump_meter_slider.visible = true
+		wall_climb_stamina = MAX_WALL_CLIMB_STAMINA
+		if JUMP_VELOCITY > MAX_JUMP_VELOCITY and jump_meter_going_up:
+			JUMP_VELOCITY += -600 * delta
+			jump_meter_slider.value = -JUMP_VELOCITY
+			#print(JUMP_VELOCITY)
+		elif JUMP_VELOCITY < 0 and not jump_meter_going_up:
+			JUMP_VELOCITY += 600 * delta
+			jump_meter_slider.value = -JUMP_VELOCITY
+			#print(JUMP_VELOCITY)
+	
+	# Handle wall climb
+	if is_on_wall_only() and wall_climb_stamina > 0:
+		if Input.is_action_pressed("Jump") and not motion_paused:
+			wall_climb_meter_slider.visible = true
+			velocity.y = -SPEED/4
+			wall_climb_stamina -= 50*delta
+			wall_climb_meter_slider.value = wall_climb_stamina
+			print(wall_climb_stamina)
+	
+	if Input.is_action_just_released("Jump") and is_on_floor() and not motion_paused:
+		jump_meter_slider.visible = false
+		velocity.y = JUMP_VELOCITY
+		JUMP_VELOCITY = 0
+		jump_meter_slider.value = 0
+	
+	if is_on_floor_only():
+		wall_climb_meter_slider.visible = false
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis("Move Left", "Move Right")
+	if direction and not motion_paused:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	# Flip direction of character sprite depending on direction 
+	if direction > 0 and not motion_paused:
+		animated_sprite_2d.flip_h = false
+		animated_sprite_2d.offset.x = 628.005
+		#if jump_meter_slider.position.x < 0:
+		#	jump_meter_slider.position.x *= -1
+	elif direction < 0 and not motion_paused:
+		animated_sprite_2d.flip_h = true
+		animated_sprite_2d.offset.x = -628.005
+		#if jump_meter_slider.position.x > 0:
+		#	jump_meter_slider.position.x *= -1
+	move_and_slide()

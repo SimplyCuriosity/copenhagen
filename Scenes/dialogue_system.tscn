@@ -2,25 +2,27 @@
 
 [ext_resource type="Texture2D" uid="uid://dkmqxywucgbly" path="res://Assets/3D art/Textures/Paper.png" id="1_b43ja"]
 [ext_resource type="Script" uid="uid://ccrs4yycusr0j" path="res://Scripts/dialogue_system.gd" id="1_tgreg"]
+[ext_resource type="Texture2D" uid="uid://smbk8vwwrjyv" path="res://Assets/2D art/little_cats/cats1.png" id="2_dqc5m"]
 [ext_resource type="Texture2D" uid="uid://58404dc8xsw4" path="res://Assets/2D art/orange cat.png" id="2_i2efg"]
+[ext_resource type="Texture2D" uid="uid://dhku0c5rp8poi" path="res://Assets/2D art/little_cats/cats4.png" id="4_4d4b6"]
 [ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="4_drpe7"]
-[ext_resource type="AudioStream" uid="uid://dnwwt043p7j3y" path="res://Assets/SFX/Audio/tone1.ogg" id="5_drpe7"]
+[ext_resource type="AudioStream" uid="uid://3v6g32fr42e3" path="res://Assets/SFX/SFX-Meow.ogg" id="5_drpe7"]
 
 [node name="Dialogue system" type="Node2D" unique_id=471126201]
 script = ExtResource("1_tgreg")
 
-[node name="Cat Portraits" type="Node2D" parent="." unique_id=124937801]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1019999970]
 
-[node name="Denial Neu" type="Sprite2D" parent="Cat Portraits" unique_id=54748308]
+[node name="Cat Portraits" type="Node2D" parent="CanvasLayer" unique_id=124937801]
+
+[node name="Denial Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=54748308]
 visible = false
-modulate = Color(0.5314308, 1, 0.9434751, 1)
 z_index = 1
-position = Vector2(268.00003, 419)
+position = Vector2(280.00003, 421)
 scale = Vector2(0.40140623, 0.4308333)
-texture = ExtResource("2_i2efg")
-flip_h = true
+texture = ExtResource("2_dqc5m")
 
-[node name="Anger Neu" type="Sprite2D" parent="Cat Portraits" unique_id=2129853506]
+[node name="Anger Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=2129853506]
 visible = false
 modulate = Color(0.99999815, 0.48763824, 0.6860338, 1)
 z_index = 1
@@ -29,7 +31,7 @@ scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("2_i2efg")
 flip_h = true
 
-[node name="Bargaining Neu" type="Sprite2D" parent="Cat Portraits" unique_id=673778884]
+[node name="Bargaining Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=673778884]
 visible = false
 modulate = Color(1, 0.89165515, 0.29748532, 1)
 z_index = 1
@@ -38,7 +40,7 @@ scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("2_i2efg")
 flip_h = true
 
-[node name="Depression Neu" type="Sprite2D" parent="Cat Portraits" unique_id=1428889895]
+[node name="Depression Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1428889895]
 visible = false
 modulate = Color(0.19540206, 0.4496959, 1, 1)
 z_index = 1
@@ -47,21 +49,20 @@ scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("2_i2efg")
 flip_h = true
 
-[node name="Neu" type="Sprite2D" parent="Cat Portraits" unique_id=805969747]
+[node name="Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=805969747]
 visible = false
 z_index = 1
-position = Vector2(268.00003, 419)
+position = Vector2(528.00006, 424)
 scale = Vector2(0.40140623, 0.4308333)
-texture = ExtResource("2_i2efg")
-flip_h = true
+texture = ExtResource("4_4d4b6")
 
-[node name="Paper" type="Sprite2D" parent="." unique_id=1023676183]
+[node name="Paper" type="Sprite2D" parent="CanvasLayer" unique_id=1023676183]
 position = Vector2(642, 560)
 texture = ExtResource("1_b43ja")
 region_enabled = true
 region_rect = Rect2(0, 27.740692, 1024, 198.76923)
 
-[node name="Speaker Name" type="RichTextLabel" parent="Paper" unique_id=1614456939]
+[node name="Speaker Name" type="RichTextLabel" parent="CanvasLayer/Paper" unique_id=1614456939]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -77,8 +78,9 @@ bbcode_enabled = true
 text = "Denial Neu
 "
 horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="Dialogue" type="RichTextLabel" parent="Paper" unique_id=607900304]
+[node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/Paper" unique_id=607900304]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -96,8 +98,9 @@ text = "Why should I move?
 Everything is just fine is it not????
 "
 scroll_active = false
+metadata/_edit_use_anchors_ = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=915386615]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=915386615]
 stream = ExtResource("5_drpe7")
-volume_db = -18.31
+volume_db = 7.317
 bus = &"Music"

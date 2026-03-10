@@ -1,8 +1,8 @@
 extends Node2D
-@onready var speaker_name: RichTextLabel = $"Paper/Speaker Name"
-@onready var dialogue: RichTextLabel = $Paper/Dialogue
-@onready var cat_portraits: Node2D = $"Cat Portraits"
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var speaker_name: RichTextLabel = $"CanvasLayer/Paper/Speaker Name"
+@onready var dialogue: RichTextLabel = $CanvasLayer/Paper/Dialogue
+@onready var cat_portraits: Node2D = $"CanvasLayer/Cat Portraits"
+@onready var audio_stream_player: AudioStreamPlayer = $CanvasLayer/AudioStreamPlayer
 
 
 enum dialogue_status {
@@ -52,6 +52,7 @@ However Anger Neu could reignite them at any time, the player can use Paralyze/s
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.dialogue_system = self
 	#print(testing.length())
 	#_generate_dialogue_box(test_script)
 	pass # Replace with function body.
@@ -63,7 +64,7 @@ func _process(delta: float) -> void:
 		next_dialogue()
 	elif dialogue_is_ready and (Input.is_action_just_pressed("Left Click") or Input.is_action_just_pressed("Jump")) and dialogue_state == dialogue_status.ANIMATING:
 		dialogue_state = dialogue_status.SPEEDING
-		time_interval = 0.0025
+		time_interval = 0.0010
 		pass
 	pass
 
@@ -183,17 +184,18 @@ func next_dialogue():
 				i.visible = false
 		speaker_name.text = "[wave]" + dialogue_array[speaking_turn][0] + "[/wave]"
 		for i in dialogue_array[speaking_turn][1][bite_number]:
-			if i == "," or i == ".":
+			if i == "," or i == "." or i == "!" or i == "?":
 				time_interval *= 8
 			dialogue.text += i
 			await get_tree().create_timer(time_interval, false, true,false).timeout
-			if i == "," or i == ".":
+			if i == "," or i == "." or i == "!" or i == "?":
 				time_interval /= 8
 			if i not in ["!", "?", ",", ".", " ", "-"]:
 				pitch_random = randf_range(0.9,1.1)
 				if i in ["a", "e", "i", "o", "u"]:
 					pitch_random += 0.2
-				play_audio()
+				if dialogue_state != dialogue_status.SPEEDING:
+					play_audio()
 				pass
 			
 			

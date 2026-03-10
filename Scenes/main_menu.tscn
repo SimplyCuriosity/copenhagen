@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/3D art/Textures/PaperRip_1.png" id="2_ce3w2"]
 [ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="3_n45e2"]
 [ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_ce3w2"]
+[ext_resource type="Script" uid="uid://dgwlr12jnfvmv" path="res://Scripts/title_screen.gd" id="4_n45e2"]
 
 [sub_resource type="Gradient" id="Gradient_ce3w2"]
 
@@ -25,16 +26,27 @@ rotation = 3.1415927
 scale = Vector2(1.165, 0.955)
 texture = ExtResource("2_ce3w2")
 
+[node name="Timer" type="Timer" parent="Carboard" unique_id=1134330419]
+process_mode = 3
+wait_time = 0.5
+autostart = true
+
 [node name="Title Screen" type="Label" parent="Carboard" unique_id=2095252805]
+process_mode = 1
 modulate = Color(0, 0, 0.5684909, 1)
-offset_left = -312.8205
-offset_top = -178.75458
-offset_right = 331.1795
-offset_bottom = 88.24542
+offset_left = -449.08426
+offset_top = -208.79121
+offset_right = 487.17953
+offset_bottom = 58.208786
+pivot_offset = Vector2(0.215, 0)
+pivot_offset_ratio = Vector2(0.5, 0.25)
 theme_override_fonts/font = ExtResource("3_n45e2")
 theme_override_font_sizes/font_size = 128
 text = "COPENHAGEN
 "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_n45e2")
 
 [node name="Start" parent="Carboard" unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
 offset_left = -242.49084
@@ -85,3 +97,5 @@ offset_top = 106.95971
 offset_right = 303.43
 offset_bottom = 148.5647
 icon = SubResource("GradientTexture2D_ce3w2")
+
+[connection signal="timeout" from="Carboard/Timer" to="Carboard/Title Screen" method="_on_timer_timeout"]

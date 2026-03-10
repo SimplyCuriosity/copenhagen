@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcobrnfkpy2rr"]
 
-[ext_resource type="PackedScene" uid="uid://we7cuthcne7q" path="res://Scenes/neu.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://we7cuthcne7q" path="res://Scenes/Characters/neu.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dov25x8y2gwtr" path="res://Scripts/third_person_cam.gd" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="3_jjvhh"]
 [ext_resource type="Material" uid="uid://cma65duu5l4o4" path="res://Resources/New_cardboard.tres" id="4_hptm8"]
@@ -117,11 +117,11 @@ modes/specular = 1
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_ynf5e")
 nodes/fragment/2/position = Vector2(-700, 100)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_hptm8")
-nodes/fragment/3/position = Vector2(-940, 180)
+nodes/fragment/3/position = Vector2(-1080, 280)
 nodes/fragment/4/node = SubResource("VisualShaderNodeInput_ee4r6")
-nodes/fragment/4/position = Vector2(-1380, 180)
+nodes/fragment/4/position = Vector2(-1440, 180)
 nodes/fragment/7/node = SubResource("VisualShaderNodeVectorCompose_hptm8")
-nodes/fragment/7/position = Vector2(-660, 180)
+nodes/fragment/7/position = Vector2(-1640, 60)
 nodes/fragment/8/node = SubResource("VisualShaderNodeVectorOp_gt3je")
 nodes/fragment/8/position = Vector2(-1040, -100)
 nodes/fragment/11/node = SubResource("VisualShaderNodeUVFunc_d1ilt")
@@ -143,10 +143,10 @@ nodes/fragment/18/position = Vector2(-720, 740)
 nodes/fragment/19/node = SubResource("VisualShaderNodeTexture2DParameter_fevyy")
 nodes/fragment/19/position = Vector2(-860, 1080)
 nodes/fragment/20/node = SubResource("VisualShaderNodeTexture_hibaj")
-nodes/fragment/20/position = Vector2(-620, 1000)
+nodes/fragment/20/position = Vector2(-480, 1000)
 nodes/fragment/21/node = SubResource("VisualShaderNodeFloatOp_pdsj5")
 nodes/fragment/21/position = Vector2(-320, 360)
-nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 4, 0, 8, 1, 12, 0, 8, 0, 8, 0, 11, 2, 11, 0, 2, 0, 13, 0, 14, 2, 14, 0, 0, 0, 14, 4, 0, 1, 19, 0, 20, 2, 15, 0, 17, 1, 16, 0, 17, 0, 17, 0, 18, 2, 18, 0, 20, 0, 21, 0, 14, 0, 20, 0, 21, 0, 2, 0, 21, 1, 7, 0, 8, 1)
+nodes/fragment/connections = PackedInt32Array(3, 0, 2, 2, 12, 0, 8, 0, 8, 0, 11, 2, 11, 0, 2, 0, 13, 0, 14, 2, 14, 0, 0, 0, 14, 4, 0, 1, 19, 0, 20, 2, 15, 0, 17, 1, 16, 0, 17, 0, 17, 0, 18, 2, 18, 0, 20, 0, 21, 0, 14, 0, 20, 0, 21, 0, 2, 0, 21, 1, 7, 0, 8, 1)
 
 [sub_resource type="Gradient" id="Gradient_3pmx8"]
 offsets = PackedFloat32Array(0, 0.13486843, 1)

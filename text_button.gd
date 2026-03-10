@@ -35,7 +35,7 @@ func _custom_button_pressed() -> void:
 	match text:
 		"Start":
 			print(3)
-			get_tree().change_scene_to_file("res://Scenes/main.tscn")
+			get_tree().change_scene_to_file("res://Scenes/main_2d.tscn")
 			GameManager.Background_music.stream = preload("res://Assets/Music/ptt_02.mp3")
 			GameManager.Background_music.playing = true
 		"Exit":
@@ -48,8 +48,10 @@ func _custom_button_pressed() -> void:
 			GameManager.setting_menu.visible = false
 			if get_tree().current_scene.name == "MainMenu":
 				get_tree().current_scene.visible = true
-			elif get_tree().current_scene.name == "Main":
+			elif get_tree().current_scene.name != "MainMenu":
 				GameManager.pause_overlay.visible = true
+				if GameManager.dialogue_system != null:
+					GameManager.dialogue_system.visible = true
 		"Resume":
 			GameManager.Resume_button_pressed = true
 			pass
@@ -59,8 +61,10 @@ func _custom_button_pressed() -> void:
 			GameManager.setting_menu.visible = true
 			if get_tree().current_scene.name == "MainMenu":
 				get_tree().current_scene.visible = false
-			elif get_tree().current_scene.name == "Main":
+			elif get_tree().current_scene.name != "MainMenu":
 				GameManager.pause_overlay.visible = false
+				if GameManager.dialogue_system != null:
+					GameManager.dialogue_system.visible = false
 		"Main Menu":
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 			GameManager.Background_music.stream = preload("res://Assets/Music/bigj_demo_4.mp3")

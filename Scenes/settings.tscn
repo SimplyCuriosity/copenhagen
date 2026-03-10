@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_f60ng"]
 [ext_resource type="Texture2D" uid="uid://c48a40ghgl8k5" path="res://Assets/3D art/Textures/PaperRip_3.png" id="5_f60ng"]
 [ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="7_rgw85"]
+[ext_resource type="PackedScene" uid="uid://8dk0yro8lp77" path="res://Scenes/ruler_slider.tscn" id="8_bismi"]
 
 [sub_resource type="Gradient" id="Gradient_mfc1d"]
 
@@ -18,13 +19,38 @@ height = 13
 
 [node name="Settings" type="Node2D" unique_id=878062762]
 visible = false
-z_index = 1
+z_index = 3
 script = ExtResource("1_6vr2p")
 
 [node name="Carboard" type="Sprite2D" parent="." unique_id=1099297000]
 position = Vector2(644, 356)
 scale = Vector2(1.365, 1.365)
 texture = ExtResource("1_j2dne")
+
+[node name="SFX" parent="Carboard" unique_id=159090270 instance=ExtResource("8_bismi")]
+z_index = 5
+offset_left = -68.132324
+offset_top = 104.02954
+offset_right = 3571.8672
+offset_bottom = 379.02954
+
+[node name="Master" parent="Carboard" unique_id=951912891 instance=ExtResource("8_bismi")]
+offset_left = -68.1319
+offset_top = -79.120895
+offset_right = 3571.8677
+offset_bottom = 195.87914
+
+[node name="RulerPng" parent="Carboard/Master" index="0" unique_id=1199310584]
+modulate = Color(1, 0.3882353, 0.5803922, 1)
+
+[node name="Music" parent="Carboard" unique_id=1046853763 instance=ExtResource("8_bismi")]
+offset_left = -67.39929
+offset_top = 11.721603
+offset_right = 3572.6
+offset_bottom = 286.72162
+
+[node name="RulerPng" parent="Carboard/Music" index="0" unique_id=1199310584]
+modulate = Color(0.53333336, 0.8509804, 0.48235294, 1)
 
 [node name="Back" parent="Carboard" unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_f60ng")]
 z_index = 1
@@ -106,39 +132,11 @@ theme_override_font_sizes/font_size = 128
 text = "COPENHAGEN
 "
 
-[node name="Master" type="HSlider" parent="Carboard" unique_id=935654514]
-offset_left = -239.56042
-offset_top = -81.31868
-offset_right = 230.76923
-offset_bottom = -56.410248
-max_value = 1.5
-step = 0.01
-value = 1.5
-
-[node name="SFX" type="HSlider" parent="Carboard" unique_id=757873365]
-offset_left = -241.02565
-offset_top = 101.831505
-offset_right = 229.304
-offset_bottom = 124.54211
-min_value = 0.1
-max_value = 1.5
-step = 0.1
-value = 0.7999999999999999
-
-[node name="Music" type="HSlider" parent="Carboard" unique_id=1993728090]
-offset_left = -243.22343
-offset_top = 16.117216
-offset_right = 227.10622
-offset_bottom = 32.234436
-max_value = 1.5
-step = 0.01
-value = 0.75
-
 [node name="Master text" type="RichTextLabel" parent="Carboard" unique_id=454208017]
-offset_left = -232.967
-offset_top = -125.27473
-offset_right = 205.033
-offset_bottom = -84.24909
+offset_left = -261.53848
+offset_top = -92.30769
+offset_right = -114.28572
+offset_bottom = -51.28206
 theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
 theme_override_constants/outline_size = -72
 theme_override_fonts/normal_font = ExtResource("7_rgw85")
@@ -148,10 +146,10 @@ text = "Master
 "
 
 [node name="Music text" type="RichTextLabel" parent="Carboard" unique_id=723223853]
-offset_left = -235.16483
-offset_top = -35.16482
-offset_right = 202.83517
-offset_bottom = 6.5933876
+offset_left = -251.28204
+offset_top = 3.6629944
+offset_right = -131.86812
+offset_bottom = 45.421204
 theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
 theme_override_constants/outline_size = -72
 theme_override_fonts/normal_font = ExtResource("7_rgw85")
@@ -161,10 +159,10 @@ text = "Music
 "
 
 [node name="SFX2" type="RichTextLabel" parent="Carboard" unique_id=824712918]
-offset_left = -237.36263
-offset_top = 56.410282
-offset_right = 200.63737
-offset_bottom = 98.90109
+offset_left = -232.23442
+offset_top = 95.2381
+offset_right = -158.97433
+offset_bottom = 137.72891
 theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
 theme_override_constants/outline_size = -72
 theme_override_fonts/normal_font = ExtResource("7_rgw85")
@@ -173,6 +171,9 @@ bbcode_enabled = true
 text = "SFX
 "
 
-[connection signal="value_changed" from="Carboard/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="Carboard/SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="Carboard/Master" to="." method="_on_master_value_changed"]
 [connection signal="value_changed" from="Carboard/Music" to="." method="_on_music_value_changed"]
+
+[editable path="Carboard/Master"]
+[editable path="Carboard/Music"]
