@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dccfjxxtn4pn"]
 
 [ext_resource type="Script" uid="uid://bu1fwuq8g5cbe" path="res://Scenes/settings.gd" id="1_6vr2p"]
-[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="1_j2dne"]
-[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/3D art/Textures/PaperRip_1.png" id="2_6kysc"]
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/2D art/Textures/CardBoard.png" id="1_j2dne"]
+[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/2D art/Textures/PaperRip_1.png" id="2_6kysc"]
 [ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="3_6vr2p"]
-[ext_resource type="Texture2D" uid="uid://wvnp8j223pad" path="res://Assets/3D art/Textures/PaperRip_2.png" id="4_bismi"]
+[ext_resource type="Texture2D" uid="uid://wvnp8j223pad" path="res://Assets/2D art/Textures/PaperRip_2.png" id="4_bismi"]
 [ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_f60ng"]
-[ext_resource type="Texture2D" uid="uid://c48a40ghgl8k5" path="res://Assets/3D art/Textures/PaperRip_3.png" id="5_f60ng"]
+[ext_resource type="Texture2D" uid="uid://c48a40ghgl8k5" path="res://Assets/2D art/Textures/PaperRip_3.png" id="5_f60ng"]
 [ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="7_rgw85"]
 [ext_resource type="PackedScene" uid="uid://8dk0yro8lp77" path="res://Scenes/ruler_slider.tscn" id="8_bismi"]
 
@@ -23,157 +23,162 @@ z_index = 3
 script = ExtResource("1_6vr2p")
 
 [node name="Carboard" type="Sprite2D" parent="." unique_id=1099297000]
-position = Vector2(644, 356)
-scale = Vector2(1.365, 1.365)
+position = Vector2(957.56006, 669.56006)
+scale = Vector2(1.9774219, 1.9774219)
 texture = ExtResource("1_j2dne")
 
-[node name="SFX" parent="Carboard" unique_id=159090270 instance=ExtResource("8_bismi")]
+[node name="SFX" parent="." unique_id=159090270 instance=ExtResource("8_bismi")]
 z_index = 5
-offset_left = -68.132324
-offset_top = 104.02954
-offset_right = 3571.8672
-offset_bottom = 379.02954
+offset_left = 760.0
+offset_top = 693.0
+offset_right = 4399.9995
+offset_bottom = 968.0
+scale = Vector2(0.2, 0.2)
 
-[node name="Master" parent="Carboard" unique_id=951912891 instance=ExtResource("8_bismi")]
-offset_left = -68.1319
-offset_top = -79.120895
-offset_right = 3571.8677
-offset_bottom = 195.87914
+[node name="Master" parent="." unique_id=951912891 instance=ExtResource("8_bismi")]
+offset_left = 760.0
+offset_top = 314.00003
+offset_right = 4399.9995
+offset_bottom = 589.0
+scale = Vector2(0.2, 0.2)
 
-[node name="RulerPng" parent="Carboard/Master" index="0" unique_id=1199310584]
+[node name="RulerPng" parent="Master" index="0" unique_id=1199310584]
 modulate = Color(1, 0.3882353, 0.5803922, 1)
 
-[node name="Music" parent="Carboard" unique_id=1046853763 instance=ExtResource("8_bismi")]
-offset_left = -67.39929
-offset_top = 11.721603
-offset_right = 3572.6
-offset_bottom = 286.72162
+[node name="Music" parent="." unique_id=1046853763 instance=ExtResource("8_bismi")]
+offset_left = 760.0
+offset_top = 505.00003
+offset_right = 4399.9995
+offset_bottom = 780.0
+scale = Vector2(0.2, 0.2)
 
-[node name="RulerPng" parent="Carboard/Music" index="0" unique_id=1199310584]
+[node name="RulerPng" parent="Music" index="0" unique_id=1199310584]
 modulate = Color(0.53333336, 0.8509804, 0.48235294, 1)
 
-[node name="Back" parent="Carboard" unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_f60ng")]
+[node name="Back" parent="." unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_f60ng")]
 z_index = 1
-offset_left = -602.1977
-offset_top = 150.18317
-offset_right = -116.19769
-offset_bottom = 271.18314
+offset_left = -90.0
+offset_top = 919.0
+offset_right = 505.0
+offset_bottom = 1089.0
 text = "Back"
 button = NodePath("Button2")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Carboard/Back" unique_id=284450145]
+[node name="Sprite2D2" type="Sprite2D" parent="Back" unique_id=284450145]
 z_index = -1
-position = Vector2(449.81677, 161.90479)
-scale = Vector2(1, 0.942)
+position = Vector2(564, 479.00012)
+scale = Vector2(1.643, 1.93)
 texture = ExtResource("4_bismi")
 region_enabled = true
 region_rect = Rect2(0, 137.23325, 739.67755, 886.7667)
 
-[node name="Button2" type="Button" parent="Carboard/Back" unique_id=74394332]
+[node name="Button2" type="Button" parent="Back" unique_id=74394332]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 183.88278
-offset_top = 32.234413
-offset_right = 302.5641
-offset_bottom = 77.97942
+offset_left = 173.0
+offset_top = 41.999977
+offset_right = 421.0
+offset_bottom = 114.99998
 icon = SubResource("GradientTexture2D_rgw85")
 
-[node name="Credits" parent="Carboard" unique_id=1296797338 node_paths=PackedStringArray("button") instance=ExtResource("4_f60ng")]
+[node name="Credits" parent="." unique_id=1296797338 node_paths=PackedStringArray("button") instance=ExtResource("4_f60ng")]
 z_index = 2
-offset_left = 54.94506
-offset_top = 156.77658
-offset_right = 540.94507
-offset_bottom = 277.77655
+offset_left = 1286.0
+offset_top = 898.0
+offset_right = 1946.0
+offset_bottom = 1123.0
 text = "Credits"
 button = NodePath("Button2")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Carboard/Credits" unique_id=1813259326]
+[node name="Sprite2D2" type="Sprite2D" parent="Credits" unique_id=1813259326]
+visible = false
 z_index = -1
-position = Vector2(369.9635, -109.15753)
+position = Vector2(539, 713)
 rotation = -3.1415927
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_f60ng")
 region_enabled = true
 region_rect = Rect2(0, 137.23325, 739.67755, 886.7667)
 
-[node name="Button2" type="Button" parent="Carboard/Credits" unique_id=438209583]
+[node name="Button2" type="Button" parent="Credits" unique_id=438209583]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 183.88278
-offset_top = 32.234413
-offset_right = 302.5641
-offset_bottom = 77.97942
+offset_left = 99.99997
+offset_top = 76.99998
+offset_right = 557.0
+offset_bottom = 143.99997
 icon = SubResource("GradientTexture2D_rgw85")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Carboard/Credits" unique_id=1202972072]
+[node name="Sprite2D3" type="Sprite2D" parent="Credits" unique_id=1202972072]
 z_index = -2
-position = Vector2(-200.7326, -53.479736)
+position = Vector2(-151, -413)
 rotation = 3.1415927
-scale = Vector2(1, 0.942)
+scale = Vector2(2.904, 1.97)
 texture = ExtResource("4_bismi")
 region_enabled = true
 region_rect = Rect2(0, 137.23325, 739.67755, 886.7667)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Carboard" unique_id=2122791765]
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2122791765]
 process_mode = 3
-position = Vector2(33.699615, -20.512833)
-rotation = 3.1415927
-scale = Vector2(1.165, 0.955)
+position = Vector2(1022, 528)
+rotation = -3.1415925
+scale = Vector2(2.385, 1.956)
 texture = ExtResource("2_6kysc")
 
-[node name="Title Screen" type="Label" parent="Carboard" unique_id=242208510]
+[node name="Title Screen" type="Label" parent="." unique_id=242208510]
 visible = false
 modulate = Color(0, 0, 0.5684909, 1)
-offset_left = -312.8205
-offset_top = -178.75458
-offset_right = 331.1795
-offset_bottom = 88.24542
+offset_left = 217.00003
+offset_top = 112.0
+offset_right = 861.0
+offset_bottom = 379.0
 theme_override_fonts/font = ExtResource("3_6vr2p")
 theme_override_font_sizes/font_size = 128
 text = "COPENHAGEN
 "
 
-[node name="Master text" type="RichTextLabel" parent="Carboard" unique_id=454208017]
-offset_left = -261.53848
-offset_top = -92.30769
-offset_right = -114.28572
-offset_bottom = -51.28206
+[node name="Master text" type="RichTextLabel" parent="." unique_id=454208017]
+offset_left = 386.0
+offset_top = 297.0
+offset_right = 679.0
+offset_bottom = 379.0
 theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
 theme_override_constants/outline_size = -72
 theme_override_fonts/normal_font = ExtResource("7_rgw85")
-theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "Master
 "
 
-[node name="Music text" type="RichTextLabel" parent="Carboard" unique_id=723223853]
-offset_left = -251.28204
-offset_top = 3.6629944
-offset_right = -131.86812
-offset_bottom = 45.421204
+[node name="Music text" type="RichTextLabel" parent="." unique_id=723223853]
+offset_left = 408.0
+offset_top = 486.0
+offset_right = 632.0
+offset_bottom = 574.0
 theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
 theme_override_constants/outline_size = -72
 theme_override_fonts/normal_font = ExtResource("7_rgw85")
-theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "Music
 "
 
-[node name="SFX2" type="RichTextLabel" parent="Carboard" unique_id=824712918]
-offset_left = -232.23442
-offset_top = 95.2381
-offset_right = -158.97433
-offset_bottom = 137.72891
+[node name="SFX2" type="RichTextLabel" parent="." unique_id=824712918]
+offset_left = 429.0
+offset_top = 679.0
+offset_right = 594.0
+offset_bottom = 791.0
 theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
 theme_override_constants/outline_size = -72
 theme_override_fonts/normal_font = ExtResource("7_rgw85")
-theme_override_font_sizes/normal_font_size = 44
+theme_override_font_sizes/normal_font_size = 88
 bbcode_enabled = true
 text = "SFX
 "
 
-[connection signal="value_changed" from="Carboard/SFX" to="." method="_on_sfx_value_changed"]
-[connection signal="value_changed" from="Carboard/Master" to="." method="_on_master_value_changed"]
-[connection signal="value_changed" from="Carboard/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="SFX" to="." method="_on_sfx_value_changed"]
+[connection signal="value_changed" from="Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Music" to="." method="_on_music_value_changed"]
 
-[editable path="Carboard/Master"]
-[editable path="Carboard/Music"]
+[editable path="Master"]
+[editable path="Music"]

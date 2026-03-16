@@ -16,11 +16,11 @@ func _process(delta: float) -> void:
 	pass
 	
 func _custom_button_focus_entered() -> void:
-	add_theme_font_size_override("font_size", 72)
+	add_theme_font_size_override("font_size", 144)
 	pass
 	
 func _custom_button_focus_exited() -> void:
-	add_theme_font_size_override("font_size", 64)
+	add_theme_font_size_override("font_size", 122)
 	pass
 	
 func _custom_button_mouse_entered() -> void:

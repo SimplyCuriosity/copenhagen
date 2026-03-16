@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://we7cuthcne7q" path="res://Scenes/Characters/neu.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://dov25x8y2gwtr" path="res://Scripts/third_person_cam.gd" id="2_jjvhh"]
-[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="3_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/2D art/Textures/CardBoard.png" id="3_jjvhh"]
 [ext_resource type="Material" uid="uid://cma65duu5l4o4" path="res://Resources/New_cardboard.tres" id="4_hptm8"]
 [ext_resource type="PackedScene" uid="uid://d1ol5tl11cqsb" path="res://Assets/3D art/Models/Placeholder cat.glb" id="5_21xkr"]
-[ext_resource type="Texture2D" uid="uid://b21elrc7iwfek" path="res://Assets/3D art/Textures/image.png" id="5_hptm8"]
+[ext_resource type="Texture2D" uid="uid://b21elrc7iwfek" path="res://Assets/2D art/Textures/image.png" id="5_hptm8"]
 [ext_resource type="Script" uid="uid://dau17sxm25ygi" path="res://Scripts/ink wheel.gd" id="5_ynf5e"]
 [ext_resource type="Script" uid="uid://d1es6odvh5pc8" path="res://Scripts/3D Denial Neu.gd" id="6_6bp64"]
 [ext_resource type="FontFile" uid="uid://c5d08j0mrjr52" path="res://Assets/Fonts/Child-Regular.ttf" id="7_344ge"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wvnp8j223pad"
-path="res://.godot/imported/PaperRip_2.png-436dd68ec8371b8e81944970cd91065d.ctex"
+uid="uid://58404dc8xsw4"
+path="res://.godot/imported/orange cat.png-478b5266a665c9fc2cfb4e69b6afa840.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/3D art/Textures/PaperRip_2.png"
-dest_files=["res://.godot/imported/PaperRip_2.png-436dd68ec8371b8e81944970cd91065d.ctex"]
+source_file="res://Assets/2D art/Placeholder/orange cat.png"
+dest_files=["res://.godot/imported/orange cat.png-478b5266a665c9fc2cfb4e69b6afa840.ctex"]
 
 [params]
 

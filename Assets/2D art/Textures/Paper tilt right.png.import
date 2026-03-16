@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5ysdmgpsjlhd"
-path.s3tc="res://.godot/imported/CardBoard Normalmap (1).png-ea8d752b8cda46493defb1c9c9cc6232.s3tc.ctex"
+uid="uid://ouqiavao2rpk"
+path.s3tc="res://.godot/imported/Paper tilt right.png-c97e69f3f80dc7cca4442c1f6ed7d7ff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/3D art/Textures/CardBoard Normalmap (1).png"
-dest_files=["res://.godot/imported/CardBoard Normalmap (1).png-ea8d752b8cda46493defb1c9c9cc6232.s3tc.ctex"]
+source_file="res://Assets/2D art/Textures/Paper tilt right.png"
+dest_files=["res://.godot/imported/Paper tilt right.png-c97e69f3f80dc7cca4442c1f6ed7d7ff.s3tc.ctex"]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1

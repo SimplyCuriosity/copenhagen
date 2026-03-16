@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var charge_jump_audio: AudioStreamPlayer = $Charge_Jump_Audio
 @onready var jump_audio: AudioStreamPlayer = $Jump_Audio
 @onready var landing_audio: AudioStreamPlayer = $"Landing Audio"
+@onready var camera_cast: RayCast2D = $CameraCast
+@onready var camera_2d: Camera2D = $Camera2D
 
 
 const SPEED = 450.0
@@ -17,6 +19,7 @@ var motion_paused
 var test_pitch
 var just_landed := false
 
+
 func _ready() -> void:
 	GameManager.playable_character = self
 	jump_meter_slider.visible = false
@@ -27,7 +30,26 @@ func _ready() -> void:
 	pass
 	
 
+func _process(delta: float) -> void:
+	
+	pass
+
 func _physics_process(delta: float) -> void:
+	# Adjust Camera Height
+	if Input.is_action_pressed("Jump") and not motion_paused:
+		camera_2d.global_position.y = move_toward(camera_2d.global_position.y,GameManager.playable_character.global_position.y - 350 +25, delta*500)
+		#camera_2d.global_position = camera_2d.global_position.round().lerp(GameManager.playable_character.global_position - Vector2(0,400 +10), delta*5)
+		#camera_2d.global_position = camera_2d.global_position.round()
+	elif camera_cast.is_colliding() == true and not Input.is_action_pressed("Jump"):
+		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, camera_cast.get_collision_point().y -350, delta*500)
+		#camera_2d.global_position = camera_2d.global_position.round().lerp(camera_cast.get_collision_point().round() - Vector2(0,400), delta*5)
+		#camera_2d.global_position = camera_2d.global_position.round()
+	elif camera_cast.is_colliding() == false and not Input.is_action_pressed("Jump"):
+		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, 1000, delta*500)
+		#camera_2d.global_position.y = lerpf(camera_2d.global_position.y, 1000, delta*500)
+		#camera_2d.global_position = camera_2d.global_position.round()
+		pass
+	#camera_2d.global_position = camera_2d.global_position.round()
 	# Add the gravity.
 	if is_on_wall_only() and wall_climb_stamina > 0 and Input.is_action_pressed("Jump") and not motion_paused:
 		pass

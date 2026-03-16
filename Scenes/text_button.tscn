@@ -14,9 +14,10 @@ height = 3
 [node name="TextButton" type="Label" unique_id=1463502387]
 offset_right = 486.0
 offset_bottom = 121.0
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
 theme_override_fonts/font = ExtResource("1_k150v")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 122
 text = "Start"
 horizontal_alignment = 1
 vertical_alignment = 1

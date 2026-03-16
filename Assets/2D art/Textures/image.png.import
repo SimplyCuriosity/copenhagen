@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ouqiavao2rpk"
-path.s3tc="res://.godot/imported/Paper tilt right.png-d250561b584d8237e6b178cc9539c0c6.s3tc.ctex"
+uid="uid://b21elrc7iwfek"
+path.s3tc="res://.godot/imported/image.png-1e63be2dff611176e7e043fda7e609a6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/3D art/Textures/Paper tilt right.png"
-dest_files=["res://.godot/imported/Paper tilt right.png-d250561b584d8237e6b178cc9539c0c6.s3tc.ctex"]
+source_file="res://Assets/2D art/Textures/image.png"
+dest_files=["res://.godot/imported/image.png-1e63be2dff611176e7e043fda7e609a6.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://d1ol5tl11cqsb" path="res://Assets/3D art/Models/Placeholder cat.glb" id="1_4ggwa"]
 [ext_resource type="Script" uid="uid://f55ahxdnrqif" path="res://Scripts/neu.gd" id="1_xrnon"]
 [ext_resource type="Material" uid="uid://c53j1jy5qqgp1" path="res://Resources/placeholder cat.tres" id="2_kj4xw"]
-[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/3D art/Textures/PaperRip_1.png" id="3_kj4xw"]
-[ext_resource type="Texture2D" uid="uid://bxd6rrep4iarn" path="res://Assets/3D art/Textures/Paper tilt left.png" id="5_3j0eb"]
+[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/2D art/Textures/PaperRip_1.png" id="3_kj4xw"]
+[ext_resource type="Texture2D" uid="uid://bxd6rrep4iarn" path="res://Assets/2D art/Textures/Paper tilt left.png" id="5_3j0eb"]
 [ext_resource type="PackedScene" uid="uid://doxs8y85vp3v5" path="res://Assets/3D art/Models/Placeholder cat outline.glb" id="5_eiv8e"]
 [ext_resource type="PackedScene" uid="uid://bqayv682wqimx" path="res://Assets/3D art/Models/Placeholder cat outline 2.glb" id="5_jmmmc"]
 [ext_resource type="Material" uid="uid://coptygcsuthhd" path="res://Resources/transparent cat.tres" id="6_jmmmc"]
-[ext_resource type="Texture2D" uid="uid://ouqiavao2rpk" path="res://Assets/3D art/Textures/Paper tilt right.png" id="6_uk23q"]
-[ext_resource type="Texture2D" uid="uid://dkmqxywucgbly" path="res://Assets/3D art/Textures/Paper.png" id="8_3j0eb"]
+[ext_resource type="Texture2D" uid="uid://ouqiavao2rpk" path="res://Assets/2D art/Textures/Paper tilt right.png" id="6_uk23q"]
+[ext_resource type="Texture2D" uid="uid://dkmqxywucgbly" path="res://Assets/2D art/Textures/Paper.png" id="8_3j0eb"]
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_p2x4n"]
 frames = 4

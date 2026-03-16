@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		dim_background.visible = false
 		Resume_button_pressed = false
 		setting_menu.visible = false
-	elif not game_is_paused and Input.is_action_just_pressed("Pause"):
+	elif not game_is_paused and Input.is_action_just_pressed("Pause") and get_tree().current_scene.name != "MainMenu":
 		game_is_paused = true
 		get_tree().paused = true
 		pause_overlay.visible = true

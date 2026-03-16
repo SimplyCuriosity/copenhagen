@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blmijp366barc"]
 
-[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="1_1ehe0"]
-[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/3D art/Textures/PaperRip_1.png" id="2_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/2D art/Textures/CardBoard.png" id="1_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/2D art/Textures/PaperRip_1.png" id="2_ce3w2"]
 [ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="3_n45e2"]
 [ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_ce3w2"]
 [ext_resource type="Script" uid="uid://dgwlr12jnfvmv" path="res://Scripts/title_screen.gd" id="4_n45e2"]
@@ -16,86 +16,89 @@ height = 13
 [node name="MainMenu" type="Node2D" unique_id=1307850192]
 
 [node name="Carboard" type="Sprite2D" parent="." unique_id=1184587122]
-position = Vector2(644, 356)
-scale = Vector2(1.365, 1.365)
+position = Vector2(996.99994, 333)
+scale = Vector2(2.048, 2.048)
 texture = ExtResource("1_1ehe0")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Carboard" unique_id=464923429]
-position = Vector2(33.699615, -20.512833)
-rotation = 3.1415927
-scale = Vector2(1.165, 0.955)
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=464923429]
+position = Vector2(1025, 506)
+rotation = -3.1415925
+scale = Vector2(2.385, 1.956)
 texture = ExtResource("2_ce3w2")
 
-[node name="Timer" type="Timer" parent="Carboard" unique_id=1134330419]
+[node name="Timer" type="Timer" parent="." unique_id=1134330419]
 process_mode = 3
 wait_time = 0.5
 autostart = true
 
-[node name="Title Screen" type="Label" parent="Carboard" unique_id=2095252805]
+[node name="Title Screen" type="Label" parent="." unique_id=2095252805 node_paths=PackedStringArray("timer")]
 process_mode = 1
 modulate = Color(0, 0, 0.5684909, 1)
-offset_left = -449.08426
-offset_top = -208.79121
-offset_right = 487.17953
-offset_bottom = 58.208786
+offset_left = 131.0
+offset_top = 157.0
+offset_right = 1797.0
+offset_bottom = 622.0
 pivot_offset = Vector2(0.215, 0)
 pivot_offset_ratio = Vector2(0.5, 0.25)
+size_flags_horizontal = 3
+size_flags_vertical = 6
 theme_override_fonts/font = ExtResource("3_n45e2")
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 256
 text = "COPENHAGEN
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_n45e2")
+timer = NodePath("../Timer")
 
-[node name="Start" parent="Carboard" unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
-offset_left = -242.49084
-offset_top = -150.91574
-offset_right = 243.50916
-offset_bottom = 116.08426
+[node name="Start" parent="." unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
+offset_left = 699.0
+offset_top = 377.0
+offset_right = 1185.0
+offset_bottom = 644.0
 button = NodePath("Button2")
 
-[node name="Button2" type="Button" parent="Carboard/Start" unique_id=394872272]
+[node name="Button2" type="Button" parent="Start" unique_id=394872272]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 161.90477
-offset_top = 110.622696
-offset_right = 324.9048
-offset_bottom = 156.3677
+offset_left = 78.999985
+offset_top = 96.000015
+offset_right = 414.0
+offset_bottom = 164.00002
 icon = SubResource("GradientTexture2D_ce3w2")
 
-[node name="Settings" parent="Carboard" unique_id=898216069 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
-offset_left = -243.95604
-offset_top = -55.67766
-offset_right = 242.04396
-offset_bottom = 211.32234
+[node name="Settings" parent="." unique_id=898216069 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
+offset_left = 487.0
+offset_top = 563.0
+offset_right = 1407.0
+offset_bottom = 830.0
 text = "Settings"
 button = NodePath("Button2")
 
-[node name="Button2" type="Button" parent="Carboard/Settings" unique_id=440493899]
+[node name="Button2" type="Button" parent="Settings" unique_id=440493899]
 z_index = -1
 layout_mode = 0
-offset_left = 118.68131
-offset_top = 107.692314
-offset_right = 370.03632
-offset_bottom = 157.02231
+offset_left = 195.99997
+offset_top = 96.99999
+offset_right = 722.0
+offset_bottom = 166.0
 icon = SubResource("GradientTexture2D_ce3w2")
 
-[node name="Exit" parent="Carboard" unique_id=778196774 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
-offset_left = -251.28206
-offset_top = 31.501835
-offset_right = 234.71794
-offset_bottom = 298.50183
+[node name="Exit" parent="." unique_id=778196774 node_paths=PackedStringArray("button") instance=ExtResource("4_ce3w2")]
+offset_left = 687.0
+offset_top = 757.0
+offset_right = 1173.0
+offset_bottom = 1024.0
 text = "Exit"
 button = NodePath("Button2")
 
-[node name="Button2" type="Button" parent="Carboard/Exit" unique_id=104015223]
+[node name="Button2" type="Button" parent="Exit" unique_id=104015223]
 z_index = -1
 layout_mode = 0
-offset_left = 181.685
-offset_top = 106.95971
-offset_right = 303.43
-offset_bottom = 148.5647
+offset_left = 124.0
+offset_top = 99.99999
+offset_right = 358.0
+offset_bottom = 162.0
 icon = SubResource("GradientTexture2D_ce3w2")
 
-[connection signal="timeout" from="Carboard/Timer" to="Carboard/Title Screen" method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Title Screen" method="_on_timer_timeout"]

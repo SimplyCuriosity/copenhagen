@@ -2,7 +2,8 @@ extends Label
 
 var Fonts:Array = [preload("res://Assets/Fonts/Childst_added-Regular.ttf"), preload("res://Assets/Fonts/DigitalHandWritingTest-Regular.ttf"), preload("res://Assets/Fonts/GabilersTerribleFont-Regular.ttf"), preload("res://Assets/Fonts/Italicst_added-Regular.ttf")]
 # Called when the node enters the scene tree for the first time.
-@onready var timer: Timer = get_parent().get_child(1)
+@export var timer: Timer
+
 var count: int = 0
 
 func _ready() -> void:

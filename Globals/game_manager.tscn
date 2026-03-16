@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dt6gggynhlc8j"]
 
 [ext_resource type="Script" uid="uid://b86kefjq8lylb" path="res://Globals/game_manager.gd" id="1_wj7el"]
-[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/3D art/Textures/PaperRip_1.png" id="2_e6ac5"]
+[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/2D art/Textures/PaperRip_1.png" id="2_e6ac5"]
 [ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="3_e6ac5"]
 [ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_ae4yk"]
 [ext_resource type="PackedScene" uid="uid://dccfjxxtn4pn" path="res://Scenes/settings.tscn" id="5_oejsf"]
@@ -30,8 +30,8 @@ layer = 2
 visible = false
 modulate = Color(0, 0, 0, 0.37300003)
 z_index = 1
-position = Vector2(642.50006, 372)
-scale = Vector2(21.078127, 12.625)
+position = Vector2(967.00006, 588.00006)
+scale = Vector2(31.218752, 19.375)
 texture = SubResource("GradientTexture2D_ae4yk")
 
 [node name="Pause Overlay" type="Node2D" parent="CanvasLayer" unique_id=1710918135]
@@ -40,17 +40,18 @@ z_index = 4
 position = Vector2(62, 41)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Pause Overlay" unique_id=1098476111]
-position = Vector2(541, 334)
+position = Vector2(863, 549)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_e6ac5")
 
 [node name="Pause" type="Label" parent="CanvasLayer/Pause Overlay" unique_id=850110653]
 modulate = Color(0, 0, 0.5684909, 1)
-offset_left = 417.0
-offset_top = 153.0
-offset_right = 755.0
-offset_bottom = 420.0
+offset_left = 522.0
+offset_top = 220.0
+offset_right = 1257.0
+offset_bottom = 651.0
 theme_override_fonts/font = ExtResource("3_e6ac5")
-theme_override_font_sizes/font_size = 96
+theme_override_font_sizes/font_size = 236
 text = "Paused
 "
 
@@ -69,54 +70,54 @@ custom font
 horizontal_alignment = 1
 
 [node name="Settings" parent="CanvasLayer/Pause Overlay" unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("4_ae4yk")]
-offset_left = 311.0
-offset_top = 211.0
-offset_right = 797.0
-offset_bottom = 478.0
+offset_left = 615.0
+offset_top = 500.0
+offset_right = 1173.0
+offset_bottom = 767.0
 text = "Settings"
 button = NodePath("Button2")
 
 [node name="Button2" type="Button" parent="CanvasLayer/Pause Overlay/Settings" unique_id=1424381320]
 z_index = -1
 layout_mode = 0
-offset_left = 118.999985
-offset_top = 108.999985
-offset_right = 370.35498
-offset_bottom = 158.32999
+offset_left = 63.999985
+offset_top = 105.999985
+offset_right = 490.0
+offset_bottom = 159.99998
 icon = SubResource("GradientTexture2D_j441c")
 
 [node name="Main Menu" parent="CanvasLayer/Pause Overlay" unique_id=1290838835 node_paths=PackedStringArray("button") instance=ExtResource("4_ae4yk")]
-offset_left = 306.0
-offset_top = 264.0
-offset_right = 792.0
-offset_bottom = 531.0
+offset_left = 572.0
+offset_top = 651.0
+offset_right = 1191.0
+offset_bottom = 918.0
 text = "Main Menu"
 button = NodePath("Button2")
 
 [node name="Button2" type="Button" parent="CanvasLayer/Pause Overlay/Main Menu" unique_id=816236716]
 z_index = -1
 layout_mode = 0
-offset_left = 107.999985
-offset_top = 108.999985
-offset_right = 377.135
-offset_bottom = 158.32999
+offset_left = 60.999985
+offset_top = 103.999985
+offset_right = 560.0
+offset_bottom = 157.99998
 icon = SubResource("GradientTexture2D_j441c")
 
 [node name="Resume" parent="CanvasLayer/Pause Overlay" unique_id=1591023397 node_paths=PackedStringArray("button") instance=ExtResource("4_ae4yk")]
-offset_left = 311.0
-offset_top = 164.0
-offset_right = 797.0
-offset_bottom = 431.0
+offset_left = 646.0
+offset_top = 355.0
+offset_right = 1132.0
+offset_bottom = 622.0
 text = "Resume"
 button = NodePath("Button2")
 
 [node name="Button2" type="Button" parent="CanvasLayer/Pause Overlay/Resume" unique_id=20773850]
 z_index = -1
 layout_mode = 0
-offset_left = 136.99998
-offset_top = 110.999985
-offset_right = 346.0
-offset_bottom = 152.99998
+offset_left = 56.999985
+offset_top = 105.999985
+offset_right = 431.0
+offset_bottom = 157.99998
 icon = SubResource("GradientTexture2D_j441c")
 
 [node name="Settings" parent="CanvasLayer" unique_id=878062762 instance=ExtResource("5_oejsf")]

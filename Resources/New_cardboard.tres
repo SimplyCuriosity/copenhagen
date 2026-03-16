@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://cma65duu5l4o4"]
 
-[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/3D art/Textures/CardBoard.png" id="1_lrtj0"]
-[ext_resource type="Texture2D" uid="uid://c5ysdmgpsjlhd" path="res://Assets/3D art/Textures/CardBoard Normalmap (1).png" id="2_wpddc"]
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/2D art/Textures/CardBoard.png" id="1_lrtj0"]
+[ext_resource type="Texture2D" uid="uid://c5ysdmgpsjlhd" path="res://Assets/2D art/Textures/CardBoard Normalmap (1).png" id="2_wpddc"]
 
 [resource]
 render_priority = -1
