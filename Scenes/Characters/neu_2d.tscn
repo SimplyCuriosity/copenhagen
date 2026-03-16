@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b8g8pdk017vun" path="res://Assets/2D art/UI/ruler_slicing/slicing_piece2.png" id="4_obmqf"]
 [ext_resource type="Texture2D" uid="uid://cntqvfyie0nuo" path="res://Assets/2D art/little_cats/cats2.png" id="5_vjogc"]
 [ext_resource type="Texture2D" uid="uid://d0t2oogocua7j" path="res://Assets/2D art/UI/ruler_slicing/slicing_piece1.png" id="6_ve2b2"]
+[ext_resource type="AudioStream" uid="uid://d3np0msnk67v" path="res://Assets/SFX/SFX-Jump_Charge_1_tone.ogg" id="7_y8nod"]
+[ext_resource type="AudioStream" uid="uid://dajye48ju0ige" path="res://Assets/SFX/SFX-Jump.ogg" id="8_mjwfn"]
+[ext_resource type="AudioStream" uid="uid://c438lyeid4ml7" path="res://Assets/SFX/SFX-Jump_Landing.ogg" id="9_mjwfn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a01il"]
 animations = [{
@@ -90,6 +93,20 @@ rotation = 2.775976
 scale = Vector2(1.587, 1.587)
 texture = ExtResource("5_vjogc")
 flip_v = true
+
+[node name="Charge_Jump_Audio" type="AudioStreamPlayer" parent="." unique_id=323730897]
+stream = ExtResource("7_y8nod")
+pitch_scale = 0.2
+bus = &"SFX"
+
+[node name="Jump_Audio" type="AudioStreamPlayer" parent="." unique_id=2091420]
+stream = ExtResource("8_mjwfn")
+bus = &"SFX"
+
+[node name="Landing Audio" type="AudioStreamPlayer" parent="." unique_id=774864934]
+stream = ExtResource("9_mjwfn")
+volume_db = 12.568
+bus = &"SFX"
 
 [editable path="JumpMeterSlider"]
 [editable path="WallClimbMeterSlider"]

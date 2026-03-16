@@ -103,4 +103,4 @@ metadata/_edit_use_anchors_ = true
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=915386615]
 stream = ExtResource("5_drpe7")
 volume_db = 7.317
-bus = &"Music"
+bus = &"SFX"

@@ -2,6 +2,9 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_meter_slider: HSlider = $JumpMeterSlider
 @onready var wall_climb_meter_slider: HSlider = $WallClimbMeterSlider
+@onready var charge_jump_audio: AudioStreamPlayer = $Charge_Jump_Audio
+@onready var jump_audio: AudioStreamPlayer = $Jump_Audio
+@onready var landing_audio: AudioStreamPlayer = $"Landing Audio"
 
 
 const SPEED = 450.0
@@ -11,6 +14,8 @@ var jump_meter_going_up = true
 const MAX_WALL_CLIMB_STAMINA = 100
 var wall_climb_stamina = 100
 var motion_paused 
+var test_pitch
+var just_landed := false
 
 func _ready() -> void:
 	GameManager.playable_character = self
@@ -31,17 +36,30 @@ func _physics_process(delta: float) -> void:
 		jump_meter_slider.visible = false
 		wall_climb_meter_slider.visible = false
 		JUMP_VELOCITY = 0
+		just_landed = false
 		pass
-	
+	if is_on_floor() and not just_landed:
+		just_landed = true
+		landing_audio.pitch_scale = randf_range(0.9,1.1)
+		landing_audio.play()
+		
 	# Handle jump.
 	if JUMP_VELOCITY >= 0:
 		jump_meter_going_up = true
+		charge_jump_audio.stop()
 	elif JUMP_VELOCITY <= MAX_JUMP_VELOCITY:
 		jump_meter_going_up = false
+		
+	if Input.is_action_just_pressed("Jump") and is_on_floor() and not motion_paused:
+		test_pitch = randf_range(0.1,0.2)
+		#charge_jump_audio.play()
 	
 	if Input.is_action_pressed("Jump") and is_on_floor() and not motion_paused:
 		jump_meter_slider.visible = true
 		wall_climb_stamina = MAX_WALL_CLIMB_STAMINA
+		if charge_jump_audio.playing == false:
+			charge_jump_audio.play()
+		charge_jump_audio.pitch_scale = (JUMP_VELOCITY/(MAX_JUMP_VELOCITY/0.2))+test_pitch
 		if JUMP_VELOCITY > MAX_JUMP_VELOCITY and jump_meter_going_up:
 			JUMP_VELOCITY += -600 * delta
 			jump_meter_slider.value = -JUMP_VELOCITY
@@ -58,9 +76,12 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -SPEED/4
 			wall_climb_stamina -= 50*delta
 			wall_climb_meter_slider.value = wall_climb_stamina
-			print(wall_climb_stamina)
+			#print(wall_climb_stamina)
 	
 	if Input.is_action_just_released("Jump") and is_on_floor() and not motion_paused:
+		charge_jump_audio.stop()
+		jump_audio.pitch_scale = randf_range(0.9,1.1)
+		jump_audio.play()
 		jump_meter_slider.visible = false
 		velocity.y = JUMP_VELOCITY
 		JUMP_VELOCITY = 0

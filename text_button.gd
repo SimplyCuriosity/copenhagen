@@ -70,5 +70,7 @@ func _custom_button_pressed() -> void:
 			GameManager.Background_music.stream = preload("res://Assets/Music/bigj_demo_4.mp3")
 			GameManager.Background_music.playing = true
 			GameManager.Resume_button_pressed = true
+			if GameManager.dialogue_system != null:
+				GameManager.dialogue_system.queue_free()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	pass
