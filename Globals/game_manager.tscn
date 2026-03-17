@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_ae4yk"]
 [ext_resource type="PackedScene" uid="uid://dccfjxxtn4pn" path="res://Scenes/settings.tscn" id="5_oejsf"]
 
-[sub_resource type="Gradient" id="Gradient_e6ac5"]
+[sub_resource type="Gradient" id="Gradient_j441c"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ae4yk"]
-gradient = SubResource("Gradient_e6ac5")
+gradient = SubResource("Gradient_j441c")
 
 [sub_resource type="Gradient" id="Gradient_oejsf"]
 

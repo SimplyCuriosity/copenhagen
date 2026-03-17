@@ -16,9 +16,9 @@ var jump_meter_going_up = true
 const MAX_WALL_CLIMB_STAMINA = 100
 var wall_climb_stamina = 100
 var motion_paused 
-var test_pitch
+var test_pitch = randf_range(0.1,0.2)
 var just_landed := false
-
+var manual_jump:= false
 
 func _ready() -> void:
 	GameManager.playable_character = self
@@ -37,15 +37,16 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	# Adjust Camera Height
 	if Input.is_action_pressed("Jump") and not motion_paused:
-		camera_2d.global_position.y = move_toward(camera_2d.global_position.y,GameManager.playable_character.global_position.y - 350 +25, delta*500)
+		camera_2d.global_position.y = move_toward(camera_2d.global_position.y,GameManager.playable_character.global_position.y - 300 +25, delta*500)
 		#camera_2d.global_position = camera_2d.global_position.round().lerp(GameManager.playable_character.global_position - Vector2(0,400 +10), delta*5)
 		#camera_2d.global_position = camera_2d.global_position.round()
 	elif camera_cast.is_colliding() == true and not Input.is_action_pressed("Jump"):
-		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, camera_cast.get_collision_point().y -350, delta*500)
+		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, camera_cast.get_collision_point().y -300, delta*500)
+		#camera_2d.global_position.y = clampf(-1000,1000)
 		#camera_2d.global_position = camera_2d.global_position.round().lerp(camera_cast.get_collision_point().round() - Vector2(0,400), delta*5)
 		#camera_2d.global_position = camera_2d.global_position.round()
 	elif camera_cast.is_colliding() == false and not Input.is_action_pressed("Jump"):
-		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, 1000, delta*500)
+		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, GameManager.playable_character.global_position.y + 350, delta*500)
 		#camera_2d.global_position.y = lerpf(camera_2d.global_position.y, 1000, delta*500)
 		#camera_2d.global_position = camera_2d.global_position.round()
 		pass
@@ -132,3 +133,7 @@ func _physics_process(delta: float) -> void:
 		#if jump_meter_slider.position.x > 0:
 		#	jump_meter_slider.position.x *= -1
 	move_and_slide()
+
+func _animation_jump():
+	print("its jumping time")
+	velocity.y = -800

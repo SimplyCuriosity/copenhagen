@@ -10,7 +10,8 @@ enum dialogue_status {
 	ANIMATING,
 	SPEEDING
 	}
-	
+
+signal dialogue_finished()
 var pitch_random: float
 var dialogue_state = dialogue_status.READY
 var time_interval:= 0.05
@@ -73,20 +74,23 @@ func _generate_dialogue_box(script:String) -> void:
 		#print(i)
 		if i == "\n":
 			match temporary_string:
+				"Unknown Narrator:":
+					current_speaker = "???"
+					dialogue_array.append([current_speaker, []])
 				"Neu:":
 					current_speaker = "Neu"
 					dialogue_array.append([current_speaker, []])
 				"Denial Neu:":
-					current_speaker = "Denial Neu"
+					current_speaker = "Deni"
 					dialogue_array.append([current_speaker, []])
 				"Anger Neu:":
-					current_speaker = "Anger Neu"
+					current_speaker = "Ag"
 					dialogue_array.append([current_speaker, []])
 				"Bargaining Neu:":
-					current_speaker = "Bargaining Neu"
+					current_speaker = "Gai"
 					dialogue_array.append([current_speaker, []])
 				"Depression Neu:":
-					current_speaker = "Depression Neu"
+					current_speaker = "Ress"
 					dialogue_array.append([current_speaker, []])
 				_:
 					if temporary_string != "":
@@ -174,6 +178,7 @@ func next_dialogue():
 	if speaking_turn > dialogue_array.size()-1:
 		if GameManager.playable_character != null:
 			GameManager.playable_character.motion_paused = false
+		dialogue_finished.emit()
 		queue_free()
 	else:
 		dialogue.text = ""

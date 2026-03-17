@@ -35,7 +35,7 @@ func _custom_button_pressed() -> void:
 	match text:
 		"Start":
 			print(3)
-			get_tree().change_scene_to_file("res://Scenes/main_2d.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Levels/intro_level.tscn")
 			GameManager.Background_music.stream = preload("res://Assets/Music/ptt_02.mp3")
 			GameManager.Background_music.playing = true
 		"Exit":

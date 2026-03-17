@@ -3,10 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://dkmqxywucgbly" path="res://Assets/2D art/Textures/Paper.png" id="1_b43ja"]
 [ext_resource type="Script" uid="uid://ccrs4yycusr0j" path="res://Scripts/dialogue_system.gd" id="1_tgreg"]
 [ext_resource type="Texture2D" uid="uid://smbk8vwwrjyv" path="res://Assets/2D art/little_cats/cats1.png" id="2_dqc5m"]
-[ext_resource type="Texture2D" uid="uid://58404dc8xsw4" path="res://Assets/2D art/Placeholder/orange cat.png" id="2_i2efg"]
 [ext_resource type="Texture2D" uid="uid://dhku0c5rp8poi" path="res://Assets/2D art/little_cats/cats4.png" id="4_4d4b6"]
 [ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="4_drpe7"]
+[ext_resource type="Texture2D" uid="uid://bqv5c76tgae2f" path="res://Assets/2D art/little_cats/cats6.png" id="4_ilp0e"]
+[ext_resource type="Texture2D" uid="uid://cntqvfyie0nuo" path="res://Assets/2D art/little_cats/cats2.png" id="5_7xplm"]
 [ext_resource type="AudioStream" uid="uid://3v6g32fr42e3" path="res://Assets/SFX/SFX-Meow.ogg" id="5_drpe7"]
+[ext_resource type="Texture2D" uid="uid://bmvdrwh521clh" path="res://Assets/2D art/little_cats/cats5.png" id="6_kmn0t"]
+[ext_resource type="Texture2D" uid="uid://bt6a0cha30bk5" path="res://Assets/2D art/little_cats/cats3.png" id="7_l7t6y"]
+[ext_resource type="Texture2D" uid="uid://ce2v5nwvj2mdo" path="res://Assets/2D art/Tiles/tile_handraw_just_grass.png" id="10_7xplm"]
+
+[sub_resource type="Gradient" id="Gradient_j441c"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kmn0t"]
+gradient = SubResource("Gradient_j441c")
 
 [node name="Dialogue system" type="Node2D" unique_id=471126201]
 script = ExtResource("1_tgreg")
@@ -19,49 +29,71 @@ volume_db = 7.317
 bus = &"SFX"
 
 [node name="Cat Portraits" type="Node2D" parent="CanvasLayer" unique_id=124937801]
-position = Vector2(-74, 0)
+position = Vector2(-161, 0)
 
 [node name="Denial Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=54748308]
+visible = false
 z_index = 1
 position = Vector2(509.89996, 836.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("2_dqc5m")
 
 [node name="Anger Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=2129853506]
+visible = false
 modulate = Color(0.99999815, 0.48763824, 0.6860338, 1)
 z_index = 1
 position = Vector2(497.89996, 834.2108)
 scale = Vector2(0.40140623, 0.4308333)
-texture = ExtResource("2_i2efg")
+texture = ExtResource("4_ilp0e")
 flip_h = true
 
 [node name="Bargaining Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=673778884]
+visible = false
 modulate = Color(1, 0.89165515, 0.29748532, 1)
 z_index = 1
 position = Vector2(497.89996, 834.2108)
 scale = Vector2(0.40140623, 0.4308333)
-texture = ExtResource("2_i2efg")
+texture = ExtResource("5_7xplm")
 flip_h = true
 
 [node name="Depression Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1428889895]
+visible = false
 modulate = Color(0.19540206, 0.4496959, 1, 1)
 z_index = 1
 position = Vector2(497.89996, 834.2108)
 scale = Vector2(0.40140623, 0.4308333)
-texture = ExtResource("2_i2efg")
+texture = ExtResource("6_kmn0t")
+flip_h = true
+
+[node name="???" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=732520819]
+modulate = Color(0.19540206, 0.4496959, 1, 1)
+z_index = 1
+position = Vector2(694.00037, 765)
+scale = Vector2(0.40140623, 0.4308333)
+texture = ExtResource("7_l7t6y")
 flip_h = true
 
 [node name="Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=805969747]
+visible = false
 z_index = 1
 position = Vector2(757.9, 839.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("4_4d4b6")
 
 [node name="Paper" type="Sprite2D" parent="CanvasLayer" unique_id=1023676183]
-position = Vector2(1141, 829)
+position = Vector2(1054, 829)
 texture = ExtResource("1_b43ja")
 region_enabled = true
 region_rect = Rect2(0, 27.740692, 1024, 198.76923)
+
+[node name="TileHandrawJustGrass" type="Sprite2D" parent="CanvasLayer/Paper" unique_id=980833046]
+visible = false
+texture_filter = 2
+position = Vector2(11, -91.00006)
+scale = Vector2(0.65880096, 0.096153565)
+texture = ExtResource("10_7xplm")
+region_enabled = true
+region_rect = Rect2(0, 0, 1568.902, 104.96814)
 
 [node name="Speaker Name" type="RichTextLabel" parent="CanvasLayer/Paper" unique_id=1614456939]
 anchors_preset = 1
@@ -100,3 +132,10 @@ Everything is just fine is it not????
 "
 scroll_active = false
 metadata/_edit_use_anchors_ = true
+
+[node name="Dim background" type="Sprite2D" parent="CanvasLayer" unique_id=2061178565]
+modulate = Color(0.15493822, 0.40115786, 1.92523e-07, 0.37254903)
+z_index = -1
+position = Vector2(1054, 832)
+scale = Vector2(16.406248, 3.562501)
+texture = SubResource("GradientTexture2D_kmn0t")

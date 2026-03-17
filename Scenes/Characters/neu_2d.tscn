@@ -119,7 +119,7 @@ volume_db = 12.568
 bus = &"SFX"
 
 [node name="CameraCast" type="RayCast2D" parent="." unique_id=1216192123]
-target_position = Vector2(0, 1080)
+target_position = Vector2(0, 700)
 
 [editable path="JumpMeterSlider"]
 [editable path="WallClimbMeterSlider"]

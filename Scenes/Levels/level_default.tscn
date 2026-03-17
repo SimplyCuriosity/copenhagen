@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b26sp4sa56l52" path="res://Assets/2D art/Tiles/tile_rock_mossy6.png" id="8_phi12"]
 [ext_resource type="Texture2D" uid="uid://cd07uhkegisr6" path="res://Assets/2D art/Tiles/veryverysketch.png" id="9_rye2c"]
 [ext_resource type="Texture2D" uid="uid://ca2yylwsmr2d1" path="res://Assets/2D art/Tiles/tile_level1.png" id="10_xa2ty"]
+[ext_resource type="Texture2D" uid="uid://doasmwmvnun6h" path="res://Assets/2D art/Tiles/tile_circle_added.png" id="11_4ptas"]
 [ext_resource type="Texture2D" uid="uid://b0o2vtfteoith" path="res://Assets/2D art/Textures/Paper Basic Spritesheet.png" id="11_hk4pf"]
 [ext_resource type="PackedScene" uid="uid://bo80dqmpcl2en" path="res://Scenes/Characters/neu_2d.tscn" id="12_8kvcr"]
 [ext_resource type="PackedScene" uid="uid://x1qiuqhyh6o0" path="res://Scenes/Characters/alternate_neu_2d.tscn" id="13_iyjfb"]
@@ -526,6 +527,32 @@ texture_region_size = Vector2i(512, 512)
 1:3/0 = 0
 2:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45ppd"]
+texture = ExtResource("11_4ptas")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_gnuor"]
 tile_size = Vector2i(512, 512)
 sources/0 = SubResource("TileSetAtlasSource_phi12")
@@ -536,6 +563,7 @@ sources/4 = SubResource("TileSetAtlasSource_8kvcr")
 sources/5 = SubResource("TileSetAtlasSource_iyjfb")
 sources/6 = SubResource("TileSetAtlasSource_0muau")
 sources/7 = SubResource("TileSetAtlasSource_ulgui")
+sources/8 = SubResource("TileSetAtlasSource_45ppd")
 
 [node name="Level Default" type="Node2D" unique_id=1071249246]
 

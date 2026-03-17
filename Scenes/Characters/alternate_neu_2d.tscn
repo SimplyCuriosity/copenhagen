@@ -2,16 +2,60 @@
 
 [ext_resource type="Script" uid="uid://byjbrpgodpg28" path="res://Scripts/denial_neu_2d.gd" id="1_0351x"]
 [ext_resource type="Texture2D" uid="uid://smbk8vwwrjyv" path="res://Assets/2D art/little_cats/cats1.png" id="2_53cpp"]
+[ext_resource type="Texture2D" uid="uid://bqv5c76tgae2f" path="res://Assets/2D art/little_cats/cats6.png" id="2_q20g1"]
 [ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="3_53cpp"]
+[ext_resource type="Texture2D" uid="uid://cntqvfyie0nuo" path="res://Assets/2D art/little_cats/cats2.png" id="4_8rpsd"]
+[ext_resource type="Texture2D" uid="uid://bt6a0cha30bk5" path="res://Assets/2D art/little_cats/cats3.png" id="5_4splk"]
+[ext_resource type="Texture2D" uid="uid://bmvdrwh521clh" path="res://Assets/2D art/little_cats/cats5.png" id="6_8rpsd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kefgr"]
+atlas = ExtResource("2_q20g1")
+region = Rect2(0, 0, 531, 508)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lggnt"]
+atlas = ExtResource("5_4splk")
+region = Rect2(0, 0, 1020, 943)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1nufd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_kefgr")
+}],
+"loop": true,
+"name": &"Ag Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("2_53cpp")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"Deni Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8rpsd")
+}],
+"loop": true,
+"name": &"Gai Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lggnt")
+}],
+"loop": true,
+"name": &"Mystery Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8rpsd")
+}],
+"loop": true,
+"name": &"Ress Idle",
 "speed": 5.0
 }]
 
@@ -29,7 +73,7 @@ script = ExtResource("1_0351x")
 position = Vector2(-76, 0)
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_1nufd")
-animation = &"Idle"
+animation = &"Ress Idle"
 offset = Vector2(628.005, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065315180]
