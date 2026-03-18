@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bmvdrwh521clh" path="res://Assets/2D art/little_cats/cats5.png" id="6_kmn0t"]
 [ext_resource type="Texture2D" uid="uid://bt6a0cha30bk5" path="res://Assets/2D art/little_cats/cats3.png" id="7_l7t6y"]
 [ext_resource type="Texture2D" uid="uid://ce2v5nwvj2mdo" path="res://Assets/2D art/Tiles/tile_handraw_just_grass.png" id="10_7xplm"]
+[ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="12_kmn0t"]
 
 [sub_resource type="Gradient" id="Gradient_j441c"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -28,39 +29,34 @@ stream = ExtResource("5_drpe7")
 volume_db = 7.317
 bus = &"SFX"
 
-[node name="Cat Portraits" type="Node2D" parent="CanvasLayer" unique_id=124937801]
-position = Vector2(-161, 0)
+[node name="Cat Portraits" type="Node" parent="CanvasLayer" unique_id=640710486]
 
-[node name="Denial Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=54748308]
-visible = false
+[node name="Deni" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=54748308]
 z_index = 1
-position = Vector2(509.89996, 836.2108)
+position = Vector2(348.89996, 836.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("2_dqc5m")
 
-[node name="Anger Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=2129853506]
-visible = false
+[node name="Ag" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=2129853506]
 modulate = Color(0.99999815, 0.48763824, 0.6860338, 1)
 z_index = 1
-position = Vector2(497.89996, 834.2108)
+position = Vector2(336.89996, 834.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("4_ilp0e")
 flip_h = true
 
-[node name="Bargaining Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=673778884]
-visible = false
+[node name="Gai" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=673778884]
 modulate = Color(1, 0.89165515, 0.29748532, 1)
 z_index = 1
-position = Vector2(497.89996, 834.2108)
+position = Vector2(336.89996, 834.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("5_7xplm")
 flip_h = true
 
-[node name="Depression Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1428889895]
-visible = false
+[node name="Ress" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1428889895]
 modulate = Color(0.19540206, 0.4496959, 1, 1)
 z_index = 1
-position = Vector2(497.89996, 834.2108)
+position = Vector2(336.89996, 834.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("6_kmn0t")
 flip_h = true
@@ -68,15 +64,14 @@ flip_h = true
 [node name="???" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=732520819]
 modulate = Color(0.19540206, 0.4496959, 1, 1)
 z_index = 1
-position = Vector2(694.00037, 765)
+position = Vector2(533.00037, 765)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("7_l7t6y")
 flip_h = true
 
 [node name="Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=805969747]
-visible = false
 z_index = 1
-position = Vector2(757.9, 839.2108)
+position = Vector2(596.9, 839.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("4_4d4b6")
 
@@ -125,7 +120,9 @@ grow_horizontal = 0
 theme_override_colors/default_color = Color(0.16799647, 2.0214916e-06, 0.7804943, 1)
 theme_override_constants/line_separation = 23
 theme_override_fonts/normal_font = ExtResource("4_drpe7")
+theme_override_fonts/italics_font = ExtResource("12_kmn0t")
 theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
 bbcode_enabled = true
 text = "Why should I move? 
 Everything is just fine is it not????

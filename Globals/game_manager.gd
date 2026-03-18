@@ -14,7 +14,30 @@ var setting_menu
 var Resume_button_pressed:= false
 var main_menu
 var dialogue_system
-var current_scene
+#var current_scene
+var deni_speech_num = 0
+var deni_speech_max = 1
+var deni_dead_speech_num = 0
+var deni_dead_speech_max = 9
+var just_died:= false
+var level_1_half_way:= false:
+	set(value):
+		level_1_half_way = value
+		if value == true:
+			_update_alternate_neu_position()
+			if get_tree().current_scene.name == "Level 1":
+				deni_dead_speech_num = 5
+var respawn_bench:
+	set(value):
+		if value != null:
+			respawn_bench = value
+			respawn_point = respawn_bench.global_position
+			if respawn_bench.name == "MidBench":
+				level_1_half_way = true
+var respawn_point:
+	set(value):
+		respawn_point = value
+		print(respawn_point)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,3 +64,15 @@ func _process(delta: float) -> void:
 		dim_background.visible = true
 		
 	pass
+
+func _player_died():
+	just_died = true
+	get_tree().current_scene.animation_player.play("FadeOut")
+	#await get_tree().create_timer(4).timeout
+	await get_tree().current_scene.animation_player.animation_finished
+	await get_tree().reload_current_scene()
+	#playable_character.global_position = respawn_point
+	pass
+
+func _update_alternate_neu_position():
+	get_tree().current_scene.alternate_neu_2d.global_position = get_tree().current_scene.alternate_position.global_position

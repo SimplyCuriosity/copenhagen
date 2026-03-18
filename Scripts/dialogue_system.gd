@@ -1,7 +1,7 @@
 extends Node2D
 @onready var speaker_name: RichTextLabel = $"CanvasLayer/Paper/Speaker Name"
 @onready var dialogue: RichTextLabel = $CanvasLayer/Paper/Dialogue
-@onready var cat_portraits: Node2D = $"CanvasLayer/Cat Portraits"
+@onready var cat_portraits: Node = $"CanvasLayer/Cat Portraits"
 @onready var audio_stream_player: AudioStreamPlayer = $CanvasLayer/AudioStreamPlayer
 
 
@@ -10,7 +10,7 @@ enum dialogue_status {
 	ANIMATING,
 	SPEEDING
 	}
-
+var hold:= false
 signal dialogue_finished()
 var pitch_random: float
 var dialogue_state = dialogue_status.READY
@@ -50,12 +50,24 @@ Victory & chance to talk to Anger Neu upon putting all fires out.
 However Anger Neu could reignite them at any time, the player can use Paralyze/stun on Anger Neu to delay this.
 "
 
-
+var a = "Deni:
+Just... please... just...
+Reconsider.
+Deni:
+ 
+I... I don’t want to feel alone... please, I...
+Deni:
+.
+.
+.
+"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.dialogue_system = self
 	#print(testing.length())
-	#_generate_dialogue_box(test_script)
+	#_generate_dialogue_box(a)
+	for i in cat_portraits.get_children():
+		i.visible = false
 	pass # Replace with function body.
 
 
@@ -67,6 +79,7 @@ func _process(delta: float) -> void:
 		dialogue_state = dialogue_status.SPEEDING
 		time_interval = 0.0010
 		pass
+		
 	pass
 
 func _generate_dialogue_box(script:String) -> void:
@@ -80,16 +93,16 @@ func _generate_dialogue_box(script:String) -> void:
 				"Neu:":
 					current_speaker = "Neu"
 					dialogue_array.append([current_speaker, []])
-				"Denial Neu:":
+				"Deni:":
 					current_speaker = "Deni"
 					dialogue_array.append([current_speaker, []])
-				"Anger Neu:":
+				"Ag:":
 					current_speaker = "Ag"
 					dialogue_array.append([current_speaker, []])
-				"Bargaining Neu:":
+				"Gai:":
 					current_speaker = "Gai"
 					dialogue_array.append([current_speaker, []])
-				"Depression Neu:":
+				"Ress:":
 					current_speaker = "Ress"
 					dialogue_array.append([current_speaker, []])
 				_:
@@ -188,20 +201,88 @@ func next_dialogue():
 			else:
 				i.visible = false
 		speaker_name.text = "[wave]" + dialogue_array[speaking_turn][0] + "[/wave]"
+		var temp_holder = ""
 		for i in dialogue_array[speaking_turn][1][bite_number]:
-			if i == "," or i == "." or i == "!" or i == "?":
-				time_interval *= 8
-			dialogue.text += i
-			await get_tree().create_timer(time_interval, false, true,false).timeout
-			if i == "," or i == "." or i == "!" or i == "?":
-				time_interval /= 8
-			if i not in ["!", "?", ",", ".", " ", "-"]:
-				pitch_random = randf_range(0.9,1.1)
-				if i in ["a", "e", "i", "o", "u"]:
-					pitch_random += 0.2
-				if dialogue_state != dialogue_status.SPEEDING:
-					play_audio()
-				pass
+			if i == "[":
+				hold = true
+			elif "[/b]" in temp_holder or "[/i]" in temp_holder or "[/color]" in temp_holder or "[/wave]" in temp_holder:
+				hold = false
+				if "[/i]" in temp_holder:
+					temp_holder = temp_holder.replace("[/i]", "")
+					temp_holder = temp_holder.replace("[i]", "")
+					var temporary = ""
+					dialogue.text += "[i]"+temporary+"[/i]"
+					for a in temp_holder:
+						dialogue.text = dialogue.text.replace("[i]"+temporary+"[/i]", "[i]"+temporary+a+"[/i]")
+						await get_tree().create_timer(time_interval, false, true,false).timeout
+						temporary += a
+						if temporary == "," or i == "." or i == "!" or i == "?":
+							time_interval *= 8
+						if temporary == "," or i == "." or i == "!" or i == "?":
+							time_interval /= 8
+						if temporary not in ["!", "?", ",", ".", " ", "-"]:
+							pitch_random = randf_range(0.9,1.1)
+						if temporary in ["a", "e", "i", "o", "u"]:
+							pitch_random += 0.2
+						if dialogue_state != dialogue_status.SPEEDING:
+							play_audio()
+				elif "[/color]" in temp_holder:
+					temp_holder = temp_holder.replace("[/color]", "")
+					temp_holder = temp_holder.replace("[color=purple]", "")
+					var temporary = ""
+					dialogue.text += "[color=purple]"+temporary+"[/color]"
+					for a in temp_holder:
+						dialogue.text = dialogue.text.replace("[color=purple]"+temporary+"[/color]", "[color=purple]"+temporary+a+"[/color]")
+						await get_tree().create_timer(time_interval, false, true,false).timeout
+						temporary += a
+						if temporary == "," or i == "." or i == "!" or i == "?":
+							time_interval *= 8
+						if temporary == "," or i == "." or i == "!" or i == "?":
+							time_interval /= 8
+						if temporary not in ["!", "?", ",", ".", " ", "-"]:
+							pitch_random = randf_range(0.9,1.1)
+						if temporary in ["a", "e", "i", "o", "u"]:
+							pitch_random += 0.2
+						if dialogue_state != dialogue_status.SPEEDING:
+							play_audio()
+				elif "[/wave]" in temp_holder:
+					temp_holder = temp_holder.replace("[/wave]", "")
+					temp_holder = temp_holder.replace("[wave]", "")
+					var temporary = ""
+					dialogue.text += "[wave]"+temporary+"[/wave]"
+					for a in temp_holder:
+						dialogue.text = dialogue.text.replace("[wave]"+temporary+"[/wave]", "[wave]"+temporary+a+"[/wave]")
+						await get_tree().create_timer(time_interval, false, true,false).timeout
+						temporary += a
+						if temporary == "," or i == "." or i == "!" or i == "?":
+							time_interval *= 8
+						if temporary == "," or i == "." or i == "!" or i == "?":
+							time_interval /= 8
+						if temporary not in ["!", "?", ",", ".", " ", "-"]:
+							pitch_random = randf_range(0.9,1.1)
+						if temporary in ["a", "e", "i", "o", "u"]:
+							pitch_random += 0.2
+						if dialogue_state != dialogue_status.SPEEDING:
+							play_audio()
+				
+				#dialogue.text += temp_holder
+				temp_holder = ""
+			if hold:
+				temp_holder += i 
+			if not hold:
+				if i == "," or i == "." or i == "!" or i == "?":
+					time_interval *= 8
+				dialogue.text += i
+				await get_tree().create_timer(time_interval, false, true,false).timeout
+				if i == "," or i == "." or i == "!" or i == "?":
+					time_interval /= 8
+				if i not in ["!", "?", ",", ".", " ", "-"]:
+					pitch_random = randf_range(0.9,1.1)
+					if i in ["a", "e", "i", "o", "u"]:
+						pitch_random += 0.2
+					if dialogue_state != dialogue_status.SPEEDING:
+						play_audio()
+					pass
 			
 			
 		#dialogue.text = dialogue_array[speaking_turn][1][bite_number]

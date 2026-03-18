@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ecrb06yumk5q"]
+
+[ext_resource type="Texture2D" uid="uid://doasmwmvnun6h" path="res://Assets/2D art/Tiles/tile_circle_added.png" id="1_1rc8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(188, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rc8e"]
+size = Vector2(188, 25)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=1870290390]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2020692763]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_1rc8e")
+region_enabled = true
+region_rect = Rect2(0, 2568.336, 1539.1201, 503.66406)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937480539]
+position = Vector2(1, -15)
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true
+
+[node name="PlayerDetect" type="Area2D" parent="." unique_id=1434210922]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect" unique_id=2075947922]
+position = Vector2(1, -42.5)
+shape = SubResource("RectangleShape2D_1rc8e")

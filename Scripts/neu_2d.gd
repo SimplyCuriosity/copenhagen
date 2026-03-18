@@ -20,8 +20,13 @@ var test_pitch = randf_range(0.1,0.2)
 var just_landed := false
 var manual_jump:= false
 
+
 func _ready() -> void:
 	GameManager.playable_character = self
+	if not GameManager.just_died:
+		GameManager.respawn_point = global_position
+	elif GameManager.just_died:
+		global_position = GameManager.respawn_point
 	jump_meter_slider.visible = false
 	jump_meter_slider.max_value = -MAX_JUMP_VELOCITY
 	wall_climb_meter_slider.visible = false
@@ -36,10 +41,12 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Adjust Camera Height
-	if Input.is_action_pressed("Jump") and not motion_paused:
+	if Input.is_action_pressed("Move Forward") and not motion_paused:
 		camera_2d.global_position.y = move_toward(camera_2d.global_position.y,GameManager.playable_character.global_position.y - 300 +25, delta*500)
 		#camera_2d.global_position = camera_2d.global_position.round().lerp(GameManager.playable_character.global_position - Vector2(0,400 +10), delta*5)
 		#camera_2d.global_position = camera_2d.global_position.round()
+	elif Input.is_action_pressed("Move Backward") and not motion_paused:
+		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, GameManager.playable_character.global_position.y + 350, delta*500)
 	elif camera_cast.is_colliding() == true and not Input.is_action_pressed("Jump"):
 		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, camera_cast.get_collision_point().y -300, delta*500)
 		#camera_2d.global_position.y = clampf(-1000,1000)
@@ -137,3 +144,7 @@ func _physics_process(delta: float) -> void:
 func _animation_jump():
 	print("its jumping time")
 	velocity.y = -800
+
+
+func _on_fall_kill_zone_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
