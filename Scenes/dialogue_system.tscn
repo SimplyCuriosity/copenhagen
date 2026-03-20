@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dkmqxywucgbly" path="res://Assets/2D art/Textures/Paper.png" id="1_b43ja"]
 [ext_resource type="Script" uid="uid://ccrs4yycusr0j" path="res://Scripts/dialogue_system.gd" id="1_tgreg"]
 [ext_resource type="Texture2D" uid="uid://smbk8vwwrjyv" path="res://Assets/2D art/little_cats/cats1.png" id="2_dqc5m"]
+[ext_resource type="Texture2D" uid="uid://uioemynmmpph" path="res://Assets/2D art/Cat Portraits/Cat_Deni.png" id="3_l7t6y"]
 [ext_resource type="Texture2D" uid="uid://dhku0c5rp8poi" path="res://Assets/2D art/little_cats/cats4.png" id="4_4d4b6"]
 [ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="4_drpe7"]
 [ext_resource type="Texture2D" uid="uid://bqv5c76tgae2f" path="res://Assets/2D art/little_cats/cats6.png" id="4_ilp0e"]
@@ -23,6 +24,7 @@ gradient = SubResource("Gradient_j441c")
 script = ExtResource("1_tgreg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1019999970]
+layer = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=915386615]
 stream = ExtResource("5_drpe7")
@@ -31,7 +33,14 @@ bus = &"SFX"
 
 [node name="Cat Portraits" type="Node" parent="CanvasLayer" unique_id=640710486]
 
-[node name="Deni" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=54748308]
+[node name="Deni" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1455540282]
+z_index = 1
+position = Vector2(395.00003, 629)
+scale = Vector2(0.535, 0.535)
+texture = ExtResource("3_l7t6y")
+flip_h = true
+
+[node name="Deni Old" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=54748308]
 z_index = 1
 position = Vector2(348.89996, 836.2108)
 scale = Vector2(0.40140623, 0.4308333)

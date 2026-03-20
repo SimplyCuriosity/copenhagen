@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dd4nbni6qhnsj"]
+
+[ext_resource type="Texture2D" uid="uid://c48a40ghgl8k5" path="res://Assets/2D art/Textures/PaperRip_3.png" id="1_3avw4"]
+[ext_resource type="Script" uid="uid://bd2vgp0yxtfl8" path="res://Scenes/VFX/fire.gd" id="2_ahfbu"]
+
+[sub_resource type="Curve" id="Curve_ahfbu"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.21673003, 0.68949044), 0.0, 0.0, 0, 0, Vector2(0.7794677, 0.6791401), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_vo4fp"]
+curve = SubResource("Curve_ahfbu")
+
+[sub_resource type="Gradient" id="Gradient_8s01l"]
+offsets = PackedFloat32Array(0.6329114, 1)
+colors = PackedColorArray(0.88856316, 0.6834083, 0.6704621, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wncwc"]
+gradient = SubResource("Gradient_8s01l")
+
+[sub_resource type="Gradient" id="Gradient_pbp1h"]
+offsets = PackedFloat32Array(0, 0.24472573)
+colors = PackedColorArray(1, 0.7796042, 0.6124952, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lojxs"]
+gradient = SubResource("Gradient_pbp1h")
+
+[sub_resource type="Curve" id="Curve_5ts8w"]
+_data = [Vector2(0, 0.8343949), 0.0, 0.0, 0, 0, Vector2(1, 0.120222926), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rcscf"]
+curve = SubResource("Curve_5ts8w")
+
+[sub_resource type="Curve" id="Curve_jlpyg"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.14828897, 0.26512742), 0.0, 0.0, 0, 0, Vector2(1, 0.037420392), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_acka3"]
+curve = SubResource("Curve_jlpyg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l1v1k"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1920, 1, 1)
+angle_min = -179.99998
+angle_max = 1.0728835e-05
+angular_velocity_min = -100.000015
+angular_velocity_max = 99.999985
+gravity = Vector3(0, -98, 0)
+scale_curve = SubResource("CurveTexture_acka3")
+color = Color(1, 0.8198382, 0.432765, 1)
+color_ramp = SubResource("GradientTexture1D_lojxs")
+color_initial_ramp = SubResource("GradientTexture1D_wncwc")
+alpha_curve = SubResource("CurveTexture_vo4fp")
+emission_curve = SubResource("CurveTexture_rcscf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3avw4"]
+size = Vector2(3836, 93)
+
+[node name="Fire" type="GPUParticles2D" unique_id=175458437]
+amount = 128
+texture = ExtResource("1_3avw4")
+lifetime = 2.0
+randomness = 0.06
+fixed_fps = 0
+process_material = SubResource("ParticleProcessMaterial_l1v1k")
+script = ExtResource("2_ahfbu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=72688627]
+collision_layer = 8
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=65549653]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_3avw4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

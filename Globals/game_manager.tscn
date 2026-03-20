@@ -24,7 +24,7 @@ process_mode = 3
 script = ExtResource("1_wj7el")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1476219943]
-layer = 2
+layer = 3
 
 [node name="Dim background" type="Sprite2D" parent="CanvasLayer" unique_id=164077079]
 visible = false

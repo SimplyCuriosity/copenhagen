@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var landing_audio: AudioStreamPlayer = $"Landing Audio"
 @onready var camera_cast: RayCast2D = $CameraCast
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var regular_jump_window: Timer = $RegularJumpWindow
 
 
 const SPEED = 450.0
@@ -19,10 +20,13 @@ var motion_paused
 var test_pitch = randf_range(0.1,0.2)
 var just_landed := false
 var manual_jump:= false
-
+var stop_all_motion:= false
+var regular_jump := true
+var pressed_on_land := true
 
 func _ready() -> void:
 	GameManager.playable_character = self
+	stop_all_motion = false
 	if not GameManager.just_died:
 		GameManager.respawn_point = global_position
 	elif GameManager.just_died:
@@ -73,29 +77,37 @@ func _physics_process(delta: float) -> void:
 		landing_audio.pitch_scale = randf_range(0.9,1.1)
 		landing_audio.play()
 		
-	# Handle jump.
+	
+	# Handle Charge jump.
 	if JUMP_VELOCITY >= 0:
 		jump_meter_going_up = true
 		charge_jump_audio.stop()
 	elif JUMP_VELOCITY <= MAX_JUMP_VELOCITY:
 		jump_meter_going_up = false
 		
+	if Input.is_action_just_pressed("Jump") and not is_on_floor() and not motion_paused:
+		pressed_on_land = false
+	
+		
 	if Input.is_action_just_pressed("Jump") and is_on_floor() and not motion_paused:
+		regular_jump = true
 		test_pitch = randf_range(0.1,0.2)
+		regular_jump_window.start()
 		#charge_jump_audio.play()
 	
-	if Input.is_action_pressed("Jump") and is_on_floor() and not motion_paused:
+	if Input.is_action_pressed("Jump") and is_on_floor() and not motion_paused and not regular_jump:
+		#if not regular_jump:
 		jump_meter_slider.visible = true
 		wall_climb_stamina = MAX_WALL_CLIMB_STAMINA
 		if charge_jump_audio.playing == false:
 			charge_jump_audio.play()
 		charge_jump_audio.pitch_scale = (JUMP_VELOCITY/(MAX_JUMP_VELOCITY/0.2))+test_pitch
 		if JUMP_VELOCITY > MAX_JUMP_VELOCITY and jump_meter_going_up:
-			JUMP_VELOCITY += -600 * delta
+			JUMP_VELOCITY += -800 * delta
 			jump_meter_slider.value = -JUMP_VELOCITY
 			#print(JUMP_VELOCITY)
 		elif JUMP_VELOCITY < 0 and not jump_meter_going_up:
-			JUMP_VELOCITY += 600 * delta
+			JUMP_VELOCITY += 800 * delta
 			jump_meter_slider.value = -JUMP_VELOCITY
 			#print(JUMP_VELOCITY)
 	
@@ -108,14 +120,27 @@ func _physics_process(delta: float) -> void:
 			wall_climb_meter_slider.value = wall_climb_stamina
 			#print(wall_climb_stamina)
 	
-	if Input.is_action_just_released("Jump") and is_on_floor() and not motion_paused:
+	if Input.is_action_just_released("Jump") and is_on_floor() and not motion_paused and pressed_on_land:
 		charge_jump_audio.stop()
 		jump_audio.pitch_scale = randf_range(0.9,1.1)
 		jump_audio.play()
+		if not regular_jump:
+			jump_meter_slider.visible = false
+			velocity.y = JUMP_VELOCITY
+			JUMP_VELOCITY = 0
+			jump_meter_slider.value = 0
+			regular_jump = true
+		elif regular_jump:
+			regular_jump_window.stop()
+			velocity.y = MAX_JUMP_VELOCITY * 3/5
+			regular_jump = false
+	elif Input.is_action_just_released("Jump") and not pressed_on_land:
+		pressed_on_land = true
 		jump_meter_slider.visible = false
 		velocity.y = JUMP_VELOCITY
 		JUMP_VELOCITY = 0
 		jump_meter_slider.value = 0
+		regular_jump = true
 	
 	if is_on_floor_only():
 		wall_climb_meter_slider.visible = false
@@ -123,6 +148,8 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Move Left", "Move Right")
+	
+	#if direction and not motion_paused and not (Input.is_action_pressed("Jump") and is_on_floor()):
 	if direction and not motion_paused:
 		velocity.x = direction * SPEED
 	else:
@@ -132,14 +159,17 @@ func _physics_process(delta: float) -> void:
 	if direction > 0 and not motion_paused:
 		animated_sprite_2d.flip_h = false
 		animated_sprite_2d.offset.x = 628.005
+		camera_cast.position.x = 17
 		#if jump_meter_slider.position.x < 0:
 		#	jump_meter_slider.position.x *= -1
 	elif direction < 0 and not motion_paused:
 		animated_sprite_2d.flip_h = true
 		animated_sprite_2d.offset.x = -628.005
+		camera_cast.position.x = -17
 		#if jump_meter_slider.position.x > 0:
 		#	jump_meter_slider.position.x *= -1
-	move_and_slide()
+	if not stop_all_motion:
+		move_and_slide()
 
 func _animation_jump():
 	print("its jumping time")
@@ -147,4 +177,9 @@ func _animation_jump():
 
 
 func _on_fall_kill_zone_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_regular_jump_window_timeout() -> void:
+	regular_jump = false
 	pass # Replace with function body.

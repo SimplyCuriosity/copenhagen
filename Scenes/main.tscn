@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://d1es6odvh5pc8" path="res://Scripts/3D Denial Neu.gd" id="6_6bp64"]
 [ext_resource type="FontFile" uid="uid://c5d08j0mrjr52" path="res://Assets/Fonts/Child-Regular.ttf" id="7_344ge"]
 [ext_resource type="Script" uid="uid://c3rirbrvaruuy" path="res://Scripts/killzone.gd" id="8_344ge"]
+[ext_resource type="PackedScene" uid="uid://dtfmi3va8x6ey" path="res://Scenes/Levels/level_1.tscn" id="11_d1ilt"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_jjvhh"]
 
@@ -240,6 +241,9 @@ _data = {
 &"platforms": SubResource("Animation_hptm8")
 }
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_6iyac"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
 [node name="Main" type="Node3D" unique_id=435746957]
 
 [node name="Neu" parent="." unique_id=790300511 instance=ExtResource("1_jjgbg")]
@@ -405,6 +409,18 @@ shape = SubResource("CylinderShape3D_ynf5e")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1712168188]
 libraries/ = SubResource("AnimationLibrary_d1ilt")
 autoplay = &"platforms"
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=636050475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.711044, 5.3311005, 0)
+billboard = 2
+transparent = false
+texture = SubResource("ViewportTexture_6iyac")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D" unique_id=40299773]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="Level 1" parent="Sprite3D/SubViewport" unique_id=797584260 instance=ExtResource("11_d1ilt")]
 
 [connection signal="body_entered" from="Denial Neu/Area3D" to="Denial Neu" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Denial Neu/Area3D" to="Denial Neu" method="_on_area_3d_body_exited"]

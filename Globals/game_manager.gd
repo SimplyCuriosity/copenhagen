@@ -13,7 +13,11 @@ var Background_music
 var setting_menu
 var Resume_button_pressed:= false
 var main_menu
-var dialogue_system
+var dialogue_system:
+	set(value):
+		if dialogue_system != null:
+			dialogue_system.queue_free()
+		dialogue_system = value
 #var current_scene
 var deni_speech_num = 0
 var deni_speech_max = 1

@@ -63,6 +63,8 @@ Deni:
 "
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if GameManager.playable_character != null:
+		GameManager.playable_character.motion_paused = true
 	GameManager.dialogue_system = self
 	#print(testing.length())
 	#_generate_dialogue_box(a)

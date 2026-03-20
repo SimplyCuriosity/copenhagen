@@ -1,6 +1,8 @@
 extends Node2D
 @onready var world_cam: Camera2D = $WorldCam
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var dialogue_canvas: CanvasLayer = $DialogueCanvas
+@onready var canvas_layer_2: CanvasLayer = $CanvasLayer2
 
 
 var dialogue_scene = preload("res://Scenes/dialogue_system.tscn")
@@ -42,7 +44,7 @@ func _process(delta: float) -> void:
 	
 func _play_intro_dialogue():
 	var dialogue_node = dialogue_scene.instantiate()
-	get_tree().root.add_child(dialogue_node)
+	dialogue_canvas.add_child(dialogue_node)
 	animation_player.pause()
 	dialogue_node._generate_dialogue_box(mystery_dialogue)
 	await dialogue_node.dialogue_finished
@@ -51,7 +53,7 @@ func _play_intro_dialogue():
 
 func _play_intro_dialogue_2():
 	var dialogue_node = dialogue_scene.instantiate()
-	get_tree().root.add_child(dialogue_node)
+	dialogue_canvas.add_child(dialogue_node)
 	animation_player.pause()
 	dialogue_node._generate_dialogue_box(mystery_dialogue_2)
 	await dialogue_node.dialogue_finished
@@ -61,7 +63,7 @@ func _play_intro_dialogue_2():
 
 func _play_intro_dialogue_3():
 	var dialogue_node = dialogue_scene.instantiate()
-	get_tree().root.add_child(dialogue_node)
+	dialogue_canvas.add_child(dialogue_node)
 	animation_player.pause()
 	dialogue_node._generate_dialogue_box(mystery_dialogue_3)
 	await dialogue_node.dialogue_finished
