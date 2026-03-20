@@ -63,7 +63,7 @@ animations = [{
 size = Vector2(72, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q20g1"]
-size = Vector2(230, 84)
+size = Vector2(230, 1097)
 
 [node name="AlternateNeu2D" type="CharacterBody2D" unique_id=1774092108]
 collision_layer = 4
@@ -79,13 +79,14 @@ offset = Vector2(628.005, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065315180]
 position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_auvye")
+disabled = true
 
 [node name="DialogueArea" type="Area2D" parent="." unique_id=1600579369]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueArea" unique_id=1067429528]
-position = Vector2(-1, -17)
+position = Vector2(-1, -523.5)
 shape = SubResource("RectangleShape2D_q20g1")
 
 [node name="Talk" type="RichTextLabel" parent="." unique_id=616301482]

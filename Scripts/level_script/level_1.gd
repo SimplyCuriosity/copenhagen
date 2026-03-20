@@ -3,6 +3,9 @@ extends Node2D
 @onready var alternate_neu_2d: CharacterBody2D = $AlternateNeu2D
 @onready var alternate_position: Node2D = $AlternatePosition
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var world_cam: Camera2D = $WorldCam
+@onready var mid_barrier: TileMapLayer = $Barriers/MidBarrier
+@onready var burning_paper: AnimatableBody2D = $"Burning Papers/Burning Paper"
 
 var deni_speech_1 = "Deni:
 You’re really going at it again?
@@ -18,15 +21,21 @@ Best to finish before you start.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameManager.current_level = self
 	GameManager.playable_character.motion_paused = true
 	animation_player.play("Spawning")
 	if GameManager.level_1_half_way:
 		GameManager._update_alternate_neu_position()
+		if GameManager.stage_open:
+			mid_barrier.enabled = false
+			burning_paper._ignite_fire()
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#world_cam.global_position = GameManager.playable_character.camera_2d.global_position
+	#animation_player.get_animation("Stage2Open").track_set_key_value()
 	pass
 
 

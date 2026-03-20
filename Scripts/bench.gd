@@ -12,6 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and Neu_is_here:
 		GameManager.respawn_bench = self
+		GameManager._player_save_checkpoint()
 	pass
 
 

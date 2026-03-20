@@ -1,109 +1,50 @@
-[gd_scene format=4 uid="uid://btq1hm8c8kk81"]
+[gd_scene format=3 uid="uid://btq1hm8c8kk81"]
 
 [ext_resource type="Script" uid="uid://coqbuj4yua5o" path="res://animatable_body_2d.gd" id="1_4ftjq"]
 [ext_resource type="PackedScene" uid="uid://dd4nbni6qhnsj" path="res://Scenes/VFX/fire.tscn" id="2_2pqxu"]
-[ext_resource type="Shader" uid="uid://cre8jc1jwk1ui" path="res://Resources/very test.gdshader" id="2_yv2k6"]
-[ext_resource type="Gradient" uid="uid://c0ufwe7c86xvh" path="res://Resources/Paper_burn_gradient.tres" id="3_2pqxu"]
+[ext_resource type="Shader" uid="uid://c6mcg22e7wfxa" path="res://Resources/Paperburn again.gdshader" id="3_yv2k6"]
 [ext_resource type="Texture2D" uid="uid://sd3ar8f6mr7e" path="res://Assets/2D art/Textures/Notebook sized Paper.png" id="5_yv2k6"]
-[ext_resource type="Texture2D" uid="uid://btmvedvh2pl4t" path="res://Assets/2D art/Tiles/tile_circle_withspikes.png" id="15_q5kmp"]
-[ext_resource type="Script" uid="uid://usivnih13est" path="res://Scripts/actual_tiles.gd" id="16_p7f0p"]
-[ext_resource type="PackedScene" uid="uid://bo80dqmpcl2en" path="res://Scenes/Characters/neu_2d.tscn" id="17_jq21i"]
+[ext_resource type="PackedScene" uid="uid://o1wg88t662va" path="res://Scenes/burnable_tiles.tscn" id="6_2pqxu"]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3pxd6"]
-gradient = ExtResource("3_2pqxu")
+[sub_resource type="Gradient" id="Gradient_yv2k6"]
+interpolation_mode = 1
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2pqxu"]
+gradient = SubResource("Gradient_yv2k6")
 fill_from = Vector2(0, 1)
 fill_to = Vector2(0, 0.999)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjyyd"]
-shader = ExtResource("2_yv2k6")
-shader_parameter/a = SubResource("GradientTexture2D_3pxd6")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fq8wn"]
+shader = ExtResource("3_yv2k6")
+shader_parameter/a = SubResource("GradientTexture2D_2pqxu")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxy85"]
-texture = ExtResource("15_q5kmp")
-texture_region_size = Vector2i(512, 512)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-1:4/0 = 0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-2:4/0 = 0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-3:4/0 = 0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-1:5/0 = 0
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-2:5/0 = 0
-2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-3:5/0 = 0
-3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-0:6/0 = 0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-1:6/0 = 0
-1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-2:6/0 = 0
-2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-3:6/0 = 0
-3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
-
-[sub_resource type="TileSet" id="TileSet_81rmd"]
-tile_size = Vector2i(512, 512)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_wxy85")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pqxu"]
+size = Vector2(996.5, 1484.5)
 
 [node name="Burning Paper" type="AnimatableBody2D" unique_id=1729512614]
 script = ExtResource("1_4ftjq")
 
-[node name="Neu2D" parent="." unique_id=587876329 instance=ExtResource("17_jq21i")]
-z_index = 1
-position = Vector2(971, 345)
-
 [node name="Fire" parent="." unique_id=175458437 node_paths=PackedStringArray("tiles") instance=ExtResource("2_2pqxu")]
 z_index = 1
-position = Vector2(1012, 1275.9999)
+position = Vector2(19, 765.9999)
 scale = Vector2(0.285, 0.285)
-tiles = NodePath("../Actual Tiles")
+tiles = NodePath("../BurnableTiles")
 
 [node name="Paper" type="Sprite2D" parent="." unique_id=1444098803]
-material = SubResource("ShaderMaterial_hjyyd")
-position = Vector2(990, 512)
+material = SubResource("ShaderMaterial_fq8wn")
+position = Vector2(-3, 2)
 texture = ExtResource("5_yv2k6")
 region_rect = Rect2(352.053, 1939.3378, 1545.2917, 1031.5187)
 
-[node name="Actual Tiles" type="TileMapLayer" parent="." unique_id=1920030013]
-scale = Vector2(0.125, 0.125)
-tile_map_data = PackedByteArray("AAANAAkAAAACAAEAAAAMAAkAAAACAAEAAAAMAAYAAAACAAEAAAANAAYAAAACAAEAAAAOAAYAAAACAAEAAAAPAAYAAAACAAEAAAAPAAcAAAACAAEAAAAQAAcAAAACAAEAAAAQAAgAAAACAAEAAAAQAAkAAAACAAEAAAAPAAoAAAACAAEAAAAPAAsAAAACAAEAAAAOAAsAAAACAAEAAAAOAAwAAAACAAEAAAANAAwAAAACAAEAAAANAAsAAAACAAEAAAAMAAsAAAACAAEAAAAMAAoAAAACAAEAAAANAAoAAAACAAEAAAAOAAgAAAACAAEAAAAPAAgAAAACAAEAAAARAAgAAAACAAEAAAARAAkAAAACAAEAAAASAAoAAAACAAEAAAASAAsAAAACAAEAAAASAAwAAAACAAEAAAARAAwAAAACAAEAAAARAA0AAAACAAEAAAAQAA0AAAACAAEAAAAPAAwAAAACAAEAAAAMAAgAAAACAAEAAAAMAAcAAAACAAEAAAANAAcAAAACAAEAAAAOAAcAAAACAAEAAAARAAoAAAACAAEAAAARAAsAAAACAAEAAAAQAAwAAAACAAEAAAAPAA0AAAACAAEAAAAOAA0AAAACAAEAAAANAAgAAAACAAEAAAAQAAoAAAACAAEAAAAQAAsAAAACAAEAAAAOAAkAAAACAAEAAAA=")
-tile_set = SubResource("TileSet_81rmd")
-script = ExtResource("16_p7f0p")
+[node name="BurnableTiles" parent="." unique_id=1287871736 instance=ExtResource("6_2pqxu")]
+enabled = false
+
+[node name="PlayerDetection" type="Area2D" parent="." unique_id=1764939663]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=670136715]
+shape = SubResource("RectangleShape2D_2pqxu")
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]

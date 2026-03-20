@@ -4,8 +4,8 @@ extends Node3D
 @onready var canvas_modulate: CanvasModulate = $CanvasLayer/CanvasModulate 
 @onready var pause_overlay: Node2D = $"CanvasLayer/Pause Overlay"
 
-
-
+var stage_open = false
+var current_level
 var playable_character
 var third_person_cam 
 var game_is_paused: bool = false
@@ -28,7 +28,6 @@ var level_1_half_way:= false:
 	set(value):
 		level_1_half_way = value
 		if value == true:
-			_update_alternate_neu_position()
 			if get_tree().current_scene.name == "Level 1":
 				deni_dead_speech_num = 5
 var respawn_bench:
@@ -74,9 +73,54 @@ func _player_died():
 	get_tree().current_scene.animation_player.play("FadeOut")
 	#await get_tree().create_timer(4).timeout
 	await get_tree().current_scene.animation_player.animation_finished
+	print("happen here")
 	await get_tree().reload_current_scene()
 	#playable_character.global_position = respawn_point
 	pass
 
 func _update_alternate_neu_position():
 	get_tree().current_scene.alternate_neu_2d.global_position = get_tree().current_scene.alternate_position.global_position
+
+func _player_save_checkpoint():
+	GameManager.playable_character.motion_paused = true
+	get_tree().current_scene.animation_player.play("FadeOut")
+	await get_tree().current_scene.animation_player.animation_finished
+	
+	if level_1_half_way:
+		_update_alternate_neu_position()
+	
+	get_tree().current_scene.animation_player.play("FadeIn")
+	await get_tree().current_scene.animation_player.animation_finished
+	GameManager.playable_character.motion_paused = false
+	if level_1_half_way and not stage_open:
+		stage_open = true
+		_stage_opening()
+	
+
+func _stage_opening():
+	#fade out 
+	GameManager.playable_character.motion_paused = true
+	get_tree().current_scene.animation_player.play("FadeOut")
+	
+	await get_tree().current_scene.animation_player.animation_finished
+	#change cam
+	GameManager.playable_character.motion_paused = true
+	current_level.world_cam.position_smoothing_enabled = false
+	current_level.world_cam.global_position = playable_character.camera_2d.global_position
+	current_level.world_cam.make_current()
+	#fade in
+	get_tree().current_scene.animation_player.play("FadeIn")
+	
+	await get_tree().current_scene.animation_player.animation_finished
+	#play anim
+	current_level.animation_player.get_animation("Stage2Open").track_set_key_value(2,0,current_level.world_cam.global_position)
+	get_tree().current_scene.animation_player.play("Stage2Open")
+	current_level.world_cam.position_smoothing_enabled = false
+	await get_tree().current_scene.animation_player.animation_finished
+	#when anim finished (with fadeout), fade in again 
+	playable_character.camera_2d.make_current()
+	get_tree().current_scene.animation_player.play("FadeIn")
+	await get_tree().current_scene.animation_player.animation_finished
+	
+	GameManager.playable_character.motion_paused = false
+	pass
