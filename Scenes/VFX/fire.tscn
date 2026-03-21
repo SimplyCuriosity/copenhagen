@@ -232,6 +232,12 @@ fixed_fps = 0
 visibility_rect = Rect2(-1920, -1920, 3840, 3840)
 process_material = SubResource("ParticleProcessMaterial_vwyli")
 
+[node name="LeftPoint" type="Node2D" parent="." unique_id=350828705]
+position = Vector2(-1920, -77)
+
+[node name="RightPoint" type="Node2D" parent="." unique_id=2128279055]
+position = Vector2(1920, -77)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
 [connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]

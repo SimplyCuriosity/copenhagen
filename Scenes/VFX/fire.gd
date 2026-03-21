@@ -1,6 +1,8 @@
 extends GPUParticles2D
 @onready var smoke: GPUParticles2D = $Smoke
 @onready var ashes: GPUParticles2D = $Ashes
+@onready var right_cast: RayCast2D = $RightCast
+@onready var left_cast: RayCast2D = $LeftCast
 
 @export var tiles:TileMapLayer
 var tile_to_remove = []
@@ -33,12 +35,20 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 		#print("yeah")
 		if body.name == "BurnableTiles":
 			#print(tiles.found_coords)
-			for tile in tiles.found_coords:
-				if tile.x*64 <= round(global_position.x) + 500 and tile.x*64 >= round(global_position.x) -500 and tile.y*64 <= round(global_position.y) + 16 and tile.y*64 >= round(global_position.y) -90:
-					tiles.erase_cell(tile)
-					tiles.found_coords.erase(tile)
-					#tiles.notify_runtime_tile_data_update() 
-					tile_to_remove.append(tile)
+			#500, -500, 16, -90
+			#print(tiles.get_coords_for_body_rid(body_rid))
+			
+			tiles.erase_cell(tiles.get_coords_for_body_rid(body_rid))
+			
+			#below is old code
+			#for tile in tiles.found_coords:
+			#	if tile.x*64 <= round(global_position.x) + 500 and tile.x*64 >= round(global_position.x) -500 and tile.y*64 <= round(global_position.y) + 16 and tile.y*64 >= round(global_position.y) -90:
+			#		tiles.erase_cell(tile)
+			#		tiles.found_coords.erase(tile)
+			#		#tiles.notify_runtime_tile_data_update() 
+			#		tile_to_remove.append(tile)
+			
+			
 					#print("it happens")
 	#print("tile to remove is", tile_to_remove)
 	#tiles.tile_to_remove = tile_to_remove
