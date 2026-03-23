@@ -185,7 +185,6 @@ turbulence_influence_min = 0.70400006
 turbulence_influence_max = 0.88600004
 
 [node name="Fire" type="GPUParticles2D" unique_id=175458437]
-emitting = false
 amount = 128
 texture = ExtResource("1_3avw4")
 lifetime = 2.0
@@ -204,7 +203,6 @@ position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_3avw4")
 
 [node name="Smoke" type="GPUParticles2D" parent="." unique_id=1676530157]
-emitting = false
 amount = 32
 texture = ExtResource("1_3avw4")
 lifetime = 4.0
@@ -213,7 +211,6 @@ visibility_rect = Rect2(-1920, -1920, 3840, 3840)
 process_material = SubResource("ParticleProcessMaterial_rcscf")
 
 [node name="Ashes" type="GPUParticles2D" parent="." unique_id=1011446110]
-emitting = false
 amount = 16
 sub_emitter = NodePath("../Ashes flame")
 texture = ExtResource("1_3avw4")

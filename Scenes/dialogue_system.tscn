@@ -7,12 +7,17 @@
 [ext_resource type="Texture2D" uid="uid://dhku0c5rp8poi" path="res://Assets/2D art/little_cats/cats4.png" id="4_4d4b6"]
 [ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="4_drpe7"]
 [ext_resource type="Texture2D" uid="uid://bqv5c76tgae2f" path="res://Assets/2D art/little_cats/cats6.png" id="4_ilp0e"]
+[ext_resource type="Texture2D" uid="uid://dcm5psoqf21v4" path="res://Assets/2D art/Cat Portraits/Cat_Ag.png" id="5_3ipml"]
 [ext_resource type="Texture2D" uid="uid://cntqvfyie0nuo" path="res://Assets/2D art/little_cats/cats2.png" id="5_7xplm"]
 [ext_resource type="AudioStream" uid="uid://3v6g32fr42e3" path="res://Assets/SFX/SFX-Meow.ogg" id="5_drpe7"]
 [ext_resource type="Texture2D" uid="uid://bmvdrwh521clh" path="res://Assets/2D art/little_cats/cats5.png" id="6_kmn0t"]
+[ext_resource type="Texture2D" uid="uid://tnihwq2forrm" path="res://Assets/2D art/Cat Portraits/Cat_Gai.png" id="7_ir1wl"]
 [ext_resource type="Texture2D" uid="uid://bt6a0cha30bk5" path="res://Assets/2D art/little_cats/cats3.png" id="7_l7t6y"]
+[ext_resource type="Texture2D" uid="uid://ce4qggrr75cor" path="res://Assets/2D art/Cat Portraits/Cat_Ress.png" id="9_36exc"]
 [ext_resource type="Texture2D" uid="uid://ce2v5nwvj2mdo" path="res://Assets/2D art/Tiles/tile_handraw_just_grass.png" id="10_7xplm"]
+[ext_resource type="Texture2D" uid="uid://dhhhxrrnx3wig" path="res://Assets/2D art/Cat Portraits/Cat_Ress_black.png" id="11_qei6v"]
 [ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="12_kmn0t"]
+[ext_resource type="Texture2D" uid="uid://ct1n5vtsoooii" path="res://Assets/2D art/Cat Portraits/Cat_You.png" id="13_dcfmj"]
 
 [sub_resource type="Gradient" id="Gradient_j441c"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -35,18 +40,26 @@ bus = &"SFX"
 
 [node name="Deni" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1455540282]
 z_index = 1
-position = Vector2(395.00003, 629)
+position = Vector2(545, 658.00006)
 scale = Vector2(0.535, 0.535)
 texture = ExtResource("3_l7t6y")
 flip_h = true
 
 [node name="Deni Old" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=54748308]
+visible = false
 z_index = 1
 position = Vector2(348.89996, 836.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("2_dqc5m")
 
-[node name="Ag" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=2129853506]
+[node name="Ag" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=97118576]
+z_index = 1
+position = Vector2(493, 711)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_3ipml")
+
+[node name="Ag Old" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=2129853506]
+visible = false
 modulate = Color(0.99999815, 0.48763824, 0.6860338, 1)
 z_index = 1
 position = Vector2(336.89996, 834.2108)
@@ -54,7 +67,14 @@ scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("4_ilp0e")
 flip_h = true
 
-[node name="Gai" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=673778884]
+[node name="Gai" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=849778383]
+z_index = 1
+position = Vector2(571, 758)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_ir1wl")
+
+[node name="Gai Old" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=673778884]
+visible = false
 modulate = Color(1, 0.89165515, 0.29748532, 1)
 z_index = 1
 position = Vector2(336.89996, 834.2108)
@@ -62,7 +82,13 @@ scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("5_7xplm")
 flip_h = true
 
-[node name="Ress" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1428889895]
+[node name="Ress" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1831917199]
+position = Vector2(475, 719)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_36exc")
+
+[node name="Ress Old" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1428889895]
+visible = false
 modulate = Color(0.19540206, 0.4496959, 1, 1)
 z_index = 1
 position = Vector2(336.89996, 834.2108)
@@ -70,7 +96,13 @@ scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("6_kmn0t")
 flip_h = true
 
-[node name="???" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=732520819]
+[node name="???" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=305933766]
+position = Vector2(475, 726)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_qei6v")
+
+[node name="??? Old" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=732520819]
+visible = false
 modulate = Color(0.19540206, 0.4496959, 1, 1)
 z_index = 1
 position = Vector2(533.00037, 765)
@@ -78,14 +110,21 @@ scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("7_l7t6y")
 flip_h = true
 
-[node name="Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=805969747]
+[node name="Neu" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=1565200400]
+z_index = 1
+position = Vector2(490, 664)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_dcfmj")
+
+[node name="Neu Old" type="Sprite2D" parent="CanvasLayer/Cat Portraits" unique_id=805969747]
+visible = false
 z_index = 1
 position = Vector2(596.9, 839.2108)
 scale = Vector2(0.40140623, 0.4308333)
 texture = ExtResource("4_4d4b6")
 
 [node name="Paper" type="Sprite2D" parent="CanvasLayer" unique_id=1023676183]
-position = Vector2(1054, 829)
+position = Vector2(1115, 829)
 texture = ExtResource("1_b43ja")
 region_enabled = true
 region_rect = Rect2(0, 27.740692, 1024, 198.76923)
@@ -115,6 +154,7 @@ bbcode_enabled = true
 text = "Denial Neu
 "
 horizontal_alignment = 2
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Dialogue" type="RichTextLabel" parent="CanvasLayer/Paper" unique_id=607900304]
@@ -142,6 +182,6 @@ metadata/_edit_use_anchors_ = true
 [node name="Dim background" type="Sprite2D" parent="CanvasLayer" unique_id=2061178565]
 modulate = Color(0.15493822, 0.40115786, 1.92523e-07, 0.37254903)
 z_index = -1
-position = Vector2(1054, 832)
+position = Vector2(1115, 831.99994)
 scale = Vector2(16.406248, 3.562501)
 texture = SubResource("GradientTexture2D_kmn0t")

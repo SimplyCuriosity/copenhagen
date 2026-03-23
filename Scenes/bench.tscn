@@ -1,34 +1,36 @@
 [gd_scene format=3 uid="uid://5lagdrgiptk5"]
 
 [ext_resource type="Script" uid="uid://cmxbhakqh5w2y" path="res://Scripts/bench.gd" id="1_lwohs"]
-[ext_resource type="Texture2D" uid="uid://dwmcbxpyqdtar" path="res://Assets/2D art/Tiles/tile_rock_mossy1.png" id="2_2j4nf"]
+[ext_resource type="Texture2D" uid="uid://cp2sv678cevex" path="res://Assets/2D art/checkpoint_cave/checkpoints/chairs.png" id="2_lwohs"]
 [ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="3_sht6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86gcv"]
-size = Vector2(190, 62)
+size = Vector2(190, 94)
 
 [node name="Bench" type="Node2D" unique_id=1956506495]
 script = ExtResource("1_lwohs")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=324732360]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("2_2j4nf")
+position = Vector2(0, 3)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_lwohs")
 region_enabled = true
-region_rect = Rect2(0, 0, 1536, 498.2103)
+region_rect = Rect2(-3.4938354, -1.8414383, 596.5609, 528.1804)
 
 [node name="PlayerDetection" type="Area2D" parent="." unique_id=1160357309]
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=1415105683]
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_86gcv")
 
 [node name="Interact" type="RichTextLabel" parent="." unique_id=374113517]
 offset_left = -136.0
-offset_top = -85.0
+offset_top = -113.0
 offset_right = 136.0
-offset_bottom = -32.0
-theme_override_colors/default_color = Color(0.42358288, 1, 0.46845925, 1)
+offset_bottom = -60.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
 theme_override_fonts/normal_font = ExtResource("3_sht6a")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true

@@ -36,7 +36,7 @@ texture = SubResource("GradientTexture2D_ae4yk")
 
 [node name="Pause Overlay" type="Node2D" parent="CanvasLayer" unique_id=1710918135]
 visible = false
-z_index = 4
+z_index = 5
 position = Vector2(62, 41)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Pause Overlay" unique_id=1098476111]

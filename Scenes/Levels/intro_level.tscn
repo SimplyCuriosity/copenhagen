@@ -594,7 +594,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 2, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -5.68, -0.6666667, 0, 0, 0, 0, -0.6666667, 0, 0, 0, 0, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -5.68, -0.6666667, 0, 0, 0, -5.68, -0.6666667, 0, 0, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 4, 7.766667, 11.733334)
 }
 tracks/2/type = "bezier"
@@ -805,7 +805,7 @@ scale = Vector2(4.2656255, 2.1015625)
 texture = SubResource("GradientTexture2D_lc2h3")
 
 [node name="AlternateNeu2D" parent="." unique_id=1774092108 instance=ExtResource("14_lgoat")]
-position = Vector2(264, 327)
+position = Vector2(294, 330)
 alternate_neu_name = 5
 
 [node name="Rain" parent="." unique_id=1522191624 instance=ExtResource("16_oopbb")]

@@ -14,6 +14,7 @@ width = 90
 height = 13
 
 [node name="MainMenu" type="Node2D" unique_id=1307850192]
+z_index = 1
 
 [node name="Carboard" type="Sprite2D" parent="." unique_id=1184587122]
 position = Vector2(996.99994, 333)

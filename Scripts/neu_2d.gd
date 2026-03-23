@@ -9,8 +9,9 @@ extends CharacterBody2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var regular_jump_window: Timer = $RegularJumpWindow
 
-
-const SPEED = 450.0
+@export var god_mode:= false
+const SPEED = 25000.0 #450 before motion * delta
+const WALL_CLIMB_SPEED = 450
 const MAX_JUMP_VELOCITY = -1000
 var JUMP_VELOCITY = 0
 var jump_meter_going_up = true
@@ -44,6 +45,27 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("God Mode"):
+		if god_mode:
+			god_mode = false
+		elif not god_mode:
+			god_mode = true
+	#god mode
+	if god_mode:
+		var direction_x := Input.get_axis("Move Left", "Move Right")
+		if direction_x and not motion_paused:
+			velocity.x = direction_x * SPEED * delta
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+		var direction_y := Input.get_axis("Move Forward", "Move Backward")
+		if direction_y and not motion_paused:
+			velocity.y = direction_y * SPEED * delta
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
+		move_and_slide()
+	
+	
+	
 	# Adjust Camera Height
 	if Input.is_action_pressed("Move Forward") and not motion_paused:
 		camera_2d.global_position.y = move_toward(camera_2d.global_position.y,GameManager.playable_character.global_position.y - 300 +25, delta*500)
@@ -115,7 +137,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall_only() and wall_climb_stamina > 0:
 		if Input.is_action_pressed("Jump") and not motion_paused:
 			wall_climb_meter_slider.visible = true
-			velocity.y = -SPEED/4
+			velocity.y = -WALL_CLIMB_SPEED/4
 			wall_climb_stamina -= 50*delta
 			wall_climb_meter_slider.value = wall_climb_stamina
 			#print(wall_climb_stamina)
@@ -137,7 +159,6 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_released("Jump") and not pressed_on_land:
 		pressed_on_land = true
 		jump_meter_slider.visible = false
-		velocity.y = JUMP_VELOCITY
 		JUMP_VELOCITY = 0
 		jump_meter_slider.value = 0
 		regular_jump = true
@@ -151,7 +172,7 @@ func _physics_process(delta: float) -> void:
 	
 	#if direction and not motion_paused and not (Input.is_action_pressed("Jump") and is_on_floor()):
 	if direction and not motion_paused:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED * delta
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
@@ -168,8 +189,10 @@ func _physics_process(delta: float) -> void:
 		camera_cast.position.x = -17
 		#if jump_meter_slider.position.x > 0:
 		#	jump_meter_slider.position.x *= -1
-	if not stop_all_motion:
+	if not stop_all_motion and not god_mode:
 		move_and_slide()
+	if motion_paused:
+		charge_jump_audio.stop()
 
 func _animation_jump():
 	print("its jumping time")

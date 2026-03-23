@@ -36,8 +36,8 @@ func _custom_button_pressed() -> void:
 		"Start":
 			print(3)
 			get_tree().change_scene_to_file("res://Scenes/Levels/intro_level.tscn")
-			GameManager.Background_music.stream = preload("res://Assets/Music/ptt_02.mp3")
-			GameManager.Background_music.playing = true
+			#GameManager.Background_music.stream = preload("res://Assets/Music/ptt_02.mp3")
+			#GameManager.Background_music.playing = true
 		"Exit":
 			get_tree().quit()
 		"Back":
@@ -68,6 +68,7 @@ func _custom_button_pressed() -> void:
 		"Main Menu":
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 			GameManager.Background_music.stream = preload("res://Assets/Music/bigj_demo_4.mp3")
+			BackgroundMusic.volume_db = 0
 			GameManager.Background_music.playing = true
 			GameManager.Resume_button_pressed = true
 			if GameManager.dialogue_system != null:

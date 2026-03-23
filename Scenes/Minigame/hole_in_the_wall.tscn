@@ -1,0 +1,890 @@
+[gd_scene format=4 uid="uid://b1t3370yihn3y"]
+
+[ext_resource type="Script" uid="uid://br3ooe6h0rja2" path="res://Scripts/Minigame/hole_in_the_wall.gd" id="1_b44nu"]
+[ext_resource type="PackedScene" uid="uid://o1wg88t662va" path="res://Scenes/burnable_tiles.tscn" id="1_d8wjg"]
+[ext_resource type="Texture2D" uid="uid://sd3ar8f6mr7e" path="res://Assets/2D art/Textures/Notebook sized Paper.png" id="2_sjyyo"]
+[ext_resource type="PackedScene" uid="uid://gv4jx0of3eee" path="res://Scenes/Hazzard/spike.tscn" id="4_pnoou"]
+[ext_resource type="Script" uid="uid://b242pkm24j42h" path="res://Scripts/Minigame/obstacle.gd" id="4_rcm2j"]
+[ext_resource type="FontFile" uid="uid://esg1noxywjcx" path="res://Assets/Fonts/DigitalHandWritingTest-Regular.ttf" id="7_on4fr"]
+[ext_resource type="Script" uid="uid://22qcj120nl36" path="res://Scripts/Minigame/countdown.gd" id="8_ucbi2"]
+[ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="9_t4lvn"]
+[ext_resource type="Texture2D" uid="uid://dopo0tkc8rq11" path="res://Assets/2D art/checkpoint_cave/checkpoints/check_danger.png" id="10_t4lvn"]
+[ext_resource type="Script" uid="uid://ceyvagsntpuov" path="res://Scripts/danger_totem.gd" id="11_83p0x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rcm2j"]
+load_path = "res://.godot/imported/tile_circle_withspikes.png-fd2517b40aa5b407cf42daee63511289.ctex"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b44nu"]
+texture = SubResource("CompressedTexture2D_rcm2j")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-256, -256, 256, -256, 256, 256, -256, 256)
+
+[sub_resource type="TileSet" id="TileSet_lfrue"]
+tile_size = Vector2i(512, 512)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_b44nu")
+
+[sub_resource type="Animation" id="Animation_rcm2j"]
+resource_name = "Obstacle 1"
+length = 5.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacle 1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(190, 0), Vector2(-1023, 0), Vector2(190, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacle 1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_b44nu"]
+resource_name = "Obstacle 2"
+length = 5.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacle 2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(190, 0), Vector2(-1023, 0), Vector2(190, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacle 2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_lfrue"]
+resource_name = "Obstacle 3"
+length = 5.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacle 3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.04),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(190, 0), Vector2(-1023, 0), Vector2(190, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacle 3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_on4fr"]
+resource_name = "Obstacle 4"
+length = 5.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacle 4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1023, 0), Vector2(190, 0), Vector2(-1023, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacle 4:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ucbi2"]
+resource_name = "Obstacle 5"
+length = 5.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacle 5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.03),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1023, 0), Vector2(190, 0), Vector2(-1023, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacle 5:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_t4lvn"]
+resource_name = "Obstacle 6"
+length = 5.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacle 6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 5.06),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1023, 0), Vector2(190, 0), Vector2(-1023, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacle 6:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_7qdkx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Obstacle 1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(190, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Obstacle 2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(190, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Obstacle 3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(190, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Obstacle 1:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Obstacle 2:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Obstacle 3:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Obstacle 4:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(190, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Obstacle 4:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Obstacle 5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1023, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Obstacle 5:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Obstacle 6:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1023, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Obstacle 6:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_on4fr"]
+_data = {
+&"Obstacle 1": SubResource("Animation_rcm2j"),
+&"Obstacle 2": SubResource("Animation_b44nu"),
+&"Obstacle 3": SubResource("Animation_lfrue"),
+&"Obstacle 4": SubResource("Animation_on4fr"),
+&"Obstacle 5": SubResource("Animation_ucbi2"),
+&"Obstacle 6": SubResource("Animation_t4lvn"),
+&"RESET": SubResource("Animation_7qdkx")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqimi"]
+size = Vector2(115, 306)
+
+[node name="HoleInTheWall" type="Node2D" unique_id=1621761792]
+z_index = -1
+script = ExtResource("1_b44nu")
+
+[node name="NotebookSizedPaper" type="Sprite2D" parent="." unique_id=336409936]
+position = Vector2(963, 545)
+rotation = 1.5707964
+texture = ExtResource("2_sjyyo")
+
+[node name="BurnableTiles" parent="." unique_id=1287871736 instance=ExtResource("1_d8wjg")]
+tile_map_data = PackedByteArray("AAARAA0AAAABAAAAAAAQAA0AAAABAAAAAAAPAA0AAAABAAAAAAAOAA0AAAABAAAAAAAHAA0AAAABAAAAAAAIAA0AAAABAAAAAAAJAA0AAAABAAAAAAAKAA0AAAABAAAAAAALAA0AAAABAAAAAAAMAA0AAAABAAAAAAANAA0AAAABAAAAAAASAA0AAAABAAAAAAATAA0AAAABAAAAAAAUAA0AAAABAAAAAAAVAA0AAAABAAAAAAAWAA0AAAABAAAAAAAXAA0AAAACAAAAAAAGAA4AAAAAAAEAAAAHAA4AAAABAAEAAAAIAA4AAAABAAEAAAAJAA4AAAABAAEAAAAKAA4AAAABAAEAAAALAA4AAAABAAEAAAAMAA4AAAABAAEAAAANAA4AAAABAAEAAAAOAA4AAAABAAEAAAAPAA4AAAABAAEAAAAQAA4AAAABAAEAAAARAA4AAAABAAEAAAASAA4AAAABAAEAAAATAA4AAAABAAEAAAAUAA4AAAABAAEAAAAVAA4AAAABAAEAAAAWAA4AAAABAAEAAAAXAA4AAAACAAEAAAAGAA8AAAAAAAMAAAAHAA8AAAABAAMAAAAIAA8AAAABAAMAAAAJAA8AAAABAAMAAAAKAA8AAAABAAMAAAALAA8AAAABAAMAAAAMAA8AAAABAAMAAAANAA8AAAABAAMAAAAOAA8AAAABAAMAAAAPAA8AAAABAAMAAAAQAA8AAAABAAMAAAARAA8AAAABAAMAAAASAA8AAAABAAMAAAATAA8AAAABAAMAAAAUAA8AAAABAAMAAAAVAA8AAAABAAMAAAAWAA8AAAABAAMAAAAXAA8AAAACAAMAAAAGAA0AAAAAAAAAAAA=")
+
+[node name="Obstacle 1" type="Node2D" parent="." unique_id=105395840]
+visible = false
+position = Vector2(190, 0)
+script = ExtResource("4_rcm2j")
+
+[node name="Tile" type="TileMapLayer" parent="Obstacle 1" unique_id=83515887]
+scale = Vector2(0.125, 0.125)
+tile_map_data = PackedByteArray("AAAVAAwAAAABAAEAAAAVAAsAAAABAAEAAAAVAAoAAAABAAEAAAAVAAkAAAABAAEAAAAVAAgAAAABAAEAAAAVAAcAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_lfrue")
+
+[node name="Spikes" type="Node2D" parent="Obstacle 1" unique_id=1562640332]
+
+[node name="Spike34" parent="Obstacle 1/Spikes" unique_id=60013587 instance=ExtResource("4_pnoou")]
+position = Vector2(1316, 553)
+rotation = -1.5707964
+
+[node name="Spike35" parent="Obstacle 1/Spikes" unique_id=1263608212 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 614)
+rotation = -1.5707964
+
+[node name="Spike36" parent="Obstacle 1/Spikes" unique_id=1440468114 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 675)
+rotation = -1.5707964
+
+[node name="Spike37" parent="Obstacle 1/Spikes" unique_id=96294630 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 738)
+rotation = -1.5707964
+
+[node name="Spike38" parent="Obstacle 1/Spikes" unique_id=1683165117 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 801)
+rotation = -1.5707964
+
+[node name="Spike39" parent="Obstacle 1/Spikes" unique_id=1221760922 instance=ExtResource("4_pnoou")]
+position = Vector2(1435, 553)
+rotation = 1.5707964
+
+[node name="Spike44" parent="Obstacle 1/Spikes" unique_id=1181097150 instance=ExtResource("4_pnoou")]
+position = Vector2(1316, 492)
+rotation = -1.5707964
+
+[node name="Spike45" parent="Obstacle 1/Spikes" unique_id=101908686 instance=ExtResource("4_pnoou")]
+position = Vector2(1435, 492)
+rotation = 1.5707964
+
+[node name="Spike40" parent="Obstacle 1/Spikes" unique_id=1038033329 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 614)
+rotation = 1.5707964
+
+[node name="Spike41" parent="Obstacle 1/Spikes" unique_id=1335210663 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 675)
+rotation = 1.5707964
+
+[node name="Spike42" parent="Obstacle 1/Spikes" unique_id=217810458 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 738)
+rotation = 1.5707964
+
+[node name="Spike43" parent="Obstacle 1/Spikes" unique_id=1876082487 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 801)
+rotation = 1.5707964
+
+[node name="Obstacle 2" type="Node2D" parent="." unique_id=1164166057]
+visible = false
+position = Vector2(190, 0)
+script = ExtResource("4_rcm2j")
+
+[node name="Tile" type="TileMapLayer" parent="Obstacle 2" unique_id=820441765]
+scale = Vector2(0.125, 0.125)
+tile_map_data = PackedByteArray("AAAVAAwAAAABAAEAAAAVAAsAAAABAAEAAAAVAAoAAAABAAAAAAAVAAYAAAABAAYAAAAVAAUAAAABAAEAAAAVAAQAAAABAAEAAAAVAAMAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_lfrue")
+
+[node name="Spikes" type="Node2D" parent="Obstacle 2" unique_id=1154594603]
+
+[node name="Spike36" parent="Obstacle 2/Spikes" unique_id=1242208616 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 675)
+rotation = -1.5707964
+
+[node name="Spike37" parent="Obstacle 2/Spikes" unique_id=360552826 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 738)
+rotation = -1.5707964
+
+[node name="Spike38" parent="Obstacle 2/Spikes" unique_id=1153783464 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 801)
+rotation = -1.5707964
+
+[node name="Spike41" parent="Obstacle 2/Spikes" unique_id=277309358 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 675)
+rotation = 1.5707964
+
+[node name="Spike42" parent="Obstacle 2/Spikes" unique_id=124831753 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 738)
+rotation = 1.5707964
+
+[node name="Spike43" parent="Obstacle 2/Spikes" unique_id=714885678 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 801)
+rotation = 1.5707964
+
+[node name="Spike39" parent="Obstacle 2/Spikes" unique_id=297836259 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 226)
+rotation = -1.5707964
+
+[node name="Spike44" parent="Obstacle 2/Spikes" unique_id=1825360366 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 287)
+rotation = -1.5707964
+
+[node name="Spike45" parent="Obstacle 2/Spikes" unique_id=1296606483 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 350)
+rotation = -1.5707964
+
+[node name="Spike46" parent="Obstacle 2/Spikes" unique_id=624799416 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 413)
+rotation = -1.5707964
+
+[node name="Spike47" parent="Obstacle 2/Spikes" unique_id=1638482930 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 226)
+rotation = 1.5707964
+
+[node name="Spike48" parent="Obstacle 2/Spikes" unique_id=1833923752 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 287)
+rotation = 1.5707964
+
+[node name="Spike49" parent="Obstacle 2/Spikes" unique_id=1981486028 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 350)
+rotation = 1.5707964
+
+[node name="Spike50" parent="Obstacle 2/Spikes" unique_id=948672220 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 413)
+rotation = 1.5707964
+
+[node name="Obstacle 3" type="Node2D" parent="." unique_id=1935684467]
+visible = false
+position = Vector2(190, 0)
+script = ExtResource("4_rcm2j")
+
+[node name="Tile" type="TileMapLayer" parent="Obstacle 3" unique_id=589259671]
+scale = Vector2(0.125, 0.125)
+tile_map_data = PackedByteArray("AAAVAAYAAAABAAEAAAAVAAUAAAABAAEAAAAVAAQAAAABAAEAAAAVAAMAAAABAAAAAAAVAAcAAAABAAEAAAAVAAgAAAABAAYAAAAVAAwAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_lfrue")
+
+[node name="Spikes" type="Node2D" parent="Obstacle 3" unique_id=1232833465]
+
+[node name="Spike35" parent="Obstacle 3/Spikes" unique_id=120596403 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 475)
+rotation = -1.5707964
+
+[node name="Spike36" parent="Obstacle 3/Spikes" unique_id=524200649 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 536)
+rotation = -1.5707964
+
+[node name="Spike38" parent="Obstacle 3/Spikes" unique_id=747297756 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 801)
+rotation = -1.5707964
+
+[node name="Spike40" parent="Obstacle 3/Spikes" unique_id=1807901472 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 475)
+rotation = 1.5707964
+
+[node name="Spike41" parent="Obstacle 3/Spikes" unique_id=725426427 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 536)
+rotation = 1.5707964
+
+[node name="Spike43" parent="Obstacle 3/Spikes" unique_id=1326129804 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 801)
+rotation = 1.5707964
+
+[node name="Spike39" parent="Obstacle 3/Spikes" unique_id=1799298371 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 226)
+rotation = -1.5707964
+
+[node name="Spike44" parent="Obstacle 3/Spikes" unique_id=1348907928 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 287)
+rotation = -1.5707964
+
+[node name="Spike45" parent="Obstacle 3/Spikes" unique_id=1218253905 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 350)
+rotation = -1.5707964
+
+[node name="Spike46" parent="Obstacle 3/Spikes" unique_id=1152014978 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 413)
+rotation = -1.5707964
+
+[node name="Spike47" parent="Obstacle 3/Spikes" unique_id=81332387 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 226)
+rotation = 1.5707964
+
+[node name="Spike48" parent="Obstacle 3/Spikes" unique_id=317114215 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 287)
+rotation = 1.5707964
+
+[node name="Spike49" parent="Obstacle 3/Spikes" unique_id=731383646 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 350)
+rotation = 1.5707964
+
+[node name="Spike50" parent="Obstacle 3/Spikes" unique_id=1745412342 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 413)
+rotation = 1.5707964
+
+[node name="Obstacle 4" type="Node2D" parent="." unique_id=329083489]
+visible = false
+position = Vector2(190, 0)
+script = ExtResource("4_rcm2j")
+
+[node name="Tile" type="TileMapLayer" parent="Obstacle 4" unique_id=1471926991]
+scale = Vector2(0.125, 0.125)
+tile_map_data = PackedByteArray("AAAVAAwAAAABAAEAAAAVAAsAAAABAAEAAAAVAAoAAAABAAEAAAAVAAkAAAABAAEAAAAVAAgAAAABAAEAAAAVAAcAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_lfrue")
+
+[node name="Spikes" type="Node2D" parent="Obstacle 4" unique_id=993867199]
+
+[node name="Spike34" parent="Obstacle 4/Spikes" unique_id=196357516 instance=ExtResource("4_pnoou")]
+position = Vector2(1316, 553)
+rotation = -1.5707964
+
+[node name="Spike35" parent="Obstacle 4/Spikes" unique_id=1744758143 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 614)
+rotation = -1.5707964
+
+[node name="Spike36" parent="Obstacle 4/Spikes" unique_id=1508653567 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 675)
+rotation = -1.5707964
+
+[node name="Spike37" parent="Obstacle 4/Spikes" unique_id=586532714 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 738)
+rotation = -1.5707964
+
+[node name="Spike38" parent="Obstacle 4/Spikes" unique_id=2019680915 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 801)
+rotation = -1.5707964
+
+[node name="Spike39" parent="Obstacle 4/Spikes" unique_id=180763428 instance=ExtResource("4_pnoou")]
+position = Vector2(1435, 553)
+rotation = 1.5707964
+
+[node name="Spike44" parent="Obstacle 4/Spikes" unique_id=1428722986 instance=ExtResource("4_pnoou")]
+position = Vector2(1316, 492)
+rotation = -1.5707964
+
+[node name="Spike45" parent="Obstacle 4/Spikes" unique_id=1838094095 instance=ExtResource("4_pnoou")]
+position = Vector2(1435, 492)
+rotation = 1.5707964
+
+[node name="Spike40" parent="Obstacle 4/Spikes" unique_id=157575300 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 614)
+rotation = 1.5707964
+
+[node name="Spike41" parent="Obstacle 4/Spikes" unique_id=1823597947 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 675)
+rotation = 1.5707964
+
+[node name="Spike42" parent="Obstacle 4/Spikes" unique_id=16530278 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 738)
+rotation = 1.5707964
+
+[node name="Spike43" parent="Obstacle 4/Spikes" unique_id=1737294420 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 801)
+rotation = 1.5707964
+
+[node name="Obstacle 5" type="Node2D" parent="." unique_id=1675452015]
+visible = false
+position = Vector2(-1023, 0)
+script = ExtResource("4_rcm2j")
+
+[node name="Tile" type="TileMapLayer" parent="Obstacle 5" unique_id=1245055270]
+scale = Vector2(0.125, 0.125)
+tile_map_data = PackedByteArray("AAAVAAwAAAABAAEAAAAVAAsAAAABAAEAAAAVAAoAAAABAAAAAAAVAAYAAAABAAYAAAAVAAUAAAABAAEAAAAVAAQAAAABAAEAAAAVAAMAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_lfrue")
+
+[node name="Spikes" type="Node2D" parent="Obstacle 5" unique_id=1638741103]
+
+[node name="Spike36" parent="Obstacle 5/Spikes" unique_id=1893162419 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 675)
+rotation = -1.5707964
+
+[node name="Spike37" parent="Obstacle 5/Spikes" unique_id=1006289309 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 738)
+rotation = -1.5707964
+
+[node name="Spike38" parent="Obstacle 5/Spikes" unique_id=519103268 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 801)
+rotation = -1.5707964
+
+[node name="Spike41" parent="Obstacle 5/Spikes" unique_id=288084274 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 675)
+rotation = 1.5707964
+
+[node name="Spike42" parent="Obstacle 5/Spikes" unique_id=1481917995 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 738)
+rotation = 1.5707964
+
+[node name="Spike43" parent="Obstacle 5/Spikes" unique_id=920268743 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 801)
+rotation = 1.5707964
+
+[node name="Spike39" parent="Obstacle 5/Spikes" unique_id=638099835 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 226)
+rotation = -1.5707964
+
+[node name="Spike44" parent="Obstacle 5/Spikes" unique_id=673953250 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 287)
+rotation = -1.5707964
+
+[node name="Spike45" parent="Obstacle 5/Spikes" unique_id=1635066790 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 350)
+rotation = -1.5707964
+
+[node name="Spike46" parent="Obstacle 5/Spikes" unique_id=1266997445 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 413)
+rotation = -1.5707964
+
+[node name="Spike47" parent="Obstacle 5/Spikes" unique_id=241948012 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 226)
+rotation = 1.5707964
+
+[node name="Spike48" parent="Obstacle 5/Spikes" unique_id=1282881411 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 287)
+rotation = 1.5707964
+
+[node name="Spike49" parent="Obstacle 5/Spikes" unique_id=221290037 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 350)
+rotation = 1.5707964
+
+[node name="Spike50" parent="Obstacle 5/Spikes" unique_id=2026072815 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 413)
+rotation = 1.5707964
+
+[node name="Obstacle 6" type="Node2D" parent="." unique_id=2060278224]
+visible = false
+position = Vector2(-1023, 0)
+script = ExtResource("4_rcm2j")
+
+[node name="Tile" type="TileMapLayer" parent="Obstacle 6" unique_id=970956844]
+scale = Vector2(0.125, 0.125)
+tile_map_data = PackedByteArray("AAAVAAYAAAABAAEAAAAVAAUAAAABAAEAAAAVAAQAAAABAAEAAAAVAAMAAAABAAAAAAAVAAcAAAABAAEAAAAVAAgAAAABAAYAAAAVAAwAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_lfrue")
+
+[node name="Spikes" type="Node2D" parent="Obstacle 6" unique_id=816466140]
+
+[node name="Spike35" parent="Obstacle 6/Spikes" unique_id=2031651074 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 475)
+rotation = -1.5707964
+
+[node name="Spike36" parent="Obstacle 6/Spikes" unique_id=776401706 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 536)
+rotation = -1.5707964
+
+[node name="Spike38" parent="Obstacle 6/Spikes" unique_id=109691185 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 801)
+rotation = -1.5707964
+
+[node name="Spike40" parent="Obstacle 6/Spikes" unique_id=1457881787 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 475)
+rotation = 1.5707964
+
+[node name="Spike41" parent="Obstacle 6/Spikes" unique_id=2076264076 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 536)
+rotation = 1.5707964
+
+[node name="Spike43" parent="Obstacle 6/Spikes" unique_id=557770499 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 801)
+rotation = 1.5707964
+
+[node name="Spike39" parent="Obstacle 6/Spikes" unique_id=1844930799 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 226)
+rotation = -1.5707964
+
+[node name="Spike44" parent="Obstacle 6/Spikes" unique_id=1978811130 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 287)
+rotation = -1.5707964
+
+[node name="Spike45" parent="Obstacle 6/Spikes" unique_id=1085483256 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 350)
+rotation = -1.5707964
+
+[node name="Spike46" parent="Obstacle 6/Spikes" unique_id=442110725 instance=ExtResource("4_pnoou")]
+position = Vector2(1317, 413)
+rotation = -1.5707964
+
+[node name="Spike47" parent="Obstacle 6/Spikes" unique_id=1696186476 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 226)
+rotation = 1.5707964
+
+[node name="Spike48" parent="Obstacle 6/Spikes" unique_id=1440590362 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 287)
+rotation = 1.5707964
+
+[node name="Spike49" parent="Obstacle 6/Spikes" unique_id=879729699 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 350)
+rotation = 1.5707964
+
+[node name="Spike50" parent="Obstacle 6/Spikes" unique_id=1929915402 instance=ExtResource("4_pnoou")]
+position = Vector2(1436, 413)
+rotation = 1.5707964
+
+[node name="ObstacleAnimation" type="AnimationPlayer" parent="." unique_id=1881079647]
+libraries/ = SubResource("AnimationLibrary_on4fr")
+
+[node name="Countdown" type="RichTextLabel" parent="." unique_id=1724139783]
+offset_left = 431.0
+offset_top = 121.0
+offset_right = 1517.0
+offset_bottom = 292.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/normal_font = ExtResource("7_on4fr")
+theme_override_font_sizes/normal_font_size = 128
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_ucbi2")
+
+[node name="Survive" type="RichTextLabel" parent="." unique_id=260994938]
+offset_left = 434.0
+offset_top = 27.0
+offset_right = 1520.0
+offset_bottom = 198.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/normal_font = ExtResource("9_t4lvn")
+theme_override_font_sizes/normal_font_size = 128
+text = "SURVIVE!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DangerTotem" type="Sprite2D" parent="." unique_id=1448792694]
+position = Vector2(975, 680)
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("10_t4lvn")
+script = ExtResource("11_83p0x")
+
+[node name="Activate" type="RichTextLabel" parent="DangerTotem" unique_id=728500669]
+offset_left = -536.9565
+offset_top = -619.56525
+offset_right = 549.0435
+offset_bottom = -448.56525
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/normal_font = ExtResource("9_t4lvn")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[wave]\"E\" to Activate[/wave]
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="DangerTotem" unique_id=1416751215]
+position = Vector2(-2119.5652, -1478.2609)
+scale = Vector2(2.173913, 2.173913)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerTotem/Area2D" unique_id=701836065]
+position = Vector2(982.5, 680)
+shape = SubResource("RectangleShape2D_fqimi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2125708626]
+
+[node name="StartCountdown" type="RichTextLabel" parent="CanvasLayer" unique_id=568801503]
+offset_left = 431.0
+offset_top = 362.0
+offset_right = 1517.0
+offset_bottom = 640.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/normal_font = ExtResource("7_on4fr")
+theme_override_font_sizes/normal_font_size = 258
+text = "
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="ObstacleAnimation" to="." method="_on_obstacle_animation_animation_finished"]
+[connection signal="body_entered" from="DangerTotem/Area2D" to="DangerTotem" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="DangerTotem/Area2D" to="DangerTotem" method="_on_area_2d_body_exited"]

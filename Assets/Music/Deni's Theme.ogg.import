@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c8oicyyr5sm0k"
+path="res://.godot/imported/Deni's Theme.ogg-9f0cdc90acc27b2d4404b20ad2fcee97.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Music/Deni's Theme.ogg"
+dest_files=["res://.godot/imported/Deni's Theme.ogg-9f0cdc90acc27b2d4404b20ad2fcee97.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

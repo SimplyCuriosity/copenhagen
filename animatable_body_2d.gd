@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 func _on_player_detection_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		if body.get_collision_layer_value(2) == true:
-			_ignite_fire()
+			#_ignite_fire()
 			burning = true
 	pass # Replace with function body.
 

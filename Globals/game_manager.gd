@@ -3,9 +3,9 @@ extends Node3D
 @onready var dim_background: Sprite2D = $"CanvasLayer/Dim background"
 @onready var canvas_modulate: CanvasModulate = $CanvasLayer/CanvasModulate 
 @onready var pause_overlay: Node2D = $"CanvasLayer/Pause Overlay"
-
+const DENI_THEME = preload("res://Assets/Music/Deni's Theme.ogg")
 var stage_open = false
-var current_level
+var current_level = null
 var playable_character
 var third_person_cam 
 var game_is_paused: bool = false
@@ -65,17 +65,25 @@ func _process(delta: float) -> void:
 		pause_overlay.visible = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		dim_background.visible = true
-		
+	
+	if current_level != null:
+		if current_level.name == "Level 1" and Background_music.stream != DENI_THEME:
+			Background_music.stream = DENI_THEME
+			BackgroundMusic.volume_db = -10
+			Background_music.playing = true
 	pass
 
 func _player_died():
 	just_died = true
-	get_tree().current_scene.animation_player.play("FadeOut")
-	#await get_tree().create_timer(4).timeout
-	await get_tree().current_scene.animation_player.animation_finished
-	print("happen here")
-	await get_tree().reload_current_scene()
-	#playable_character.global_position = respawn_point
+	print(get_tree().current_scene)
+	if current_level != null:
+		get_tree().current_scene.animation_player.play("FadeOut")
+		#await get_tree().create_timer(4).timeout
+		await get_tree().current_scene.animation_player.animation_finished
+		print("happen here")
+		await get_tree().reload_current_scene()
+		#playable_character.global_position = respawn_point
+	get_tree().reload_current_scene()
 	pass
 
 func _update_alternate_neu_position():

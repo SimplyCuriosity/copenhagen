@@ -19,7 +19,7 @@ height = 13
 
 [node name="Settings" type="Node2D" unique_id=878062762]
 visible = false
-z_index = 3
+z_index = 4
 script = ExtResource("1_6vr2p")
 
 [node name="Carboard" type="Sprite2D" parent="." unique_id=1099297000]
