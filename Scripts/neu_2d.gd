@@ -73,13 +73,13 @@ func _physics_process(delta: float) -> void:
 		#camera_2d.global_position = camera_2d.global_position.round()
 	elif Input.is_action_pressed("Move Backward") and not motion_paused:
 		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, GameManager.playable_character.global_position.y + 350, delta*500)
-	elif camera_cast.is_colliding() == true and not Input.is_action_pressed("Jump"):
+	elif camera_cast.is_colliding() == true and not Input.is_action_pressed("Jump") and not motion_paused:
 		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, camera_cast.get_collision_point().y -300, delta*500)
 		#camera_2d.global_position.y = clampf(-1000,1000)
 		#camera_2d.global_position = camera_2d.global_position.round().lerp(camera_cast.get_collision_point().round() - Vector2(0,400), delta*5)
 		#camera_2d.global_position = camera_2d.global_position.round()
-	elif camera_cast.is_colliding() == false and not Input.is_action_pressed("Jump"):
-		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, GameManager.playable_character.global_position.y + 350, delta*500)
+	elif camera_cast.is_colliding() == false and not Input.is_action_pressed("Jump") and not motion_paused:
+		camera_2d.global_position.y = move_toward(camera_2d.global_position.y, GameManager.playable_character.global_position.y + 300, delta*500)
 		#camera_2d.global_position.y = lerpf(camera_2d.global_position.y, 1000, delta*500)
 		#camera_2d.global_position = camera_2d.global_position.round()
 		pass
@@ -127,11 +127,9 @@ func _physics_process(delta: float) -> void:
 		if JUMP_VELOCITY > MAX_JUMP_VELOCITY and jump_meter_going_up:
 			JUMP_VELOCITY += -800 * delta
 			jump_meter_slider.value = -JUMP_VELOCITY
-			#print(JUMP_VELOCITY)
 		elif JUMP_VELOCITY < 0 and not jump_meter_going_up:
 			JUMP_VELOCITY += 800 * delta
 			jump_meter_slider.value = -JUMP_VELOCITY
-			#print(JUMP_VELOCITY)
 	
 	# Handle wall climb
 	if is_on_wall_only() and wall_climb_stamina > 0:
@@ -140,7 +138,6 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -WALL_CLIMB_SPEED/4
 			wall_climb_stamina -= 50*delta
 			wall_climb_meter_slider.value = wall_climb_stamina
-			#print(wall_climb_stamina)
 	
 	if Input.is_action_just_released("Jump") and is_on_floor() and not motion_paused and pressed_on_land:
 		charge_jump_audio.stop()
@@ -195,7 +192,6 @@ func _physics_process(delta: float) -> void:
 		charge_jump_audio.stop()
 
 func _animation_jump():
-	print("its jumping time")
 	velocity.y = -800
 
 

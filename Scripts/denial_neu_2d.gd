@@ -214,6 +214,69 @@ Deni:
 "
 ]
 
+var deni_end_speech: Array = [
+"
+Deni:
+ 
+WAIT!
+",
+"
+Deni:
+I... I just wanted to see you again!
+I... I don’t...
+Look... It’s been... what, a week?
+Month?
+Year?
+I don’t know... My point is...
+I haven’t seen someone in a while, ok?
+It felt... nice not being left behind.
+The others were so determined and I... I couldn’t do it.
+The world was out to get us!
+We were on the cusp of death, just barely getting by!
+I can’t let that happen again!
+The world... [color=purple]The Outside[/color] I mean... it can’t hurt us in here!
+But... that kid...
+Do... do you really think he’d still be there?
+For us?
+Perhaps...
+Ag was right.
+This is a prison.
+There is no food.
+No naps.
+Just... you and me.
+Don’t get me wrong, your a joy to hang out with!
+But...
+",
+"
+Deni:
+I want to see him again... I...
+I want to leave the box, don’t I?
+",
+"
+Deni:
+Your... your right!
+I shouldn’t be here, rotting in this dingy box!
+I should be out there, out in [color=purple]The Outside[/color]!
+I should be out their... with you... with Neu.
+Mind if I follow along?
+",
+"
+Deni:
+You still listening to me?
+Well, I hope so.
+As much as I’d love to be by your side the whole way...
+I don’t really know any other shortcuts.
+So, hopefully you don’t mind if I stay up in here, in... well, your mind?
+Deni:
+ 
+...
+Deni:
+...I’ll take that as a yes.
+Now let’s see if this journey is worthwhile.
+"
+]
+
+
 
 func _ready() -> void:
 	talk.visible = false
@@ -233,6 +296,19 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	# Sprite look at player 
+	if alternate_neu_name == neu_name.Deni:
+		if global_position.x > GameManager.playable_character.global_position.x:
+			animated_sprite_2d.flip_h = false
+		elif global_position.x < GameManager.playable_character.global_position.x:
+			animated_sprite_2d.flip_h = true
+		pass
+	else:
+		if global_position.x > GameManager.playable_character.global_position.x:
+			animated_sprite_2d.flip_h = true
+		elif global_position.x < GameManager.playable_character.global_position.x:
+			animated_sprite_2d.flip_h = false
+	
 	if Input.is_action_just_pressed("interact") and Neu_is_here or stop_right_there:
 		var dialogue_node = dialogue_scene.instantiate()
 		get_tree().root.add_child(dialogue_node)
@@ -240,16 +316,13 @@ func _physics_process(delta: float) -> void:
 		match alternate_neu_name:
 			neu_name.Deni:
 				# First Speech
-				print(GameManager.level_1_half_way)
-				print(GameManager.deni_speech_num)
 				if GameManager.deni_speech_num < GameManager.deni_speech_max and not GameManager.just_died and not GameManager.level_1_half_way:
-					print("first speech")
 					dialogue_node._generate_dialogue_box(deni_speech[GameManager.deni_speech_num])
 					GameManager.deni_speech_num += 1
 					
 				# Second half Speech
 				elif GameManager.deni_speech_num <= GameManager.deni_speech_max and not GameManager.just_died and GameManager.level_1_half_way:
-					print("second speech")
+
 					dialogue_node._generate_dialogue_box(deni_speech[GameManager.deni_speech_num])
 					GameManager.deni_speech_num += 1
 				
@@ -290,16 +363,11 @@ func _on_dialogue_area_body_exited(body: Node2D) -> void:
 
 
 func _play_dead_message():
-	print(1)
-	print(GameManager.level_1_half_way)
-	print(GameManager.just_died)
 	if not GameManager.level_1_half_way and GameManager.just_died:
-		print(2)
 		#GameManager.just_died = false
 		match alternate_neu_name:
 			neu_name.Deni:
 				if GameManager.deni_dead_speech_num < 5:
-					print(3)
 					var dialogue_node = dialogue_scene.instantiate()
 					get_tree().root.add_child(dialogue_node)
 					GameManager.playable_character.motion_paused = true

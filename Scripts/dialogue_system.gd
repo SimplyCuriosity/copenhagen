@@ -50,16 +50,19 @@ Victory & chance to talk to Anger Neu upon putting all fires out.
 However Anger Neu could reignite them at any time, the player can use Paralyze/stun on Anger Neu to delay this.
 "
 
-var a = "Deni:
-Just... please... just...
-Reconsider.
+var a = "
+Deni:
+You still listening to me?
+Well, I hope so.
+As much as I’d love to be by your side the whole way...
+I don’t really know any other shortcuts.
+So, hopefully you don’t mind if I stay up in here, in... well, your mind?
 Deni:
  
-I... I don’t want to feel alone... please, I...
+...
 Deni:
-.
-.
-.
+...I’ll take that as a yes.
+Now let’s see if this journey is worthwhile.
 "
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -70,6 +73,7 @@ func _ready() -> void:
 	#_generate_dialogue_box(a)
 	for i in cat_portraits.get_children():
 		i.visible = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	pass # Replace with function body.
 
 
@@ -142,8 +146,6 @@ func _generate_dialogue_box(script:String) -> void:
 			temporary_string += i
 			#print(temporary_string)
 	# check name
-	print(dialogue_array)
-	print(dialogue_array.size())
 	
 	# Combines any 2 sentences, current & next sentence from the same character speaking turn 
 	# so long as its under 110 total words and no dash "-" in the current sentence
@@ -152,7 +154,6 @@ func _generate_dialogue_box(script:String) -> void:
 		var bite_count: int = 0
 		var checking:= true
 		while checking:
-			print("bite count = ", bite_count)
 			if bite_count != max_bite_count:
 				if (i[1][bite_count] + i[1][bite_count+1]).length() <= 110 and bite_count > 0:
 					if i[1][bite_count-1][i[1][bite_count-1].length()-1] != "-":
@@ -171,7 +172,6 @@ func _generate_dialogue_box(script:String) -> void:
 			if bite_count == max_bite_count:
 				checking = false
 			pass
-	print(dialogue_array)
 		
 	#Showcase first dialogue/bite
 	next_dialogue()
@@ -184,7 +184,6 @@ func _generate_dialogue_box(script:String) -> void:
 
 #animate the showing of dialogue
 func next_dialogue():
-	print(time_interval)
 	dialogue_is_ready = true
 	dialogue_state = dialogue_status.ANIMATING
 	if bite_number > dialogue_array[speaking_turn][1].size()-1:
@@ -301,4 +300,11 @@ func play_audio():
 	await get_tree().create_timer(time_interval*4, false, true,false).timeout
 	#await new_audio.finished
 	new_audio.queue_free()
+	pass
+
+func _skip_early():
+	if GameManager.playable_character != null:
+			GameManager.playable_character.motion_paused = false
+	dialogue_finished.emit()
+	queue_free()
 	pass

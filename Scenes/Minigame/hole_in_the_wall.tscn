@@ -1,15 +1,14 @@
 [gd_scene format=4 uid="uid://b1t3370yihn3y"]
 
 [ext_resource type="Script" uid="uid://br3ooe6h0rja2" path="res://Scripts/Minigame/hole_in_the_wall.gd" id="1_b44nu"]
-[ext_resource type="PackedScene" uid="uid://o1wg88t662va" path="res://Scenes/burnable_tiles.tscn" id="1_d8wjg"]
+[ext_resource type="PackedScene" uid="uid://o1wg88t662va" path="res://Scenes/Hazzard/burnable_tiles.tscn" id="1_d8wjg"]
 [ext_resource type="Texture2D" uid="uid://sd3ar8f6mr7e" path="res://Assets/2D art/Textures/Notebook sized Paper.png" id="2_sjyyo"]
 [ext_resource type="PackedScene" uid="uid://gv4jx0of3eee" path="res://Scenes/Hazzard/spike.tscn" id="4_pnoou"]
 [ext_resource type="Script" uid="uid://b242pkm24j42h" path="res://Scripts/Minigame/obstacle.gd" id="4_rcm2j"]
 [ext_resource type="FontFile" uid="uid://esg1noxywjcx" path="res://Assets/Fonts/DigitalHandWritingTest-Regular.ttf" id="7_on4fr"]
 [ext_resource type="Script" uid="uid://22qcj120nl36" path="res://Scripts/Minigame/countdown.gd" id="8_ucbi2"]
+[ext_resource type="PackedScene" uid="uid://cwqav8qan474o" path="res://Scenes/Interactibles/danger_totem.tscn" id="9_on4fr"]
 [ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="9_t4lvn"]
-[ext_resource type="Texture2D" uid="uid://dopo0tkc8rq11" path="res://Assets/2D art/checkpoint_cave/checkpoints/check_danger.png" id="10_t4lvn"]
-[ext_resource type="Script" uid="uid://ceyvagsntpuov" path="res://Scripts/danger_totem.gd" id="11_83p0x"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rcm2j"]
 load_path = "res://.godot/imported/tile_circle_withspikes.png-fd2517b40aa5b407cf42daee63511289.ctex"
@@ -404,9 +403,6 @@ _data = {
 &"Obstacle 6": SubResource("Animation_t4lvn"),
 &"RESET": SubResource("Animation_7qdkx")
 }
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqimi"]
-size = Vector2(115, 306)
 
 [node name="HoleInTheWall" type="Node2D" unique_id=1621761792]
 z_index = -1
@@ -840,35 +836,8 @@ text = "SURVIVE!!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DangerTotem" type="Sprite2D" parent="." unique_id=1448792694]
+[node name="DangerTotem" parent="." unique_id=1091748483 instance=ExtResource("9_on4fr")]
 position = Vector2(975, 680)
-scale = Vector2(0.46, 0.46)
-texture = ExtResource("10_t4lvn")
-script = ExtResource("11_83p0x")
-
-[node name="Activate" type="RichTextLabel" parent="DangerTotem" unique_id=728500669]
-offset_left = -536.9565
-offset_top = -619.56525
-offset_right = 549.0435
-offset_bottom = -448.56525
-theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
-theme_override_fonts/normal_font = ExtResource("9_t4lvn")
-theme_override_font_sizes/normal_font_size = 128
-bbcode_enabled = true
-text = "[wave]\"E\" to Activate[/wave]
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Area2D" type="Area2D" parent="DangerTotem" unique_id=1416751215]
-position = Vector2(-2119.5652, -1478.2609)
-scale = Vector2(2.173913, 2.173913)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DangerTotem/Area2D" unique_id=701836065]
-position = Vector2(982.5, 680)
-shape = SubResource("RectangleShape2D_fqimi")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2125708626]
 
@@ -886,5 +855,3 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="animation_finished" from="ObstacleAnimation" to="." method="_on_obstacle_animation_animation_finished"]
-[connection signal="body_entered" from="DangerTotem/Area2D" to="DangerTotem" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="DangerTotem/Area2D" to="DangerTotem" method="_on_area_2d_body_exited"]

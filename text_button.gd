@@ -16,11 +16,17 @@ func _process(delta: float) -> void:
 	pass
 	
 func _custom_button_focus_entered() -> void:
-	add_theme_font_size_override("font_size", 144)
+	if text ==  "Skip All":
+		add_theme_font_size_override("font_size", 28)
+	else:
+		add_theme_font_size_override("font_size", 144)
 	pass
 	
 func _custom_button_focus_exited() -> void:
-	add_theme_font_size_override("font_size", 122)
+	if text ==  "Skip All":
+		add_theme_font_size_override("font_size", 24)
+	else:
+		add_theme_font_size_override("font_size", 122)
 	pass
 	
 func _custom_button_mouse_entered() -> void:
@@ -74,4 +80,22 @@ func _custom_button_pressed() -> void:
 			if GameManager.dialogue_system != null:
 				GameManager.dialogue_system.queue_free()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		"Skip All":
+			GameManager.dialogue_system._skip_early()
 	pass
+
+
+func _on_button_focus_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_button_focus_exited() -> void:
+	pass # Replace with function body.
+
+
+func _on_button_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_button_mouse_exited() -> void:
+	pass # Replace with function body.

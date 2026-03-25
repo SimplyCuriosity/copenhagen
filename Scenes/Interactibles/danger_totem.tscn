@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cwqav8qan474o"]
+
+[ext_resource type="Texture2D" uid="uid://dopo0tkc8rq11" path="res://Assets/2D art/checkpoint_cave/checkpoints/check_danger.png" id="1_wkq3a"]
+[ext_resource type="Script" uid="uid://ceyvagsntpuov" path="res://Scripts/danger_totem.gd" id="2_h0suu"]
+[ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="3_yt00a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqimi"]
+size = Vector2(115, 306)
+
+[node name="DangerTotem" type="Sprite2D" unique_id=1091748483]
+scale = Vector2(0.46, 0.46)
+texture = ExtResource("1_wkq3a")
+script = ExtResource("2_h0suu")
+
+[node name="Activate" type="RichTextLabel" parent="." unique_id=1648298434]
+offset_left = -536.9565
+offset_top = -619.56525
+offset_right = 549.0435
+offset_bottom = -448.56525
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/normal_font = ExtResource("3_yt00a")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[wave]\"E\" to Activate[/wave]
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=372104291]
+position = Vector2(-2119.5652, -1478.2609)
+scale = Vector2(2.173913, 2.173913)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=564395466]
+position = Vector2(982.5, 680)
+shape = SubResource("RectangleShape2D_fqimi")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -117,7 +117,6 @@ size = Vector2(230, 1162)
 [node name="AlternateNeu2D" type="CharacterBody2D" unique_id=1774092108]
 collision_layer = 4
 script = ExtResource("1_0351x")
-alternate_neu_name = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1017011191]
 position = Vector2(-76, 0)

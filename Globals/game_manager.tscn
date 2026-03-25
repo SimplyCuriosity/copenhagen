@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b86kefjq8lylb" path="res://Globals/game_manager.gd" id="1_wj7el"]
 [ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/2D art/Textures/PaperRip_1.png" id="2_e6ac5"]
 [ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="3_e6ac5"]
-[ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/text_button.tscn" id="4_ae4yk"]
+[ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/UI/text_button.tscn" id="4_ae4yk"]
 [ext_resource type="PackedScene" uid="uid://dccfjxxtn4pn" path="res://Scenes/settings.tscn" id="5_oejsf"]
 
 [sub_resource type="Gradient" id="Gradient_j441c"]

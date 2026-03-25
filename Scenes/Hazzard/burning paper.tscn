@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dd4nbni6qhnsj" path="res://Scenes/VFX/fire.tscn" id="2_2pqxu"]
 [ext_resource type="Shader" uid="uid://c6mcg22e7wfxa" path="res://Resources/Paperburn again.gdshader" id="3_yv2k6"]
 [ext_resource type="Texture2D" uid="uid://sd3ar8f6mr7e" path="res://Assets/2D art/Textures/Notebook sized Paper.png" id="5_yv2k6"]
-[ext_resource type="PackedScene" uid="uid://o1wg88t662va" path="res://Scenes/burnable_tiles.tscn" id="6_2pqxu"]
+[ext_resource type="PackedScene" uid="uid://o1wg88t662va" path="res://Scenes/Hazzard/burnable_tiles.tscn" id="6_2pqxu"]
 
 [sub_resource type="Gradient" id="Gradient_yv2k6"]
 interpolation_mode = 1

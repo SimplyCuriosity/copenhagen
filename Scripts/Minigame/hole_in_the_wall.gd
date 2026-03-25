@@ -6,6 +6,7 @@ extends Node2D
 @onready var survive: RichTextLabel = $Survive
 @onready var start_countdown: RichTextLabel = $CanvasLayer/StartCountdown
 
+signal open_path()
 
 var keep_going:= true
 
@@ -27,6 +28,10 @@ func _on_obstacle_animation_animation_finished(anim_name: StringName) -> void:
 	if keep_going:
 		obstacle_animation.speed_scale *= 1.05
 		obstacle_animation.play("Obstacle " + str(randi_range(1,6)))
+	elif not keep_going:
+		if GameManager.current_level != null:
+			if GameManager.current_level.name == "Level 1":
+				open_path.emit()
 	pass # Replace with function body.
 	
 func _countdown_over():

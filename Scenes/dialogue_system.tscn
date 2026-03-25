@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dhhhxrrnx3wig" path="res://Assets/2D art/Cat Portraits/Cat_Ress_black.png" id="11_qei6v"]
 [ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="12_kmn0t"]
 [ext_resource type="Texture2D" uid="uid://ct1n5vtsoooii" path="res://Assets/2D art/Cat Portraits/Cat_You.png" id="13_dcfmj"]
+[ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/UI/text_button.tscn" id="19_ir1wl"]
 
 [sub_resource type="Gradient" id="Gradient_j441c"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -185,3 +186,20 @@ z_index = -1
 position = Vector2(1115, 831.99994)
 scale = Vector2(16.406248, 3.562501)
 texture = SubResource("GradientTexture2D_kmn0t")
+
+[node name="Skip" parent="CanvasLayer" unique_id=1463502387 node_paths=PackedStringArray("button") instance=ExtResource("19_ir1wl")]
+offset_left = 1484.0
+offset_top = 889.0
+offset_right = 1671.0
+offset_bottom = 947.0
+theme_override_font_sizes/font_size = 24
+text = "Skip All"
+button = NodePath("Button")
+
+[node name="Button" type="Button" parent="CanvasLayer/Skip" unique_id=1508456881]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 49.0
+offset_top = 16.0
+offset_right = 141.0
+offset_bottom = 40.0
