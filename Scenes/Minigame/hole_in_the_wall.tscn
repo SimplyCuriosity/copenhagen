@@ -100,7 +100,7 @@ tracks/1/path = NodePath("Obstacle 1:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 4.866667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -128,7 +128,7 @@ tracks/1/path = NodePath("Obstacle 2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 4.8333335),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -156,7 +156,7 @@ tracks/1/path = NodePath("Obstacle 3:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 4.8333335),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -184,7 +184,7 @@ tracks/1/path = NodePath("Obstacle 4:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 4.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -212,7 +212,7 @@ tracks/1/path = NodePath("Obstacle 5:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 4.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -240,7 +240,7 @@ tracks/1/path = NodePath("Obstacle 6:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 4.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -330,7 +330,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(190, 0)]
+"values": [Vector2(-1023, 0)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -614,7 +614,7 @@ rotation = 1.5707964
 
 [node name="Obstacle 4" type="Node2D" parent="." unique_id=329083489]
 visible = false
-position = Vector2(190, 0)
+position = Vector2(-1023, 0)
 script = ExtResource("4_rcm2j")
 
 [node name="Tile" type="TileMapLayer" parent="Obstacle 4" unique_id=1471926991]
