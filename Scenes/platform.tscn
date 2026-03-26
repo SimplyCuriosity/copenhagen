@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://doasmwmvnun6h" path="res://Assets/2D art/Tiles/tile_circle_added.png" id="1_1rc8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
-size = Vector2(188, 30)
+size = Vector2(188, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rc8e"]
 size = Vector2(188, 25)

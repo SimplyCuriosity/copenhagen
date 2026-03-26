@@ -42,6 +42,7 @@ var deni_speech_max = 1
 var deni_dead_speech_num = 0
 var deni_dead_speech_max = 9
 
+var ag_intro_done:= false
 var ag_speech_num = 0
 var ag_speech_max = 1
 var ag_dead_speech_num = 0
@@ -117,6 +118,7 @@ var level_2_outro_done:= false:
 		if level_2_outro_done:
 			minigame_2_done = true
 			level_2_half_way = true
+			ag_intro_done = true
 			ag_speech_num = ag_speech_max
 			ag_dead_speech_num = ag_dead_speech_max +1
 			stage_open_2 = true

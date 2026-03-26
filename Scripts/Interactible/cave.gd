@@ -9,7 +9,7 @@ enum Cave_type {
 	Level_4_Begin,
 	Level_4_End,
 }
-
+@export var open:= true
 @export var Cave_Id: Cave_type
 @onready var interact: RichTextLabel = $Interact
 signal change_level(level_num: int)
@@ -28,7 +28,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and Neu_is_here:
+	if Input.is_action_just_pressed("interact") and Neu_is_here and open:
 		match Cave_Id:
 			Cave_type.Level_1_Begin:
 				#GameManager.current_cave = Cave_type.Level_4_Begin

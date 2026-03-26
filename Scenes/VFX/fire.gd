@@ -42,12 +42,15 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 			#		tiles.found_coords.erase(tile)
 			#		#tiles.notify_runtime_tile_data_update() 
 			#		tile_to_remove.append(tile)
+	elif body is AnimatableBody2D:
+		body.queue_free()
 			
 			
 					#print("it happens")
 	#print("tile to remove is", tile_to_remove)
 	#tiles.tile_to_remove = tile_to_remove
-	tile_to_remove.clear()
+	
+	#tile_to_remove.clear()
 	pass # Replace with function body.
 
 

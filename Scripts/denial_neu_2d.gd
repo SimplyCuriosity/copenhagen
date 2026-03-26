@@ -1,6 +1,8 @@
 extends CharacterBody2D
 @onready var talk: RichTextLabel = $Talk
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var dialogue_area: Area2D = $DialogueArea
+
 var stop_right_there := false
 var Neu_is_here:= false
 var dialogue_scene = preload("res://Scenes/dialogue_system.tscn") 
@@ -13,7 +15,20 @@ enum neu_name {
 	Mystery
 }
 @export var alternate_neu_name: neu_name
-
+@export var interactible:= true:
+	set(value):
+		interactible = value
+		if interactible:
+			dialogue_area.monitoring = true
+		elif not interactible:
+			dialogue_area.monitoring = false
+@export var animation_player_flip_h:= false:
+	set(value):
+		animation_player_flip_h = value
+		if value:
+			animated_sprite_2d.flip_h = true
+		elif not value:
+			animated_sprite_2d.flip_h = false
 
 
 
@@ -276,6 +291,49 @@ Now let’s see if this journey is worthwhile.
 "
 ]
 
+var Ag_intro_dialogue:Array = ["
+Ag:
+Hello little one.
+I’ve been waiting long enough to see you leave that dump... Especially that slouch floating by your side.
+Deni:
+ 
+Hey!
+Ag:
+Your by their side Deni.
+You should know the truth about this cell just as much as I do.
+Deni:
+ 
+...right... But what gives you the 
+Ag:
+SILENCE!
+You’ve already made your case.
+As for you... You may feel a sense of gratitude for reaching this point, but it is in vain.
+Your actions have no meaning here.
+They’re just as worthless as you are!
+Deni:
+ 
+But...
+Deni:
+ 
+...
+Ag:
+My point exactly.
+Now excuse me, I’d like to find something else that actually deserves my attention before I go insane from looking at the same cardboard walls for hours.
+",
+"
+Deni:
+He’s not wrong.
+I mean, look!
+You can’t even tell when this ends!
+Deni:
+ 
+...
+Deni:
+Your still going to do it, aren’t you?
+Well... it’s a chance. That’s what matters.
+Onward, my friend!
+"
+]
 
 
 func _ready() -> void:
@@ -297,13 +355,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# Sprite look at player 
-	if alternate_neu_name == neu_name.Deni:
+	if alternate_neu_name == neu_name.Deni and interactible:
 		if global_position.x > GameManager.playable_character.global_position.x:
 			animated_sprite_2d.flip_h = false
 		elif global_position.x < GameManager.playable_character.global_position.x:
 			animated_sprite_2d.flip_h = true
 		pass
-	else:
+	elif interactible:
 		if global_position.x > GameManager.playable_character.global_position.x:
 			animated_sprite_2d.flip_h = true
 		elif global_position.x < GameManager.playable_character.global_position.x:

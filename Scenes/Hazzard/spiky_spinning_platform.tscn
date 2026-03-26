@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://bvyiyqdevhrod"]
+
+[ext_resource type="Script" uid="uid://bl63g4lqpgh4t" path="res://Scripts/Hazzard/spiky_spinning_platform.gd" id="1_c08yn"]
+[ext_resource type="Texture2D" uid="uid://doasmwmvnun6h" path="res://Assets/2D art/Tiles/tile_circle_added.png" id="2_ju8dv"]
+[ext_resource type="Script" uid="uid://dsyrkcbcone5e" path="res://Scripts/Hazzard/spike.gd" id="3_ju8dv"]
+[ext_resource type="Texture2D" uid="uid://btmvedvh2pl4t" path="res://Assets/2D art/Tiles/tile_circle_withspikes.png" id="4_3fmyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5262"]
+size = Vector2(188, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1rc8e"]
+size = Vector2(188, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t17tl"]
+size = Vector2(419, 459)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ju8dv"]
+size = Vector2(416, 464)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fmyq"]
+size = Vector2(416, 464)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbf6q"]
+size = Vector2(416, 464)
+
+[sub_resource type="Animation" id="Animation_dbf6q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vydvx"]
+resource_name = "SpikeDown"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100000024, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [3.1415927, 3.0787608005179967, 6.346017160251383, 6.283185307179586]
+}
+
+[sub_resource type="Animation" id="Animation_sbimd"]
+resource_name = "SpikeUP"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.93333334, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.06283186, 3.2044246, 3.1415927]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_da0vi"]
+_data = {
+&"RESET": SubResource("Animation_dbf6q"),
+&"SpikeDown": SubResource("Animation_vydvx"),
+&"SpikeUP": SubResource("Animation_sbimd")
+}
+
+[node name="SpikySpinningPlatform" type="AnimatableBody2D" unique_id=1870290390]
+collision_mask = 2
+script = ExtResource("1_c08yn")
+start_time = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2020692763]
+position = Vector2(0, -19)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_ju8dv")
+region_enabled = true
+region_rect = Rect2(0, 2568.336, 1539.1201, 168.47998)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=937480539]
+position = Vector2(1, -20)
+shape = SubResource("RectangleShape2D_n5262")
+one_way_collision = true
+
+[node name="PlayerDetect" type="Area2D" parent="." unique_id=1434210922]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetect" unique_id=2075947922]
+position = Vector2(1, -42.5)
+shape = SubResource("RectangleShape2D_1rc8e")
+
+[node name="Spike" type="AnimatableBody2D" parent="." unique_id=60013587]
+position = Vector2(-63, 18)
+rotation = 3.1415927
+scale = Vector2(0.125, 0.125)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_ju8dv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spike" unique_id=478116430]
+texture = ExtResource("4_3fmyq")
+region_enabled = true
+region_rect = Rect2(1532.2021, 1531.7042, 545.8833, 525.6654)
+
+[node name="Area2D" type="Area2D" parent="Spike" unique_id=975982666]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike/Area2D" unique_id=342236886]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_t17tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike" unique_id=938617771]
+shape = SubResource("RectangleShape2D_ju8dv")
+disabled = true
+
+[node name="Spike2" type="AnimatableBody2D" parent="." unique_id=1073609324]
+position = Vector2(-2, 18)
+rotation = 3.1415927
+scale = Vector2(0.125, 0.125)
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_ju8dv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spike2" unique_id=1157123009]
+texture = ExtResource("4_3fmyq")
+region_enabled = true
+region_rect = Rect2(1532.2021, 1531.7042, 545.8833, 525.6654)
+
+[node name="Area2D" type="Area2D" parent="Spike2" unique_id=1056623953]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike2/Area2D" unique_id=2143982476]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_t17tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike2" unique_id=1592235183]
+shape = SubResource("RectangleShape2D_3fmyq")
+disabled = true
+
+[node name="Spike3" type="AnimatableBody2D" parent="." unique_id=559084292]
+position = Vector2(59, 18)
+rotation = 3.1415927
+scale = Vector2(0.125, 0.125)
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("3_ju8dv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spike3" unique_id=870027497]
+texture = ExtResource("4_3fmyq")
+region_enabled = true
+region_rect = Rect2(1532.2021, 1531.7042, 545.8833, 525.6654)
+
+[node name="Area2D" type="Area2D" parent="Spike3" unique_id=252496802]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike3/Area2D" unique_id=2090538880]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_t17tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spike3" unique_id=1108808006]
+shape = SubResource("RectangleShape2D_dbf6q")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2142079964]
+libraries/ = SubResource("AnimationLibrary_da0vi")
+
+[connection signal="body_entered" from="Spike/Area2D" to="Spike" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spike2/Area2D" to="Spike2" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Spike3/Area2D" to="Spike3" method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

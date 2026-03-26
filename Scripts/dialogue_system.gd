@@ -52,17 +52,16 @@ However Anger Neu could reignite them at any time, the player can use Paralyze/s
 
 var a = "
 Deni:
-You still listening to me?
-Well, I hope so.
-As much as I’d love to be by your side the whole way...
-I don’t really know any other shortcuts.
-So, hopefully you don’t mind if I stay up in here, in... well, your mind?
+He’s not wrong.
+I mean, look!
+You can’t even tell when this ends!
 Deni:
  
 ...
 Deni:
-...I’ll take that as a yes.
-Now let’s see if this journey is worthwhile.
+Your still going to do it, aren’t you?
+Well... it’s a chance. That’s what matters.
+Onward, my friend!
 "
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
