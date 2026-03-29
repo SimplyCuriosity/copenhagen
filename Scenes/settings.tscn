@@ -10,10 +10,10 @@
 [ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="7_rgw85"]
 [ext_resource type="PackedScene" uid="uid://8dk0yro8lp77" path="res://Scenes/UI/ruler_slider.tscn" id="8_bismi"]
 
-[sub_resource type="Gradient" id="Gradient_mfc1d"]
+[sub_resource type="Gradient" id="Gradient_bismi"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_rgw85"]
-gradient = SubResource("Gradient_mfc1d")
+gradient = SubResource("Gradient_bismi")
 width = 90
 height = 13
 

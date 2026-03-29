@@ -6,8 +6,12 @@ extends Node3D
 @onready var checkpoint_audio: AudioStreamPlayer = $CheckpointAudio
 @onready var player_died_audio: AudioStreamPlayer = $PlayerDiedAudio
 
+const MAIN_THEME = preload("res://Assets/Music/bigj_demo_4.mp3")
 const DENI_THEME = preload("res://Assets/Music/Deni's Theme.ogg")
+const AG_THEME = preload("res://Assets/Music/Ag's_Theme.ogg")
+const MINIGAME_THEME = preload("res://Assets/Music/Minigame.ogg")
 
+var credits_scene
 var main_menu
 var Background_music
 var setting_menu
@@ -22,7 +26,7 @@ var dialogue_system:
 			dialogue_system.queue_free()
 		dialogue_system = value
 var just_died:= false
-
+var in_minigame:= false
 
 
 #Require save is below
@@ -170,16 +174,36 @@ func _process(delta: float) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		dim_background.visible = true
 	
+	
 	if current_level != null:
-		if current_level.name == "Level 1" and Background_music.stream != DENI_THEME:
+		if current_level.name == "Level 1" and Background_music.stream != DENI_THEME and not in_minigame:
 			Background_music.stream = DENI_THEME
-			BackgroundMusic.volume_db = -10
+			BackgroundMusic.volume_db = -8
 			Background_music.playing = true
+			#BackgroundMusic._change_music(DENI_THEME, -8)
+		elif current_level.name == "Level 2" and Background_music.stream != AG_THEME and not in_minigame:
+			Background_music.stream = AG_THEME
+			BackgroundMusic.volume_db = -5
+			Background_music.playing = true
+			#BackgroundMusic._change_music(AG_THEME, -5)
+		elif in_minigame and Background_music.stream != MINIGAME_THEME:
+			Background_music.stream = MINIGAME_THEME
+			BackgroundMusic.volume_db = -5
+			Background_music.playing = true
+			#BackgroundMusic._change_music(MINIGAME_THEME, -5)
+		pass
+	elif get_tree().current_scene != null:
+			if get_tree().current_scene.name == "MainMenu" and BackgroundMusic.stream != MAIN_THEME:
+				Background_music.stream = MAIN_THEME
+				BackgroundMusic.volume_db = 0
+				Background_music.playing = true
+				#BackgroundMusic._change_music(MAIN_THEME, 0)
 	pass
 
 func _player_died():
 	just_died = true
 	player_died_audio.play()
+	in_minigame = false
 	if current_level != null:
 		get_tree().current_scene.animation_player.play("FadeOut")
 		#await get_tree().create_timer(4).timeout

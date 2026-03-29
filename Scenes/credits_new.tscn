@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://cgpaq6pbyvogo"]
+
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/2D art/Textures/CardBoard.png" id="1_epj3n"]
+[ext_resource type="Script" uid="uid://s8j6r6xr7agl" path="res://Scripts/credits.gd" id="1_t2eot"]
+[ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="2_t2eot"]
+[ext_resource type="Texture2D" uid="uid://wvnp8j223pad" path="res://Assets/2D art/Textures/PaperRip_2.png" id="3_t2eot"]
+[ext_resource type="Script" uid="uid://c33xdlwtmnfps" path="res://Scripts/back_on_credits.gd" id="3_v8712"]
+[ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/2D art/Textures/PaperRip_1.png" id="4_v8712"]
+[ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="5_eafl8"]
+
+[node name="CreditsNew" type="Node2D" unique_id=1305526507]
+position = Vector2(0, -17)
+script = ExtResource("1_t2eot")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1218991869]
+layer = 3
+
+[node name="Carboard" type="Sprite2D" parent="CanvasLayer" unique_id=2081242263]
+position = Vector2(957.56006, 652.56006)
+scale = Vector2(1.9774219, 1.9774219)
+texture = ExtResource("1_epj3n")
+
+[node name="Back" type="Label" parent="CanvasLayer" unique_id=1463502387]
+z_index = 1
+offset_left = -90.0
+offset_top = 902.0
+offset_right = 505.0
+offset_bottom = 1072.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/font = ExtResource("2_t2eot")
+theme_override_font_sizes/font_size = 122
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_v8712")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Back" unique_id=98981319]
+z_index = -1
+position = Vector2(564, 479.00012)
+scale = Vector2(1.643, 1.93)
+texture = ExtResource("3_t2eot")
+region_enabled = true
+region_rect = Rect2(0, 137.23325, 739.67755, 886.7667)
+
+[node name="Button" type="Button" parent="CanvasLayer/Back" unique_id=1293646514]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 177.0
+offset_top = 37.0
+offset_right = 408.0
+offset_bottom = 119.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer" unique_id=1898942523]
+process_mode = 3
+position = Vector2(1022, 511)
+rotation = -3.1415925
+scale = Vector2(2.385, 1.956)
+texture = ExtResource("4_v8712")
+
+[node name="Gabiler" type="LinkButton" parent="CanvasLayer" unique_id=768706030]
+offset_left = 389.0
+offset_top = 198.0
+offset_right = 678.0
+offset_bottom = 279.0
+theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0, 1, 1)
+theme_override_fonts/font = ExtResource("5_eafl8")
+theme_override_font_sizes/font_size = 88
+text = "Gabiler"
+underline = 1
+uri = "https://linktr.ee/Gabiler"
+
+[node name="Roadhaus" type="LinkButton" parent="CanvasLayer" unique_id=145722961]
+offset_left = 345.0
+offset_top = 394.0
+offset_right = 725.0
+offset_bottom = 475.0
+theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0, 1, 1)
+theme_override_fonts/font = ExtResource("5_eafl8")
+theme_override_font_sizes/font_size = 88
+text = "Roadhaus"
+underline = 1
+uri = "https://itch.io/profile/roadhaus"
+
+[node name="Kulkugo" type="LinkButton" parent="CanvasLayer" unique_id=938664474]
+offset_left = 366.0
+offset_top = 487.0
+offset_right = 746.0
+offset_bottom = 568.0
+theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0, 1, 1)
+theme_override_fonts/font = ExtResource("5_eafl8")
+theme_override_font_sizes/font_size = 88
+text = "Kulkugo"
+underline = 1
+uri = "https://kulkogo.itch.io/"
+
+[node name="Yegax" type="LinkButton" parent="CanvasLayer" unique_id=1125739011]
+offset_left = 408.0
+offset_top = 578.0
+offset_right = 665.0
+offset_bottom = 659.0
+theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0, 1, 1)
+theme_override_fonts/font = ExtResource("5_eafl8")
+theme_override_font_sizes/font_size = 88
+text = "Yegax"
+underline = 1
+uri = "https://itch.io/profile/yegax"
+
+[node name="Stumonster" type="LinkButton" parent="CanvasLayer" unique_id=1344630942]
+offset_left = 281.0
+offset_top = 672.0
+offset_right = 739.0
+offset_bottom = 753.0
+theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.49010885, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0, 1, 1)
+theme_override_fonts/font = ExtResource("5_eafl8")
+theme_override_font_sizes/font_size = 88
+text = "Stumonster"
+underline = 1
+uri = "https://stu-n-pixels.itch.io/"
+
+[node name="SimplyCuriosity" type="LinkButton" parent="CanvasLayer" unique_id=1488904570]
+offset_left = 366.0
+offset_top = 772.0
+offset_right = 643.0
+offset_bottom = 853.0
+theme_override_colors/font_color = Color(0, 0, 0.5686275, 1)
+theme_override_colors/font_focus_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.49019608, 0, 1, 1)
+theme_override_colors/font_hover_color = Color(0.49019608, 0, 1, 1)
+theme_override_fonts/font = ExtResource("5_eafl8")
+theme_override_font_sizes/font_size = 88
+text = "Simply"
+underline = 1
+uri = "https://simplycuriosity.itch.io/"
+
+[node name="Gabiler Credit" type="RichTextLabel" parent="CanvasLayer" unique_id=377964919]
+offset_left = 780.0
+offset_top = 221.0
+offset_right = 1789.0
+offset_bottom = 377.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/line_separation = 34
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("5_eafl8")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Deni's Theme, Ag's Theme,
+minigame ost, SFX Designer
+"
+scroll_active = false
+
+[node name="Roadhaus Credit" type="RichTextLabel" parent="CanvasLayer" unique_id=206274112]
+offset_left = 779.0
+offset_top = 406.0
+offset_right = 1788.0
+offset_bottom = 473.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/line_separation = 34
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("5_eafl8")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "\"Good Morning Neu\" theme
+"
+scroll_active = false
+
+[node name="Kulkugo Credit" type="RichTextLabel" parent="CanvasLayer" unique_id=1647080257]
+offset_left = 779.0
+offset_top = 505.0
+offset_right = 1788.0
+offset_bottom = 570.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/line_separation = 34
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("5_eafl8")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Story & Dialogue Writer
+
+"
+scroll_active = false
+
+[node name="Yegax Credit" type="RichTextLabel" parent="CanvasLayer" unique_id=2023423585]
+offset_left = 779.0
+offset_top = 597.0
+offset_right = 1788.0
+offset_bottom = 659.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/line_separation = 34
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("5_eafl8")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Illustrations & tiles artist
+"
+scroll_active = false
+
+[node name="Stumonster Credit" type="RichTextLabel" parent="CanvasLayer" unique_id=1221486946]
+offset_left = 764.0
+offset_top = 687.0
+offset_right = 1773.0
+offset_bottom = 926.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/line_separation = 34
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("5_eafl8")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Background & Particle texture"
+scroll_active = false
+
+[node name="SimplyCuriosity Credit" type="RichTextLabel" parent="CanvasLayer" unique_id=914414467]
+offset_left = 766.0
+offset_top = 787.0
+offset_right = 1775.0
+offset_bottom = 1026.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_constants/line_separation = 34
+theme_override_constants/outline_size = -72
+theme_override_fonts/normal_font = ExtResource("5_eafl8")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Godot Programmer
+"
+scroll_active = false
+
+[connection signal="focus_entered" from="CanvasLayer/Back/Button" to="CanvasLayer/Back" method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="CanvasLayer/Back/Button" to="CanvasLayer/Back" method="_on_button_focus_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Back/Button" to="CanvasLayer/Back" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Back/Button" to="CanvasLayer/Back" method="_on_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Back/Button" to="CanvasLayer/Back" method="_on_button_pressed"]

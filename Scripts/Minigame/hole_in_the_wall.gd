@@ -32,6 +32,7 @@ func _on_obstacle_animation_animation_finished(anim_name: StringName) -> void:
 		if GameManager.current_level != null:
 			if GameManager.current_level.name == "Level 1":
 				open_path.emit()
+				GameManager.in_minigame = false
 	pass # Replace with function body.
 	
 func _countdown_over():
@@ -40,6 +41,7 @@ func _countdown_over():
 	survive.text = "SUCCESS"
 
 func _challenge_start():
+	GameManager.in_minigame = true
 	start_countdown.text = str(3)
 	await get_tree().create_timer(1).timeout
 	start_countdown.text = str(2)

@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://c48a40ghgl8k5" path="res://Assets/2D art/Textures/PaperRip_3.png" id="1_3avw4"]
 [ext_resource type="Script" uid="uid://bd2vgp0yxtfl8" path="res://Scenes/VFX/fire.gd" id="2_ahfbu"]
 [ext_resource type="AudioStream" uid="uid://d23720e1lwofs" path="res://Assets/SFX/SFX-Fire.ogg" id="3_vo4fp"]
+[ext_resource type="Texture2D" uid="uid://bjpsoc7nmjgsr" path="res://Assets/2D art/Textures/CardBoard.png" id="4_8s01l"]
 
 [sub_resource type="Curve" id="Curve_ahfbu"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.21673003, 0.68949044), 0.0, 0.0, 0, 0, Vector2(0.7794677, 0.6791401), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -26,7 +27,8 @@ colors = PackedColorArray(1, 0.7796042, 0.6124952, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_pbp1h")
 
 [sub_resource type="Curve" id="Curve_5ts8w"]
-_data = [Vector2(0, 0.8343949), 0.0, 0.0, 0, 0, Vector2(1, 0.120222926), 0.0, 0.0, 0, 0]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 1.4505124), 0.0, 0.0, 0, 0, Vector2(1, 0.120222926), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_rcscf"]
@@ -106,7 +108,7 @@ point_count = 2
 curve = SubResource("Curve_l1v1k")
 
 [sub_resource type="Curve" id="Curve_eftbi"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.121673, 0.13057327), 0.0, 0.0, 0, 0, Vector2(1, 0.037420392), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.121673, 0.13057327), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_waqft"]
@@ -185,6 +187,16 @@ turbulence_noise_strength = 3.7
 turbulence_influence_min = 0.70400006
 turbulence_influence_max = 0.88600004
 
+[sub_resource type="Gradient" id="Gradient_vo4fp"]
+offsets = PackedFloat32Array(0, 0.007490637, 0.014981274, 0.026217228, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.52434456, 0.52434456, 0.52434456, 1, 0.249311, 0.249311, 0.249311, 1, 0.27701223, 0.27701223, 0.27701223, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8s01l"]
+gradient = SubResource("Gradient_vo4fp")
+fill = 1
+fill_from = Vector2(0.4957265, 0.4957265)
+fill_to = Vector2(0.8418803, 0.06837607)
+
 [node name="Fire" type="GPUParticles2D" unique_id=175458437]
 amount = 128
 texture = ExtResource("1_3avw4")
@@ -242,6 +254,21 @@ volume_db = 5.3
 autoplay = true
 max_distance = 1618.0
 bus = &"SFX"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=583249678]
+visible = false
+position = Vector2(8.000053, 15.000061)
+scale = Vector2(68.84376, 24.5)
+color = Color(1, 0.49010885, 0.21209751, 1)
+energy = 5.08
+texture = SubResource("GradientTexture2D_8s01l")
+
+[node name="CardBoard" type="Sprite2D" parent="." unique_id=1483972137]
+visible = false
+z_index = -10
+position = Vector2(-179, 383)
+scale = Vector2(4.28125, 1.7226563)
+texture = ExtResource("4_8s01l")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

@@ -1184,7 +1184,7 @@ tile_map_data = PackedByteArray("AAAcAA4ACAAAAAAAAAAfAA4ACAACAAAAAAAdAA4ACAABAAA
 tile_set = SubResource("TileSet_q8f14")
 
 [node name="Neu2D" parent="." unique_id=587876329 instance=ExtResource("13_1fgkh")]
-position = Vector2(5674, -1532)
+position = Vector2(632, 868)
 
 [node name="AlternateNeu2D" parent="." unique_id=1774092108 instance=ExtResource("14_hd8f4")]
 position = Vector2(1046, 793)
@@ -1194,7 +1194,6 @@ alternate_neu_name = 1
 position = Vector2(565, -444)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2133889552]
-visible = false
 
 [node name="Ductapes" type="Node2D" parent="." unique_id=1569407078]
 

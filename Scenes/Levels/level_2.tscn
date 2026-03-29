@@ -1058,7 +1058,13 @@ alternate_neu_name = 2
 position = Vector2(565, -444)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2133889552]
+
+[node name="Red background" type="Sprite2D" parent="CanvasLayer" unique_id=2141834035]
 visible = false
+modulate = Color(0.7772606, 0.30943933, 0, 0.42800003)
+position = Vector2(967.00006, 588.00006)
+scale = Vector2(31.218752, 19.375)
+texture = SubResource("GradientTexture2D_boiit")
 
 [node name="Ductapes" type="Node2D" parent="." unique_id=1569407078]
 visible = false

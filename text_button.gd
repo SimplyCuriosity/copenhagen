@@ -8,7 +8,7 @@ func _ready() -> void:
 	button.mouse_entered.connect(_custom_button_mouse_entered)
 	button.mouse_exited.connect(_custom_button_mouse_exited)
 	button.pressed.connect(_custom_button_pressed)
-	
+	print(name)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -47,10 +47,6 @@ func _custom_button_pressed() -> void:
 		"Exit":
 			get_tree().quit()
 		"Back":
-			#if get_tree().current_scene.name == "MainMenu":
-			#	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-			#elif get_tree().current_scene.name == "Main":
-			#	GameManager.setting_menu.visible = false
 			GameManager.setting_menu.visible = false
 			if get_tree().current_scene.name == "MainMenu":
 				get_tree().current_scene.visible = true
@@ -73,23 +69,30 @@ func _custom_button_pressed() -> void:
 					GameManager.dialogue_system.visible = false
 		"Main Menu":
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-			GameManager.Background_music.stream = preload("res://Assets/Music/bigj_demo_4.mp3")
-			BackgroundMusic.volume_db = 0
-			GameManager.Background_music.playing = true
+			#GameManager.Background_music.stream = preload("res://Assets/Music/bigj_demo_4.mp3")
+			#BackgroundMusic.volume_db = 0
+			#GameManager.Background_music.playing = true
 			GameManager.Resume_button_pressed = true
 			if GameManager.dialogue_system != null:
 				GameManager.dialogue_system.queue_free()
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		"Skip All":
 			GameManager.dialogue_system._skip_early()
+		"Credits":
+			var credits_scene = preload("res://Scenes/credits_new.tscn")
+			var credits_node = credits_scene.instantiate()
+			GameManager.add_child(credits_node)
+			GameManager.setting_menu.visible = false
 	pass
 
 
 func _on_button_focus_entered() -> void:
+	_custom_button_focus_entered()
 	pass # Replace with function body.
 
 
 func _on_button_focus_exited() -> void:
+	_custom_button_focus_exited()
 	pass # Replace with function body.
 
 
