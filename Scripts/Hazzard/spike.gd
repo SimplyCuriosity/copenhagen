@@ -16,5 +16,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		if body.get_collision_layer_value(2) == true:
 			GameManager.playable_character.stop_all_motion = true
+			GameManager.playable_character.camera_2d.shake_cam(10)
 			GameManager._player_died()
 	pass # Replace with function body.

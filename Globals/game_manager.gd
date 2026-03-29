@@ -3,6 +3,8 @@ extends Node3D
 @onready var dim_background: Sprite2D = $"CanvasLayer/Dim background"
 @onready var canvas_modulate: CanvasModulate = $CanvasLayer/CanvasModulate 
 @onready var pause_overlay: Node2D = $"CanvasLayer/Pause Overlay"
+@onready var checkpoint_audio: AudioStreamPlayer = $CheckpointAudio
+@onready var player_died_audio: AudioStreamPlayer = $PlayerDiedAudio
 
 const DENI_THEME = preload("res://Assets/Music/Deni's Theme.ogg")
 
@@ -177,6 +179,7 @@ func _process(delta: float) -> void:
 
 func _player_died():
 	just_died = true
+	player_died_audio.play()
 	if current_level != null:
 		get_tree().current_scene.animation_player.play("FadeOut")
 		#await get_tree().create_timer(4).timeout
@@ -190,6 +193,8 @@ func _update_alternate_neu_position():
 	get_tree().current_scene.alternate_neu_2d.global_position = get_tree().current_scene.alternate_position.global_position
 
 func _player_save_checkpoint():
+	#play sound
+	checkpoint_audio.play()
 	#fade out
 	GameManager.playable_character.motion_paused = true
 	get_tree().current_scene.animation_player.play("FadeOut")

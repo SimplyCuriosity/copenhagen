@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dhku0c5rp8poi" path="res://Assets/2D art/little_cats/cats4.png" id="2_5brdc"]
 [ext_resource type="Texture2D" uid="uid://wvnp8j223pad" path="res://Assets/2D art/Textures/PaperRip_2.png" id="2_18pqq"]
 [ext_resource type="PackedScene" uid="uid://8dk0yro8lp77" path="res://Scenes/UI/ruler_slider.tscn" id="3_aj7yi"]
+[ext_resource type="Script" uid="uid://bjay2mmkext3u" path="res://Scripts/camera_2d.gd" id="4_4mq8b"]
 [ext_resource type="Texture2D" uid="uid://b8g8pdk017vun" path="res://Assets/2D art/UI/ruler_slicing/slicing_piece2.png" id="4_obmqf"]
 [ext_resource type="Texture2D" uid="uid://cntqvfyie0nuo" path="res://Assets/2D art/little_cats/cats2.png" id="5_vjogc"]
 [ext_resource type="Texture2D" uid="uid://d0t2oogocua7j" path="res://Assets/2D art/UI/ruler_slicing/slicing_piece1.png" id="6_ve2b2"]
@@ -53,6 +54,7 @@ process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 editor_draw_limits = true
+script = ExtResource("4_4mq8b")
 
 [node name="JumpMeterSlider" parent="." unique_id=159090270 instance=ExtResource("3_aj7yi")]
 layout_direction = 4

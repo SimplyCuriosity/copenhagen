@@ -5,6 +5,8 @@
 [ext_resource type="FontFile" uid="uid://hade7h7polbu" path="res://Assets/Fonts/Italic-Regular.ttf" id="3_e6ac5"]
 [ext_resource type="PackedScene" uid="uid://ce2a5g7yslbo7" path="res://Scenes/UI/text_button.tscn" id="4_ae4yk"]
 [ext_resource type="PackedScene" uid="uid://dccfjxxtn4pn" path="res://Scenes/settings.tscn" id="5_oejsf"]
+[ext_resource type="AudioStream" uid="uid://c5446jsip6hiu" path="res://Assets/SFX/SFX-Checkpoint.ogg" id="6_uhyx4"]
+[ext_resource type="AudioStream" uid="uid://cuj27e4loecqp" path="res://Assets/SFX/SFX-Death.ogg" id="7_4grqc"]
 
 [sub_resource type="Gradient" id="Gradient_j441c"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -124,3 +126,13 @@ icon = SubResource("GradientTexture2D_j441c")
 position = Vector2(0, -17)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer" unique_id=529441934]
+
+[node name="CheckpointAudio" type="AudioStreamPlayer" parent="." unique_id=1200117191]
+stream = ExtResource("6_uhyx4")
+volume_db = 5.073
+bus = &"SFX"
+
+[node name="PlayerDiedAudio" type="AudioStreamPlayer" parent="." unique_id=617822549]
+stream = ExtResource("7_4grqc")
+volume_db = -10.146
+bus = &"SFX"
