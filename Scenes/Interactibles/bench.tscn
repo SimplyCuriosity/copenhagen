@@ -18,7 +18,7 @@ region_enabled = true
 region_rect = Rect2(-3.4938354, -1.8414383, 596.5609, 528.1804)
 
 [node name="PlayerDetection" type="Area2D" parent="." unique_id=1160357309]
-collision_layer = 0
+collision_layer = 32
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection" unique_id=1415105683]

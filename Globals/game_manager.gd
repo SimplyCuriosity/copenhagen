@@ -10,6 +10,7 @@ const MAIN_THEME = preload("res://Assets/Music/bigj_demo_4.mp3")
 const DENI_THEME = preload("res://Assets/Music/Deni's Theme.ogg")
 const AG_THEME = preload("res://Assets/Music/Ag's_Theme.ogg")
 const MINIGAME_THEME = preload("res://Assets/Music/Minigame.ogg")
+const RESS_THEME = preload("res://Assets/Music/Ress's Theme.ogg")
 
 var credits_scene
 var main_menu
@@ -152,7 +153,34 @@ var level_4_outro_done:= false:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
+func _physics_process(delta: float) -> void:
+	if current_level != null:
+		if current_level.name == "Level 1" and BackgroundMusic.music_cue != DENI_THEME and not in_minigame:
+			#Background_music.stream = DENI_THEME
+			#BackgroundMusic.volume_db = -8
+			#Background_music.playing = true
+			BackgroundMusic._change_music(DENI_THEME, -8)
+		elif current_level.name == "Level 2" and BackgroundMusic.music_cue != AG_THEME and not in_minigame:
+			#Background_music.stream = AG_THEME
+			#BackgroundMusic.volume_db = -5
+			#Background_music.playing = true
+			BackgroundMusic._change_music(AG_THEME, -5)
+		elif in_minigame and BackgroundMusic.music_cue != MINIGAME_THEME:
+			#Background_music.stream = MINIGAME_THEME
+			#BackgroundMusic.volume_db = -5
+			#Background_music.playing = true
+			BackgroundMusic._change_music(MINIGAME_THEME, -5)
+		pass
+	elif get_tree().current_scene != null:
+			if get_tree().current_scene.name == "MainMenu" and BackgroundMusic.music_cue != MAIN_THEME:
+				#Background_music.stream = MAIN_THEME
+				#BackgroundMusic.volume_db = 0
+				#Background_music.playing = true
+				BackgroundMusic._change_music(MAIN_THEME, 0)
+			elif get_tree().current_scene.name == "Intro Level" and BackgroundMusic.music_cue != RESS_THEME:
+				BackgroundMusic._change_music(RESS_THEME, -5)
+	await get_tree().create_timer(0.2).timeout
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -175,29 +203,7 @@ func _process(delta: float) -> void:
 		dim_background.visible = true
 	
 	
-	if current_level != null:
-		if current_level.name == "Level 1" and Background_music.stream != DENI_THEME and not in_minigame:
-			Background_music.stream = DENI_THEME
-			BackgroundMusic.volume_db = -8
-			Background_music.playing = true
-			#BackgroundMusic._change_music(DENI_THEME, -8)
-		elif current_level.name == "Level 2" and Background_music.stream != AG_THEME and not in_minigame:
-			Background_music.stream = AG_THEME
-			BackgroundMusic.volume_db = -5
-			Background_music.playing = true
-			#BackgroundMusic._change_music(AG_THEME, -5)
-		elif in_minigame and Background_music.stream != MINIGAME_THEME:
-			Background_music.stream = MINIGAME_THEME
-			BackgroundMusic.volume_db = -5
-			Background_music.playing = true
-			#BackgroundMusic._change_music(MINIGAME_THEME, -5)
-		pass
-	elif get_tree().current_scene != null:
-			if get_tree().current_scene.name == "MainMenu" and BackgroundMusic.stream != MAIN_THEME:
-				Background_music.stream = MAIN_THEME
-				BackgroundMusic.volume_db = 0
-				Background_music.playing = true
-				#BackgroundMusic._change_music(MAIN_THEME, 0)
+	
 	pass
 
 func _player_died():

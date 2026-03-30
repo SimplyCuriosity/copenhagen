@@ -140,10 +140,10 @@ shape = SubResource("RectangleShape2D_q20g1")
 
 [node name="Talk" type="RichTextLabel" parent="." unique_id=616301482]
 offset_left = -136.0
-offset_top = -85.0
+offset_top = -168.0
 offset_right = 136.0
-offset_bottom = -32.0
-theme_override_colors/default_color = Color(0.42358288, 1, 0.46845925, 1)
+offset_bottom = -115.0
+theme_override_colors/default_color = Color(0.16862746, 0, 0.78039217, 1)
 theme_override_fonts/normal_font = ExtResource("3_53cpp")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true

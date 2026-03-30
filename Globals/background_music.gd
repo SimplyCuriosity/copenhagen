@@ -37,6 +37,7 @@ func _change_music(music, volume):
 	music_cue = music
 	await fade_out_over
 	stream = music_cue
+	volume_db = volume
 	playing = true
-	increasing = true
+	#increasing = true
 	pass

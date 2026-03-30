@@ -45,7 +45,6 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 	elif body is AnimatableBody2D:
 		body.queue_free()
 			
-			
 					#print("it happens")
 	#print("tile to remove is", tile_to_remove)
 	#tiles.tile_to_remove = tile_to_remove
@@ -56,4 +55,11 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 
 func _on_area_2d_body_shape_exited(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	
+	pass # Replace with function body.
+
+
+func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area is Area2D:
+		if area.get_collision_layer_value(6) == true:
+			area.get_parent().queue_free()
 	pass # Replace with function body.

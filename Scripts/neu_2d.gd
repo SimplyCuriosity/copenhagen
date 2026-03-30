@@ -96,6 +96,7 @@ func _physics_process(delta: float) -> void:
 		pass
 	if is_on_floor() and not just_landed:
 		just_landed = true
+		wall_climb_stamina = MAX_WALL_CLIMB_STAMINA
 		landing_audio.pitch_scale = randf_range(0.9,1.1)
 		landing_audio.play()
 		
