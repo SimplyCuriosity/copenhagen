@@ -840,7 +840,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("WorldCam:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -1201,7 +1201,6 @@ region_enabled = true
 region_rect = Rect2(1525.1282, 454.0793, 200.18652, 106.29373)
 
 [node name="WorldCam" type="Camera2D" parent="." unique_id=387757221]
-position = Vector2(12353, -1762)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
 
