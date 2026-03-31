@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cmqd1v3y5qxmn"]
+
+[ext_resource type="Texture2D" uid="uid://be03i71g7qawn" path="res://Assets/2D art/checkpoint_cave/checkpoints/check_flower.png" id="1_5t8pv"]
+[ext_resource type="Script" uid="uid://c5rf340wkonrb" path="res://Scenes/Interactibles/burn_poi.gd" id="1_b710t"]
+[ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="3_n4f8a"]
+[ext_resource type="PackedScene" uid="uid://68d4lgj0hf0d" path="res://Scenes/VFX/ashes_flame.tscn" id="4_mxce1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_761or"]
+size = Vector2(107, 161)
+
+[node name="Burn POI" type="Node2D" unique_id=1367886081]
+script = ExtResource("1_b710t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=43563560]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_5t8pv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1592849827]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1029346992]
+position = Vector2(-1.5, 3.5)
+shape = SubResource("RectangleShape2D_761or")
+
+[node name="Interact" type="RichTextLabel" parent="." unique_id=815305582]
+offset_left = -136.0
+offset_top = -155.0
+offset_right = 136.0
+offset_bottom = -102.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/normal_font = ExtResource("3_n4f8a")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[wave]\"E\" to Extinguish"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ashes flame" parent="." unique_id=2109213335 instance=ExtResource("4_mxce1")]
+position = Vector2(-3, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

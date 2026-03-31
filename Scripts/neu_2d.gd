@@ -8,6 +8,8 @@ extends CharacterBody2D
 @onready var camera_cast: RayCast2D = $CameraCast
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var regular_jump_window: Timer = $RegularJumpWindow
+@onready var climbing_audio: AudioStreamPlayer = $"Climbing Audio"
+
 
 @export var god_mode:= false
 const SPEED = 25000.0 #450 before motion * delta
@@ -139,6 +141,10 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -WALL_CLIMB_SPEED/4
 			wall_climb_stamina -= 50*delta
 			wall_climb_meter_slider.value = wall_climb_stamina
+			if climbing_audio.playing == false:
+				climbing_audio.play()
+	elif not is_on_wall_only():
+		climbing_audio.stop()
 	
 	if Input.is_action_just_released("Jump") and is_on_floor() and not motion_paused and pressed_on_land:
 		charge_jump_audio.stop()

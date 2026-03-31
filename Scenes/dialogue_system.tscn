@@ -30,7 +30,7 @@ gradient = SubResource("Gradient_j441c")
 script = ExtResource("1_tgreg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1019999970]
-layer = 2
+layer = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=915386615]
 stream = ExtResource("5_drpe7")

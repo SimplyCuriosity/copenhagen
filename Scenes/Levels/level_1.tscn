@@ -24,7 +24,6 @@
 [ext_resource type="Script" uid="uid://wyky0y4pci4y" path="res://Scripts/temporary_spike_areas.gd" id="21_nojx8"]
 [ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="22_vvknj"]
 [ext_resource type="PackedScene" uid="uid://gv4jx0of3eee" path="res://Scenes/Hazzard/spike.tscn" id="24_pmbdk"]
-[ext_resource type="PackedScene" uid="uid://btq1hm8c8kk81" path="res://Scenes/Hazzard/burning paper.tscn" id="25_ksf1i"]
 [ext_resource type="PackedScene" uid="uid://b1t3370yihn3y" path="res://Scenes/Minigame/hole_in_the_wall.tscn" id="26_vif5h"]
 [ext_resource type="PackedScene" uid="uid://dv4trnjvhcmkv" path="res://Scenes/Interactibles/cave.tscn" id="27_t8afp"]
 [ext_resource type="PackedScene" uid="uid://b3hlb1nt1al66" path="res://Scenes/VFX/cloud.tscn" id="28_t8afp"]
@@ -940,7 +939,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("WorldCam:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -1045,7 +1044,7 @@ tracks/0/path = NodePath("CanvasLayer2/Dim background:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0.16666667, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -1057,7 +1056,7 @@ tracks/1/path = NodePath("AlternateNeu2D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.99),
+"times": PackedFloat32Array(0.033333335),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -1104,20 +1103,6 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(12353, -1762), Vector2(11141, -1762), Vector2(11141, -1762), Vector2(12353, -1762)]
 }
-tracks/3/type = "method"
-tracks/3/imported = false
-tracks/3/enabled = false
-tracks/3/path = NodePath("Burning Papers/Burning Paper")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(11.866667),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_ignite_fire"
-}]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vvknj"]
 _data = {
@@ -1142,17 +1127,6 @@ script = ExtResource("1_7hll7")
 tile_map_data = PackedByteArray()
 
 [node name="Burning Papers" type="Node" parent="." unique_id=1980145949]
-
-[node name="Burning Paper" parent="Burning Papers" unique_id=1729512614 node_paths=PackedStringArray("burnable_tiles") instance=ExtResource("25_ksf1i")]
-z_index = -1
-position = Vector2(21007, -2746.0002)
-burnable_tiles = NodePath("../../BurnableTiles")
-
-[node name="Burning Paper2" parent="Burning Papers" unique_id=150092866 node_paths=PackedStringArray("burnable_tiles") instance=ExtResource("25_ksf1i")]
-z_index = -1
-position = Vector2(21999, -4132)
-rotation = -0.2765769
-burnable_tiles = NodePath("../../BurnableTiles")
 
 [node name="Barriers" type="Node" parent="." unique_id=1925351845]
 

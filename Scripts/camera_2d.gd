@@ -1,4 +1,5 @@
 extends Camera2D
+
 var shake:float = 3.0
 var shaking:= false
 # Called when the node enters the scene tree for the first time.

@@ -51,17 +51,14 @@ However Anger Neu could reignite them at any time, the player can use Paralyze/s
 "
 
 var a = "
-Deni:
-He’s not wrong.
-I mean, look!
-You can’t even tell when this ends!
-Deni:
+Ag:
  
-...
-Deni:
-Your still going to do it, aren’t you?
-Well... it’s a chance. That’s what matters.
-Onward, my friend!
+.
+.
+.
+Ag:
+ 
+Well now, lets see if you could extinguish them all!
 "
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -15,6 +15,7 @@ enum Cave_type {
 signal change_level(level_num: int)
 var Neu_is_here
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	change_level.connect(GameManager._change_level)
@@ -42,8 +43,13 @@ func _process(delta: float) -> void:
 				change_level.emit(1)
 				pass
 			Cave_type.Level_2_End:
-				GameManager.current_cave = Cave_type.Level_3_Begin
-				change_level.emit(3)
+				#GameManager.current_cave = Cave_type.Level_3_Begin
+				#change_level.emit(3)
+				GameManager.current_level.animation_player.play("FadeOut")
+				await GameManager.current_level.animation_player.animation_finished
+				get_tree().change_scene_to_file("res://Scenes/Cutscene/mid_game_cut_scene.tscn")
+				GameManager.current_level = null
+				BackgroundMusic._change_music(GameManager.RESS_THEME, -5)
 				pass
 			Cave_type.Level_3_Begin:
 				GameManager.current_cave = Cave_type.Level_2_End
@@ -61,6 +67,16 @@ func _process(delta: float) -> void:
 				#Ending Cutscene
 				pass
 				
+	elif Input.is_action_just_pressed("interact") and Neu_is_here and not open:
+		match Cave_Id:
+			Cave_type.Level_2_End:
+				var dialogue_node = GameManager.DIALOGUE_SCENE.instantiate()
+				add_child(dialogue_node)
+				GameManager.playable_character.motion_paused = true
+				dialogue_node._generate_dialogue_box("\nAg:\n \nWhere do you think you are going?\n")
+				await dialogue_node.dialogue_finished
+				GameManager.playable_character.motion_paused = false
+				pass
 	pass
 
 

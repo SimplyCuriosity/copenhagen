@@ -11,6 +11,7 @@ const DENI_THEME = preload("res://Assets/Music/Deni's Theme.ogg")
 const AG_THEME = preload("res://Assets/Music/Ag's_Theme.ogg")
 const MINIGAME_THEME = preload("res://Assets/Music/Minigame.ogg")
 const RESS_THEME = preload("res://Assets/Music/Ress's Theme.ogg")
+const DIALOGUE_SCENE = preload("res://Scenes/dialogue_system.tscn")
 
 var credits_scene
 var main_menu
@@ -98,7 +99,14 @@ var respawn_bench:
 			respawn_bench = value
 			respawn_point = respawn_bench.global_position
 			if respawn_bench.name == "MidBench":
-				level_1_half_way = true
+				if get_tree().current_scene.name == "Level 1":
+					level_1_half_way = true
+				elif get_tree().current_scene.name == "Level 2":
+					level_2_half_way = true
+				elif get_tree().current_scene.name == "Level 3":
+					level_3_half_way = true
+				elif get_tree().current_scene.name == "Level 4":
+					level_4_half_way = true
 var respawn_point:
 	set(value):
 		respawn_point = value
@@ -179,6 +187,8 @@ func _physics_process(delta: float) -> void:
 				BackgroundMusic._change_music(MAIN_THEME, 0)
 			elif get_tree().current_scene.name == "Intro Level" and BackgroundMusic.music_cue != RESS_THEME:
 				BackgroundMusic._change_music(RESS_THEME, -5)
+	elif in_minigame and BackgroundMusic.music_cue != MINIGAME_THEME:
+		BackgroundMusic._change_music(MINIGAME_THEME, -5)
 	await get_tree().create_timer(0.2).timeout
 	pass
 
@@ -231,9 +241,10 @@ func _player_save_checkpoint():
 	await get_tree().current_scene.animation_player.animation_finished
 	
 	# update alternate neu position if still not absorbed
-	if level_1_half_way and not level_1_outro_done:
+	if level_1_half_way and not level_1_outro_done and current_level.name == "Level 1":
 		_update_alternate_neu_position()
-	
+	elif level_2_half_way and not level_2_outro_done and current_level.name == "Level 2":
+		_update_alternate_neu_position()
 	#fade in
 	get_tree().current_scene.animation_player.play("FadeIn")
 	await get_tree().current_scene.animation_player.animation_finished
@@ -242,6 +253,9 @@ func _player_save_checkpoint():
 	# open stages
 	if level_1_half_way and not stage_open:
 		stage_open = true
+		_stage_opening()
+	elif level_2_half_way and not stage_open_2:
+		stage_open_2 = true
 		_stage_opening()
 	
 

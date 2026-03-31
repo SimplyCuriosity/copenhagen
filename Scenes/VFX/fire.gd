@@ -30,7 +30,6 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 			#tiles.erase_cell(tiles.get_coords_for_body_rid(body_rid))
 			
 			#miracle
-			print(tiles.get_coords_for_body_rid(body_rid),-1)
 			
 			
 			tiles.set_cell(tiles.get_coords_for_body_rid(body_rid),-1)

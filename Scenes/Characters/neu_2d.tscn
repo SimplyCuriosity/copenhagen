@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://d3np0msnk67v" path="res://Assets/SFX/SFX-Jump_Charge_1_tone.ogg" id="7_y8nod"]
 [ext_resource type="AudioStream" uid="uid://dajye48ju0ige" path="res://Assets/SFX/SFX-Jump.ogg" id="8_mjwfn"]
 [ext_resource type="AudioStream" uid="uid://c438lyeid4ml7" path="res://Assets/SFX/SFX-Jump_Landing.ogg" id="9_mjwfn"]
+[ext_resource type="AudioStream" uid="uid://cnnfivgmuigaj" path="res://Assets/SFX/SFX-Climb.ogg" id="12_n11mw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a01il"]
 animations = [{
@@ -30,6 +31,8 @@ size = Vector2(72, 50)
 physics_interpolation_mode = 1
 collision_layer = 2
 script = ExtResource("1_iai8c")
+
+[node name="Arrows" type="Node2D" parent="." unique_id=698344064]
 
 [node name="PaperRip2" type="Sprite2D" parent="." unique_id=1821115441]
 visible = false
@@ -127,6 +130,11 @@ target_position = Vector2(0, 700)
 [node name="RegularJumpWindow" type="Timer" parent="." unique_id=489150505]
 wait_time = 0.2
 one_shot = true
+
+[node name="Climbing Audio" type="AudioStreamPlayer" parent="." unique_id=866336694]
+stream = ExtResource("12_n11mw")
+volume_db = 6.0
+bus = &"SFX"
 
 [connection signal="timeout" from="RegularJumpWindow" to="." method="_on_regular_jump_window_timeout"]
 

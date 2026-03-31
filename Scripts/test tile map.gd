@@ -14,5 +14,4 @@ func _use_tile_data_runtime_update(coords: Vector2i) -> bool:
 	return true
 	
 func _tile_data_runtime_update(coords: Vector2i, tile_data: TileData) -> void:
-	print(coords)
 	pass

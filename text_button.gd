@@ -8,7 +8,6 @@ func _ready() -> void:
 	button.mouse_entered.connect(_custom_button_mouse_entered)
 	button.mouse_exited.connect(_custom_button_mouse_exited)
 	button.pressed.connect(_custom_button_pressed)
-	print(name)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -40,7 +39,6 @@ func _custom_button_mouse_exited() -> void:
 func _custom_button_pressed() -> void:
 	match text:
 		"Start":
-			print(3)
 			get_tree().change_scene_to_file("res://Scenes/Levels/intro_level.tscn")
 			#GameManager.Background_music.stream = preload("res://Assets/Music/ptt_02.mp3")
 			#GameManager.Background_music.playing = true
@@ -58,7 +56,6 @@ func _custom_button_pressed() -> void:
 			GameManager.Resume_button_pressed = true
 			pass
 		"Settings":
-			print(1)
 			
 			GameManager.setting_menu.visible = true
 			if get_tree().current_scene.name == "MainMenu":

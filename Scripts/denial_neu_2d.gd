@@ -18,9 +18,9 @@ enum neu_name {
 @export var interactible:= true:
 	set(value):
 		interactible = value
-		if interactible:
+		if interactible and dialogue_area != null:
 			dialogue_area.monitoring = true
-		elif not interactible:
+		elif not interactible and dialogue_area != null:
 			dialogue_area.monitoring = false
 @export var animation_player_flip_h:= false:
 	set(value):
@@ -272,7 +272,7 @@ Deni:
 Your... your right!
 I shouldn’t be here, rotting in this dingy box!
 I should be out there, out in [color=purple]The Outside[/color]!
-I should be out their... with you... with Neu.
+I should be out there... with you... with Neu.
 Mind if I follow along?
 ",
 "
@@ -335,6 +335,18 @@ Onward, my friend!
 "
 ]
 
+var Ag_minigame_intro_dialogue:= "
+Ag:
+ 
+.
+.
+.
+Ag:
+ 
+Fine! I'll follow along if you could find & extinguish them all!
+"
+
+var Ag_end_speech:= "\nAg:\nAlright - alright, you did it.\nI won't stand in your way anymore.\nMay I follow you?\n"
 
 func _ready() -> void:
 	talk.visible = false
@@ -361,7 +373,7 @@ func _physics_process(delta: float) -> void:
 		elif global_position.x < GameManager.playable_character.global_position.x:
 			animated_sprite_2d.flip_h = true
 		pass
-	elif interactible:
+	else:
 		if global_position.x > GameManager.playable_character.global_position.x:
 			animated_sprite_2d.flip_h = true
 		elif global_position.x < GameManager.playable_character.global_position.x:
@@ -429,7 +441,10 @@ func _play_dead_message():
 					var dialogue_node = dialogue_scene.instantiate()
 					get_tree().root.add_child(dialogue_node)
 					GameManager.playable_character.motion_paused = true
+					GameManager.current_level.animation_player.pause()
 					dialogue_node._generate_dialogue_box(deni_dead_speech[GameManager.deni_dead_speech_num])
+					await dialogue_node.dialogue_finished
+					GameManager.current_level.animation_player.play()
 					GameManager.deni_dead_speech_num += 1
 				pass
 			neu_name.Ag:
