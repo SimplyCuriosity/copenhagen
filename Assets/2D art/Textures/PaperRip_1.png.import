@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://wjihyw1xk8d7"
 path.s3tc="res://.godot/imported/PaperRip_1.png-3651e25ddfc2f8ac87e3687a7bb9ad5c.s3tc.ctex"
+path.etc2="res://.godot/imported/PaperRip_1.png-3651e25ddfc2f8ac87e3687a7bb9ad5c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/2D art/Textures/PaperRip_1.png"
-dest_files=["res://.godot/imported/PaperRip_1.png-3651e25ddfc2f8ac87e3687a7bb9ad5c.s3tc.ctex"]
+dest_files=["res://.godot/imported/PaperRip_1.png-3651e25ddfc2f8ac87e3687a7bb9ad5c.s3tc.ctex", "res://.godot/imported/PaperRip_1.png-3651e25ddfc2f8ac87e3687a7bb9ad5c.etc2.ctex"]
 
 [params]
 

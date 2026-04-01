@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn53f0r6yqwp1"
 path.s3tc="res://.godot/imported/CardBoard Normalmap.png-46d2577649b210bd6dca4f90f7b3d82c.s3tc.ctex"
+path.etc2="res://.godot/imported/CardBoard Normalmap.png-46d2577649b210bd6dca4f90f7b3d82c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/2D art/Textures/CardBoard Normalmap.png"
-dest_files=["res://.godot/imported/CardBoard Normalmap.png-46d2577649b210bd6dca4f90f7b3d82c.s3tc.ctex"]
+dest_files=["res://.godot/imported/CardBoard Normalmap.png-46d2577649b210bd6dca4f90f7b3d82c.s3tc.ctex", "res://.godot/imported/CardBoard Normalmap.png-46d2577649b210bd6dca4f90f7b3d82c.etc2.ctex"]
 
 [params]
 
