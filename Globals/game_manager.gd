@@ -177,7 +177,7 @@ func _physics_process(delta: float) -> void:
 			#Background_music.stream = MINIGAME_THEME
 			#BackgroundMusic.volume_db = -5
 			#Background_music.playing = true
-			BackgroundMusic._change_music(MINIGAME_THEME, -12)
+			BackgroundMusic._change_music(MINIGAME_THEME, -5)
 		pass
 	elif get_tree().current_scene != null:
 			if get_tree().current_scene.name == "MainMenu" and BackgroundMusic.music_cue != MAIN_THEME:
@@ -188,7 +188,7 @@ func _physics_process(delta: float) -> void:
 			elif get_tree().current_scene.name == "Intro Level" and BackgroundMusic.music_cue != RESS_THEME:
 				BackgroundMusic._change_music(RESS_THEME, -5)
 	elif in_minigame and BackgroundMusic.music_cue != MINIGAME_THEME:
-		BackgroundMusic._change_music(MINIGAME_THEME, -12)
+		BackgroundMusic._change_music(MINIGAME_THEME, -5)
 	await get_tree().create_timer(0.2).timeout
 	pass
 

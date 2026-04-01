@@ -2,10 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d3dc7j5lb5g1v" path="res://Assets/2D art/Placeholder/Possible mid screen.png" id="1_m5f7i"]
 [ext_resource type="FontFile" uid="uid://i0jp2mp82x0o" path="res://Assets/Fonts/Childst_added-Regular.ttf" id="2_ax6q0"]
-[ext_resource type="Texture2D" uid="uid://b1q331svad2v4" path="res://Assets/2D art/Cutscene/l2_tobectnd.png" id="3_c2jsk"]
 [ext_resource type="FontFile" uid="uid://c6opkbhg8dcqa" path="res://Assets/Fonts/Italicst_added-Regular.ttf" id="3_kjyxc"]
-[ext_resource type="Texture2D" uid="uid://bm2e5tngd6i3b" path="res://Assets/2D art/Cutscene/l2_en2.png" id="4_ud2ef"]
-[ext_resource type="Texture2D" uid="uid://8477ug7ehy5q" path="res://Assets/2D art/Cutscene/l2_end1.png" id="5_ud2ef"]
 
 [sub_resource type="Animation" id="Animation_m4i1e"]
 resource_name = "Ag Intro"
@@ -126,7 +123,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_xk8vt"]
 resource_name = "Ag Outro"
-length = 18.0
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -134,10 +131,10 @@ tracks/0/path = NodePath("CanvasLayer2/Dim background:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.4666667, 2.66, 4, 4.766667, 6.7666674, 8.766667, 14.433333, 15.8, 16.533333, 17.933332),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.4666667, 2.66, 4, 7.9666667, 9.966667, 11.966667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -146,9 +143,9 @@ tracks/1/path = NodePath("Neu2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.6333333),
+"times": PackedFloat32Array(2.01),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [Vector2(3931, -7687)]
 }
 tracks/2/type = "method"
@@ -168,38 +165,14 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("JoinNotice:modulate")
+tracks/3/path = NodePath("CanvasLayer2/JoinNotice:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(7.9, 9.428003, 10.428003, 11.928003),
+"times": PackedFloat32Array(4.8, 6.328004, 7.328004, 8.828004),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("AlternateNeu2D:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(6.758447),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Neu2D/Camera2D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(11.557662, 14.633333, 16.00155, 16.256386),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(180, -1843), Vector2(180, -1843), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ksf1i"]
@@ -339,7 +312,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("JoinNotice:modulate")
+tracks/7/path = NodePath("CanvasLayer2/JoinNotice:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -473,7 +446,7 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("JoinNotice:modulate")
+tracks/8/path = NodePath("CanvasLayer2/JoinNotice:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
@@ -520,7 +493,7 @@ tracks/11/keys = {
 }
 tracks/12/type = "value"
 tracks/12/imported = false
-tracks/12/enabled = false
+tracks/12/enabled = true
 tracks/12/path = NodePath("Neu2D:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
@@ -664,6 +637,19 @@ position = Vector2(960, 540)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_m5f7i")
 
+[node name="Interact" type="RichTextLabel" parent="." unique_id=1458568511]
+offset_left = 355.0
+offset_top = 68.0
+offset_right = 1580.0
+offset_bottom = 246.0
+theme_override_colors/default_color = Color(0, 0, 0.5686275, 1)
+theme_override_fonts/normal_font = ExtResource("2_ax6q0")
+theme_override_font_sizes/normal_font_size = 128
+bbcode_enabled = true
+text = "[wave]To Be Continued"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1208269477]
 libraries/ = SubResource("AnimationLibrary_cjxlr")
 autoplay = &"FadeIn"
@@ -679,7 +665,6 @@ scale = Vector2(31.218752, 19.375)
 texture = SubResource("GradientTexture2D_c2jsk")
 
 [node name="JoinNotice" type="RichTextLabel" parent="CanvasLayer2" unique_id=1760922499]
-visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 410.0
 offset_top = 449.0
@@ -690,35 +675,5 @@ theme_override_fonts/normal_font = ExtResource("3_kjyxc")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "Deni has accepted his fate"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="L2Tobectnd" type="Sprite2D" parent="." unique_id=1327621500]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_c2jsk")
-
-[node name="L2En2" type="Sprite2D" parent="." unique_id=1155266142]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_ud2ef")
-
-[node name="L2End1" type="Sprite2D" parent="." unique_id=1278643967]
-position = Vector2(960, 540)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_ud2ef")
-
-[node name="Interact" type="RichTextLabel" parent="." unique_id=1458568511]
-offset_left = 997.0
-offset_top = 904.0
-offset_right = 2222.0
-offset_bottom = 1082.0
-theme_override_colors/default_color = Color(0, 0.72173095, 0.5831008, 1)
-theme_override_colors/font_outline_color = Color(0, 0.72156864, 0.58431375, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/normal_font = ExtResource("2_ax6q0")
-theme_override_font_sizes/normal_font_size = 64
-bbcode_enabled = true
-text = "[wave]To Be Continued..."
 horizontal_alignment = 1
 vertical_alignment = 1
