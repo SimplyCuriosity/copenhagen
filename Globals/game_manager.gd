@@ -292,17 +292,76 @@ func _change_level(level_num:int):
 	get_tree().current_scene.animation_player.play("FadeOut")
 	await get_tree().current_scene.animation_player.animation_finished
 	current_level = null
+	playable_character = null
 	await get_tree().change_scene_to_file("res://Scenes/Levels/level_"+str(level_num)+".tscn")
 	await get_tree().tree_changed
-	
+	await get_tree().current_scene.level_ready
 	if current_cave != null:
 		for i in current_level.get_node("Caves").get_children():
 			if i.Cave_Id == current_cave:
 				respawn_point = i.global_position
-		playable_character.global_position = respawn_point
-		current_level.animation_player.play("Spawning")
+				print("happen")
+		print(playable_character.global_position)
+		get_tree().current_scene.get_node("Neu2D").global_position = respawn_point
+		print(respawn_point)
+		print(playable_character.global_position)
+		if current_level.animation_player.is_playing() == false:
+			current_level.animation_player.play("Spawning")
+			pass
 	
 	await current_level.animation_player.animation_finished
 	
 	
+	pass
+
+
+func _temp_delete_progress():
+	just_died = false
+	in_minigame = false
+	current_level = null
+	current_cave = null
+	stage_open = false
+	stage_open_2 = false
+	stage_open_3 = false
+	stage_open_4 = false
+	
+
+	#var current_scene
+	deni_speech_num = 0
+	deni_speech_max = 1
+	deni_dead_speech_num = 0
+	deni_dead_speech_max = 9
+
+	ag_intro_done = false
+	ag_speech_num = 0
+	ag_speech_max = 1
+	ag_dead_speech_num = 0
+	ag_dead_speech_max = 9
+
+	gai_speech_num = 0
+	gai_speech_max = 1
+	gai_dead_speech_num = 0
+	gai_dead_speech_max = 9
+
+	ress_speech_num = 0
+	ress_speech_max = 1
+	ress_dead_speech_num = 0
+	ress_dead_speech_max = 9
+	
+	level_1_half_way = false
+	level_2_half_way = false
+	level_3_half_way = false
+	level_4_half_way = false
+	
+	respawn_bench = null
+	
+	minigame_1_done = false
+	minigame_2_done = false
+	minigame_3_done = false
+	minigame_4_done = false
+	
+	level_1_outro_done = false
+	level_2_outro_done = false
+	level_3_outro_done = false
+	level_4_outro_done = false
 	pass

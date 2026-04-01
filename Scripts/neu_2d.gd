@@ -43,7 +43,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	
+	print(global_position)
 	pass
 
 func _physics_process(delta: float) -> void:

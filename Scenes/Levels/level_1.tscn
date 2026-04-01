@@ -1158,7 +1158,7 @@ tile_map_data = PackedByteArray("AAAcAA4ACAAAAAAAAAAfAA4ACAACAAAAAAAdAA4ACAABAAA
 tile_set = SubResource("TileSet_q8f14")
 
 [node name="Neu2D" parent="." unique_id=587876329 instance=ExtResource("13_1fgkh")]
-position = Vector2(632, 868)
+position = Vector2(16683, -2707)
 
 [node name="AlternateNeu2D" parent="." unique_id=1774092108 instance=ExtResource("14_hd8f4")]
 position = Vector2(1046, 793)
@@ -1282,6 +1282,7 @@ position_smoothing_speed = 2.0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1467569887]
 layer = 2
+visible = false
 
 [node name="Dim background" type="Sprite2D" parent="CanvasLayer2" unique_id=2027425755]
 modulate = Color(0, 0, 0, 1)
