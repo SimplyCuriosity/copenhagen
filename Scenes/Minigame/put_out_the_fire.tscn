@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://cmqd1v3y5qxmn" path="res://Scenes/Interactibles/burn_poi.tscn" id="12_ebh72"]
 [ext_resource type="PackedScene" uid="uid://bvyiyqdevhrod" path="res://Scenes/Hazzard/spiky_spinning_platform.tscn" id="13_6noxk"]
 [ext_resource type="PackedScene" uid="uid://ecrb06yumk5q" path="res://Scenes/platform.tscn" id="14_fj0mp"]
-[ext_resource type="PackedScene" uid="uid://gv4jx0of3eee" path="res://Scenes/Hazzard/spike.tscn" id="16_0w14o"]
 [ext_resource type="PackedScene" uid="uid://x1qiuqhyh6o0" path="res://Scenes/Characters/alternate_neu_2d.tscn" id="17_0w14o"]
 [ext_resource type="Texture2D" uid="uid://wjihyw1xk8d7" path="res://Assets/2D art/Textures/PaperRip_1.png" id="19_7b7o2"]
 [ext_resource type="FontFile" uid="uid://esg1noxywjcx" path="res://Assets/Fonts/DigitalHandWritingTest-Regular.ttf" id="19_hsinp"]
@@ -427,88 +426,6 @@ libraries/ = SubResource("AnimationLibrary_7b7o2")
 autoplay = &"PlatformMove"
 
 [node name="Spikes" type="Node2D" parent="." unique_id=1346586350]
-
-[node name="Spike1" parent="Spikes" unique_id=60013587 instance=ExtResource("16_0w14o")]
-position = Vector2(3686, -3839)
-rotation = -3.1415925
-
-[node name="Spike2" parent="Spikes" unique_id=1699292680 instance=ExtResource("16_0w14o")]
-position = Vector2(3747, -3839)
-rotation = -3.1415925
-
-[node name="Spike3" parent="Spikes" unique_id=1125937510 instance=ExtResource("16_0w14o")]
-position = Vector2(3808, -3839)
-rotation = -3.1415925
-
-[node name="Spike4" parent="Spikes" unique_id=624797780 instance=ExtResource("16_0w14o")]
-position = Vector2(3871, -3839)
-rotation = -3.1415925
-
-[node name="Spike5" parent="Spikes" unique_id=1816527292 instance=ExtResource("16_0w14o")]
-position = Vector2(3932, -3892)
-rotation = 1.5707964
-
-[node name="Spike6" parent="Spikes" unique_id=1233144197 instance=ExtResource("16_0w14o")]
-position = Vector2(3625, -3897)
-rotation = -1.5707964
-
-[node name="Spike7" parent="Spikes" unique_id=828959195 instance=ExtResource("16_0w14o")]
-position = Vector2(3686, -4274)
-
-[node name="Spike8" parent="Spikes" unique_id=1670465848 instance=ExtResource("16_0w14o")]
-position = Vector2(3747, -4274)
-
-[node name="Spike9" parent="Spikes" unique_id=1645227915 instance=ExtResource("16_0w14o")]
-position = Vector2(3808, -4274)
-
-[node name="Spike10" parent="Spikes" unique_id=535888057 instance=ExtResource("16_0w14o")]
-position = Vector2(3871, -4274)
-
-[node name="Spike11" parent="Spikes" unique_id=965424426 instance=ExtResource("16_0w14o")]
-position = Vector2(3625, -4274)
-
-[node name="Spike12" parent="Spikes" unique_id=1268501700 instance=ExtResource("16_0w14o")]
-position = Vector2(3932, -4274)
-
-[node name="Spike13" parent="Spikes" unique_id=1887158382 instance=ExtResource("16_0w14o")]
-position = Vector2(3560, -4214)
-rotation = -1.5707964
-
-[node name="Spike14" parent="Spikes" unique_id=627041204 instance=ExtResource("16_0w14o")]
-position = Vector2(3560, -4155)
-rotation = -1.5707964
-
-[node name="Spike15" parent="Spikes" unique_id=858846339 instance=ExtResource("16_0w14o")]
-position = Vector2(3991, -4214)
-rotation = 1.5707964
-
-[node name="Spike16" parent="Spikes" unique_id=937966951 instance=ExtResource("16_0w14o")]
-position = Vector2(3991, -4155)
-rotation = 1.5707964
-
-[node name="Spike17" parent="Spikes" unique_id=857044697 instance=ExtResource("16_0w14o")]
-position = Vector2(3682, -4093)
-rotation = -3.1415925
-
-[node name="Spike18" parent="Spikes" unique_id=997654585 instance=ExtResource("16_0w14o")]
-position = Vector2(3743, -4093)
-rotation = -3.1415925
-
-[node name="Spike19" parent="Spikes" unique_id=2075893735 instance=ExtResource("16_0w14o")]
-position = Vector2(3804, -4093)
-rotation = -3.1415925
-
-[node name="Spike20" parent="Spikes" unique_id=642746665 instance=ExtResource("16_0w14o")]
-position = Vector2(3867, -4093)
-rotation = -3.1415925
-
-[node name="Spike21" parent="Spikes" unique_id=1642560053 instance=ExtResource("16_0w14o")]
-position = Vector2(3621, -4093)
-rotation = -3.1415925
-
-[node name="Spike22" parent="Spikes" unique_id=934238814 instance=ExtResource("16_0w14o")]
-position = Vector2(3928, -4093)
-rotation = -3.1415925
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=574523823]
 libraries/ = SubResource("AnimationLibrary_1vbyu")

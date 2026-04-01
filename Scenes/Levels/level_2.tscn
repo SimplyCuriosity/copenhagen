@@ -1177,28 +1177,244 @@ scale = Vector2(31.218752, 19.375)
 texture = SubResource("GradientTexture2D_boiit")
 
 [node name="Ductapes" type="Node2D" parent="." unique_id=1569407078]
-visible = false
 
 [node name="Tape01GreenTransparent" type="Sprite2D" parent="Ductapes" unique_id=1770627194]
-position = Vector2(114, -1)
-rotation = 1.5638821
+position = Vector2(468.00006, -770)
+rotation = -0.48470712
 texture = ExtResource("18_vybpq")
 region_enabled = true
 region_rect = Rect2(930.3357, 184.22256, 325.79626, 113.61145)
 
-[node name="Tape01GreenTransparent2" type="Sprite2D" parent="Ductapes" unique_id=1399444852]
-position = Vector2(1454.0001, 71.99997)
-rotation = 1.3240908
+[node name="Tape01GreenTransparent2" type="Sprite2D" parent="Ductapes" unique_id=1447513813]
+position = Vector2(1437, -812)
+rotation = -0.72064155
 texture = ExtResource("18_vybpq")
 region_enabled = true
-region_rect = Rect2(1304.4406, 442.96735, 216.1305, 120.46619)
+region_rect = Rect2(915.19934, 578.9067, 627.21423, 120.25537)
 
-[node name="Tape01GreenTransparent3" type="Sprite2D" parent="Ductapes" unique_id=1173051242]
-position = Vector2(1691, 112)
-rotation = 1.8335184
+[node name="Tape01GreenTransparent3" type="Sprite2D" parent="Ductapes" unique_id=1742805968]
+position = Vector2(2482, -927.99994)
+rotation = 0.5421201
 texture = ExtResource("18_vybpq")
 region_enabled = true
-region_rect = Rect2(1525.1282, 454.0793, 200.18652, 106.29373)
+region_rect = Rect2(1297.1869, 437.42975, 216.93127, 120.25537)
+
+[node name="Tape01GreenTransparent4" type="Sprite2D" parent="Ductapes" unique_id=1031036700]
+position = Vector2(3262.9998, -2239)
+rotation = 0.4172532
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1521.192, 456.29333, 214.57324, 108.46564)
+
+[node name="Tape01GreenTransparent5" type="Sprite2D" parent="Ductapes" unique_id=765364099]
+position = Vector2(2313, -1977.0001)
+rotation = -0.81137896
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(952.9265, 41.294437, 209.8573, 139.11894)
+
+[node name="Tape01GreenTransparent6" type="Sprite2D" parent="Ductapes" unique_id=1052025179]
+position = Vector2(1524.0002, -3310)
+rotation = -0.4825847
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1233.5223, 48.368282, 530.5383, 127.32921)
+
+[node name="Tape01GreenTransparent7" type="Sprite2D" parent="Ductapes" unique_id=2025519589]
+position = Vector2(2435, -3174)
+rotation = 0.5421201
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1308.9767, 300.66876, 363.12402, 129.68716)
+
+[node name="Tape01GreenTransparent8" type="Sprite2D" parent="Ductapes" unique_id=1926004197]
+position = Vector2(2837.9998, -4317.9995)
+rotation = -0.2348274
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(919.91516, 574.1908, 620.1404, 124.97125)
+
+[node name="Tape01GreenTransparent9" type="Sprite2D" parent="Ductapes" unique_id=283275299]
+position = Vector2(3581, -5288)
+rotation = 1.6091805
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1308.9767, 300.66876, 363.12402, 129.68716)
+
+[node name="Tape01GreenTransparent10" type="Sprite2D" parent="Ductapes" unique_id=944615495]
+position = Vector2(4610, -5282)
+rotation = 1.6091805
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(967.0741, 444.5036, 294.74365, 124.97125)
+
+[node name="Tape01GreenTransparent11" type="Sprite2D" parent="Ductapes" unique_id=919556148]
+position = Vector2(3618.9998, -6790)
+rotation = -0.6917045
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(905.76746, 310.10056, 386.7036, 122.61331)
+
+[node name="Tape01GreenTransparent12" type="Sprite2D" parent="Ductapes" unique_id=284081183]
+position = Vector2(4550, -6816)
+rotation = 0.69129974
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1308.9767, 300.66876, 363.12402, 129.68716)
+
+[node name="Tape01GreenTransparent13" type="Sprite2D" parent="Ductapes" unique_id=13994854]
+position = Vector2(6425, -5979.9995)
+rotation = 0.6058022
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1271.2495, 170.98158, 440.93628, 117.897446)
+
+[node name="Tape01GreenTransparent14" type="Sprite2D" parent="Ductapes" unique_id=672515056]
+position = Vector2(5029, -6024.0005)
+rotation = -0.6880872
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(929.3469, 170.98158, 332.47083, 124.9713)
+
+[node name="Tape01GreenTransparent15" type="Sprite2D" parent="Ductapes" unique_id=802192573]
+position = Vector2(1726.0005, -8234.001)
+rotation = -0.6880872
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(929.3469, 170.98158, 332.47083, 124.9713)
+
+[node name="Tape01GreenTransparent16" type="Sprite2D" parent="Ductapes" unique_id=319138269]
+position = Vector2(3116.9995, -8252)
+rotation = 0.6058022
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1271.2495, 170.98158, 440.93628, 117.897446)
+
+[node name="Tape01GreenTransparent17" type="Sprite2D" parent="Ductapes" unique_id=2119169981]
+position = Vector2(4923.9995, -8234.999)
+rotation = 0.0022091866
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(936.4208, 576.5487, 605.9928, 124.97125)
+
+[node name="Tape01GreenTransparent18" type="Sprite2D" parent="Ductapes" unique_id=1800636240]
+position = Vector2(2408, -6037)
+rotation = -0.07058628
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(919.91516, 857.14453, 929.0316, 110.82361)
+
+[node name="Tape01GreenTransparent19" type="Sprite2D" parent="Ductapes" unique_id=803241822]
+position = Vector2(5065, -10529)
+rotation = -0.4825847
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1233.5223, 48.368282, 530.5383, 127.32921)
+
+[node name="Tape01GreenTransparent20" type="Sprite2D" parent="Ductapes" unique_id=2023835743]
+position = Vector2(96.00012, -10458)
+rotation = -0.80248225
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1233.5223, 48.368282, 530.5383, 127.32921)
+
+[node name="Tape01GreenTransparent21" type="Sprite2D" parent="Ductapes" unique_id=1573366879]
+position = Vector2(7703.9995, -10227)
+rotation = 0.34569877
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1233.5223, 48.368282, 530.5383, 127.32921)
+
+[node name="Tape01GreenTransparent22" type="Sprite2D" parent="Ductapes" unique_id=1362636079]
+position = Vector2(6801.0005, -10086)
+rotation = -0.95869446
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(893.9778, 288.87903, 393.77734, 148.55072)
+
+[node name="Tape01GreenTransparent23" type="Sprite2D" parent="Ductapes" unique_id=1914763369]
+position = Vector2(3490, -8339)
+rotation = -0.95869446
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(967.0741, 456.29333, 294.74365, 99.03381)
+
+[node name="Tape01GreenTransparent24" type="Sprite2D" parent="Ductapes" unique_id=614654573]
+position = Vector2(1840, -10588)
+rotation = -1.472621
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(967.0741, 456.29333, 294.74365, 99.03381)
+
+[node name="Tape01GreenTransparent25" type="Sprite2D" parent="Ductapes" unique_id=2117676270]
+position = Vector2(3169.0002, -10519.001)
+rotation = 1.6206439
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1311.3346, 303.0267, 370.19788, 120.25537)
+
+[node name="Tape01GreenTransparent26" type="Sprite2D" parent="Ductapes" unique_id=665521813]
+position = Vector2(949.99994, -9101)
+rotation = 0.12383461
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(922.2731, 581.2646, 622.4984, 117.89746)
+
+[node name="Tape01GreenTransparent27" type="Sprite2D" parent="Ductapes" unique_id=1415756516]
+position = Vector2(7543.0005, -7973.999)
+rotation = 0.12383461
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(922.2731, 581.2646, 622.4984, 117.89746)
+
+[node name="Tape01GreenTransparent28" type="Sprite2D" parent="Ductapes" unique_id=1271806530]
+position = Vector2(8122.001, -5927.001)
+rotation = 0.6705828
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(926.989, 706.23584, 448.01013, 129.6872)
+
+[node name="Tape01GreenTransparent29" type="Sprite2D" parent="Ductapes" unique_id=1282547647]
+position = Vector2(6686, -6041.9995)
+rotation = -0.5512222
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(948.2106, 442.14566, 318.323, 124.97128)
+
+[node name="Tape01GreenTransparent30" type="Sprite2D" parent="Ductapes" unique_id=1836886864]
+position = Vector2(6431, -8321)
+rotation = 0.64947474
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(948.2106, 442.14566, 318.323, 124.97128)
+
+[node name="Tape01GreenTransparent31" type="Sprite2D" parent="Ductapes" unique_id=821958737]
+position = Vector2(1526.0005, -10559.001)
+rotation = -2.3920236
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(1308.9767, 317.1744, 353.69226, 115.53946)
+
+[node name="Tape01GreenTransparent32" type="Sprite2D" parent="Ductapes" unique_id=1963827771]
+position = Vector2(3974, -10220)
+rotation = -0.1646538
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(910.4834, 567.11694, 615.42444, 136.76099)
+
+[node name="Tape01GreenTransparent33" type="Sprite2D" parent="Ductapes" unique_id=964096723]
+position = Vector2(1104, -6845)
+rotation = 0.33748254
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(910.4834, 567.11694, 615.42444, 136.76099)
+
+[node name="Tape01GreenTransparent34" type="Sprite2D" parent="Ductapes" unique_id=31146341]
+position = Vector2(262.99988, -6744.0005)
+rotation = -0.79222345
+texture = ExtResource("18_vybpq")
+region_enabled = true
+region_rect = Rect2(943.4946, 170.98158, 334.82874, 124.9713)
 
 [node name="WorldCam" type="Camera2D" parent="." unique_id=387757221]
 position_smoothing_enabled = true

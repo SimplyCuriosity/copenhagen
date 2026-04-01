@@ -1276,6 +1276,41 @@ texture = ExtResource("17_k1rx4")
 region_enabled = true
 region_rect = Rect2(968.05176, 455.44824, 280.22876, 106.2937)
 
+[node name="Tape01GreenTransparent16" type="Sprite2D" parent="Ductapes" unique_id=1128145087]
+position = Vector2(13206, -2258)
+rotation = 5.703521
+texture = ExtResource("17_k1rx4")
+region_enabled = true
+region_rect = Rect2(971, 445.66998, 278.30005, 124.630066)
+
+[node name="Tape01GreenTransparent17" type="Sprite2D" parent="Ductapes" unique_id=1718354033]
+position = Vector2(14653, -2090)
+rotation = 6.818367
+texture = ExtResource("17_k1rx4")
+region_enabled = true
+region_rect = Rect2(939.3485, 725.63574, 402.99475, 111.466675)
+
+[node name="Tape01GreenTransparent18" type="Sprite2D" parent="Ductapes" unique_id=1447359465]
+position = Vector2(15212.999, -3019)
+rotation = 5.7803626
+texture = ExtResource("17_k1rx4")
+region_enabled = true
+region_rect = Rect2(1286.2859, 168.90869, 429.1466, 117.8974)
+
+[node name="Tape01GreenTransparent19" type="Sprite2D" parent="Ductapes" unique_id=1594165276]
+position = Vector2(16046, -2857.0005)
+rotation = 4.0458503
+texture = ExtResource("17_k1rx4")
+region_enabled = true
+region_rect = Rect2(1233.5223, 48.368282, 549.402, 120.255356)
+
+[node name="Tape01GreenTransparent20" type="Sprite2D" parent="Ductapes" unique_id=713743115]
+position = Vector2(17120, -3323)
+rotation = 6.2829943
+texture = ExtResource("17_k1rx4")
+region_enabled = true
+region_rect = Rect2(924.6311, 571.8328, 627.21423, 127.32922)
+
 [node name="WorldCam" type="Camera2D" parent="." unique_id=387757221]
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0

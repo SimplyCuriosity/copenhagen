@@ -293,16 +293,16 @@ func _change_level(level_num:int):
 	await get_tree().current_scene.animation_player.animation_finished
 	current_level = null
 	await get_tree().change_scene_to_file("res://Scenes/Levels/level_"+str(level_num)+".tscn")
-	await get_tree().tree_changed
-	
+	await get_tree().scene_changed
+	#await get_tree().tree_changed
 	if current_cave != null:
-		for i in current_level.get_node("Caves").get_children():
+		for i in get_tree().current_scene.get_node("Caves").get_children():
 			if i.Cave_Id == current_cave:
 				respawn_point = i.global_position
 		playable_character.global_position = respawn_point
-		current_level.animation_player.play("Spawning")
+		get_tree().current_scene.animation_player.play("Spawning")
 	
-	await current_level.animation_player.animation_finished
+	await get_tree().current_scene.animation_player.animation_finished
 	
 	
 	pass
