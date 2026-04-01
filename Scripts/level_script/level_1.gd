@@ -9,7 +9,7 @@ extends Node2D
 @onready var burning_paper: AnimatableBody2D = $"Burning Papers/Burning Paper"
 @onready var hole_in_the_wall: Node2D = $HoleInTheWall
 @onready var ending_trigger: Area2D = $EndingTrigger
-signal level_ready()
+
 
 var dialogue_scene = preload("res://Scenes/dialogue_system.tscn")
 
@@ -28,12 +28,9 @@ Best to finish before you start.
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.current_level = self
-	level_ready.emit()
 	GameManager.playable_character.motion_paused = true
 	hole_in_the_wall.open_path.connect(_minigame_finished)
-	if animation_player.is_playing() == false:
-		animation_player.play("Spawning")
-		pass
+	animation_player.play("Spawning")
 	
 	# Handles alternate Neu at start
 	if GameManager.level_1_half_way:
@@ -56,8 +53,6 @@ func _ready() -> void:
 		hole_in_the_wall.danger_totem.queue_free()
 	else:
 		platform_anim_2.play("NotInPosition")
-	
-	
 	pass # Replace with function body.
 
 

@@ -67,7 +67,6 @@ func _custom_button_pressed() -> void:
 		"Main Menu":
 			GameManager.in_minigame = false
 			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-			#GameManager._temp_delete_progress()
 			#GameManager.Background_music.stream = preload("res://Assets/Music/bigj_demo_4.mp3")
 			#BackgroundMusic.volume_db = 0
 			#GameManager.Background_music.playing = true

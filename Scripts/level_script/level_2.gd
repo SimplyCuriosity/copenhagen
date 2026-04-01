@@ -9,14 +9,13 @@ extends Node2D
 @onready var world_cam: Camera2D = $WorldCam
 @onready var put_out_the_fire: Node2D = $"Put Out The Fire"
 @onready var cave: Node2D = $Caves/Cave
-signal level_ready()
+
 
 const dialogue_scene = preload("res://Scenes/dialogue_system.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameManager.current_level = self
-	level_ready.emit()
 	GameManager.playable_character.motion_paused = true
 	put_out_the_fire.minigame_finished.connect(_minigame_finished)
 	alternate_neu_2d.interactible = false
@@ -41,8 +40,6 @@ func _ready() -> void:
 	if GameManager.level_2_outro_done:
 		cave.open = true
 		alternate_neu_2d.queue_free()
-	
-	
 	pass # Replace with function body.
 
 
