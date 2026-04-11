@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dut3iad4kyxdf"]
+
+[ext_resource type="Script" uid="uid://dpo5r8y8r8i55" path="res://Globals/SaveLoad.gd" id="1_46xdw"]
+
+[node name="test save load" type="Node2D" unique_id=9253684]
+script = ExtResource("1_46xdw")
