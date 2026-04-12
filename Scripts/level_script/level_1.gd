@@ -27,10 +27,14 @@ Best to finish before you start.
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(GameManager.respawn_point)
 	GameManager.current_level = self
 	GameManager.playable_character.motion_paused = true
 	hole_in_the_wall.open_path.connect(_minigame_finished)
+	if GameManager.respawn_point != null:
+		GameManager.playable_character.global_position = GameManager.respawn_point
 	animation_player.play("Spawning")
+	
 	
 	# Handles alternate Neu at start
 	if GameManager.level_1_half_way:
@@ -38,7 +42,7 @@ func _ready() -> void:
 		if GameManager.stage_open:
 			mid_barrier.enabled = false
 		
-	elif GameManager.level_1_outro_done:
+	if GameManager.level_1_outro_done:
 		alternate_neu_2d.queue_free()
 		ending_trigger.monitoring = false
 		mid_barrier.enabled = false

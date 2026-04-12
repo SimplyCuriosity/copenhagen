@@ -30,8 +30,10 @@ var pressed_on_land := true
 func _ready() -> void:
 	GameManager.playable_character = self
 	stop_all_motion = false
-	if not GameManager.just_died:
+	if not GameManager.just_died and GameManager.respawn_point == null:
 		GameManager.respawn_point = global_position
+	elif not GameManager.just_died and GameManager.respawn_bench != null:
+		global_position = GameManager.respawn_point
 	elif GameManager.just_died:
 		global_position = GameManager.respawn_point
 	jump_meter_slider.visible = false
@@ -43,7 +45,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	
+	#global_position = GameManager.respawn_point
 	pass
 
 func _physics_process(delta: float) -> void:

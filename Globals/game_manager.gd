@@ -32,6 +32,8 @@ var in_minigame:= false
 
 
 #Require save is below
+var last_current_level = null
+
 var current_cave: #in the form of enum value
 	set(value):
 		current_cave = value
